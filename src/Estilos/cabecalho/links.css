@@ -1,0 +1,32 @@
+.lista-links {
+    list-style: none;
+    
+}
+
+.lista-links .links {
+    display: inline-block;
+    margin-left: 10px;
+    
+}
+
+.instagram,
+.linkedin,
+.github {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 10px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    border-color: transparent;
+    
+}
+
+.redes {
+    display: inline-block;
+    margin-left: 10px;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: cover;
+}
+

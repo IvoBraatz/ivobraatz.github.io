@@ -1,0 +1,23 @@
+.descricao {
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.ola {
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.apresentacao {
+    font-size: 50px;
+    font-weight: 600;
+    
+}
+
+.mini {
+    padding-top: 10px;
+    font-size: 20px;
+    font-style: oblique ;
+    font-weight: 500;
+}
