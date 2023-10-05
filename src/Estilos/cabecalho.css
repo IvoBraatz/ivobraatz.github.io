@@ -68,3 +68,61 @@
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
+
+
+/* Estilos para telas pequenas (até 768px de largura) */
+@media (max-width: 768px) {
+
+
+    .cabecalho-conteudo {
+      flex-direction: column;
+      margin-bottom: 2rem;
+      padding: 1rem;
+    }
+  
+    .cabecalho-sobre,
+    .cabecalho-projetos,
+    .cabecalho-conhecimentos,
+    .cabecalho-contato {
+      padding: 1rem 0;
+      font-size: 1rem;
+    }
+
+    .cabecalho-nome {
+        padding: 0;
+        margin: 0;
+
+    }
+
+  }
+  
+  /* Estilos para telas médias (entre 768px e 1024px de largura) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .cabecalho-conteudo {
+      padding: 1.5rem;
+    }
+  
+    .cabecalho-sobre,
+    .cabecalho-projetos,
+    .cabecalho-conhecimentos,
+    .cabecalho-contato {
+      padding: 1.5rem 1rem;
+      font-size: 1.125rem;
+    }
+  }
+  
+  /* Estilos para telas grandes (mais de 1024px de largura) */
+  @media (min-width: 1025px) {
+    .cabecalho-conteudo {
+      padding: 2rem;
+    }
+  
+    .cabecalho-sobre,
+    .cabecalho-projetos,
+    .cabecalho-conhecimentos,
+    .cabecalho-contato {
+      padding: 2rem 1rem;
+      font-size: 1.25rem;
+    }
+  }
+  

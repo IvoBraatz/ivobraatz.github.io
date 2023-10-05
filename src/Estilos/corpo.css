@@ -145,19 +145,89 @@
     margin-bottom: 1rem;
 }
 
-/* Estilos responsivos */
+/* Estilos para telas pequenas (até 768px de largura) */
 @media (max-width: 768px) {
+    .sobre-mim {
+      height: auto;
+      margin-bottom: 2rem;
+      padding: 1rem;
+    }
+
+    .imagem-sobre img {
+        margin-left: 0;
+    }
+  
+    .titulo-sobre {
+      margin-left: 0;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  
+    .conteudo-sobre {
+      margin-left: 0;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .imagem-sobre {
+      width: 8rem;
+      margin: 1rem 0;
+    }
+  
+    .descricao-container {
+      max-width: 100%;
+      text-align: center;
+      padding: 0;
+      font-size: 1rem;
+    }
+  
     .card-container {
-        flex-wrap: nowrap;
-        overflow-x: auto;
+      flex-direction: column;
+      gap: 1rem;
+      overflow-x: hidden;
     }
-
-    .card {
-        flex: 0 0 calc(33.333% - 20px);
-        margin-right: 0.625rem;
+  
+    .card-linguagens,
+    .card-projetos {
+      max-width: 100%;
+      height: auto;
+      flex: 1;
+      margin-bottom: .5rem;
     }
-
-    .card:last-child {
-        margin-right: 0;
+  }
+  
+  
+  /* Estilos para telas grandes (mais de 1024px de largura) */
+  @media (min-width: 1025px) {
+    .sobre-mim {
+      padding: 2rem;
     }
-}
+  
+    .titulo-sobre {
+      font-size: 2rem;
+    }
+  
+    .imagem-sobre {
+      width: 12.5rem;
+    }
+  
+    .descricao-container {
+      max-width: 25rem;
+      text-align: left;
+      padding-left: 5rem;
+      font-size: 1.25rem;
+    }
+  
+    .card-container {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .card-linguagens,
+    .card-projetos {
+      max-width: calc(33.333% - 20px);
+      height: 24rem;
+      margin: 2rem 0;
+    }
+  }
+  

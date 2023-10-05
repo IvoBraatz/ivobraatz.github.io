@@ -83,3 +83,85 @@ input[type="submit"]:hover{
     color: #DEDFE0;
     background: var(--cor-hover);
 }
+
+/* Estilos para telas pequenas (até 768px de largura) */
+@media (max-width: 768px) {
+    .rodape {
+      height: auto;
+    }
+  
+    .acompanhe {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  
+    .paragrafo {
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
+  
+    .container-rodape {
+      padding: 0;
+    }
+  
+    input[type="email"] {
+      width: 18rem;
+      margin-bottom: 2rem;
+    }
+  
+    input[type="submit"] {
+      width: 10rem;
+    }
+
+    .copy{
+        padding-top: 5rem;
+    }
+  }
+  
+  /* Estilos para telas médias (entre 769px e 1024px de largura) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .acompanhe {
+      font-size: 1.8rem;
+      line-height: 2.25rem;
+    }
+  
+    .paragrafo {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+    }
+  
+    input[type="email"] {
+      width: 70%;
+    }
+  
+    input[type="submit"] {
+      width: 25%;
+    }
+  }
+  
+  /* Estilos para telas grandes (mais de 1024px de largura) */
+  @media (min-width: 1025px) {
+    .acompanhe {
+      font-size: 2.2rem;
+      line-height: 2.75rem;
+    }
+  
+    .paragrafo {
+      font-size: 1.25rem;
+      line-height: 1.875rem;
+    }
+  
+    .container-rodape {
+      justify-content: space-between;
+    }
+  
+    input[type="email"] {
+      width: 300px;
+    }
+  
+    input[type="submit"] {
+      width: auto;
+      padding: 0.625rem 1.125rem;
+    }
+  }
+  
