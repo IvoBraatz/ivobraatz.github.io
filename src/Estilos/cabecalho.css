@@ -6,7 +6,7 @@
 .cabecalho-conteudo {
     display: flex;
     align-items: center;
-    margin: 5rem 5rem;
+    margin-bottom: 5rem;
     justify-content: space-between;
 }
 

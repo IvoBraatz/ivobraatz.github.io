@@ -5,10 +5,13 @@
 @import url(reset.css);
 @import url(portifolio.css);
 @import url(footer.css);
+@import url(corpo.css);
 
 /* Reset CSS */
 body {
     font-family: Roboto, sans-serif;
+    margin-left: 5rem;
+    margin-right: 5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -19,9 +22,14 @@ h1, h2, h3, h4, h5, h6 {
 ul, li {
     padding: 0;
 }
+
+main{
+    margin-bottom: 5rem;
+}
 /* Variaveis */
 :root{
     --cor-primaria: #666666;
     --cor-secundaria: #000000;
     --cor-hover: #4d37b5;
+    --cor-background:#F9FAFB;
 }

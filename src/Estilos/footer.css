@@ -4,8 +4,11 @@
     height: 26.875rem;
     gap: 2rem;
     margin: 0 auto;
-    background:  #F9FAFB;
+    background:  var(--cor-background);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
 }
+
 .container-rodape{
     width: 100%;
     height: 11.375rem;
@@ -14,14 +17,15 @@
     margin: 0 auto;
     justify-content: center;
     align-items: center;
-    
 }
+
 .conteudo-rodape{
     width: 100%;
     height: 11.375rem;
     gap: 2.5rem;
     margin: 0 auto;
 }
+
 .acompanhe{
     text-align: center;
     width: 100%;
@@ -30,8 +34,8 @@
     font-size: 2.2rem;
     line-height: 2.75rem;
     font-weight: 600;
-    
 }
+
 .paragrafo{
     text-align: center;
     width: 100%;
@@ -41,18 +45,17 @@
     line-height: 1.875rem;
     font-weight: 400;
     color: #667085;
-    margin-top: 1rem
-    
+    margin-top: 1rem  
 }
+
 .area-email{
     text-align: center;
     width: 100%;
     height: 3rem;
     gap: 1rem;
-    margin: 0 auto;
-
-    
+    margin: 0 auto; 
 }
+
 .copy{
     text-align: center;
     width: 100%;
