@@ -17,9 +17,11 @@
     margin: 0 auto;
     justify-content: center;
     align-items: center;
+    
 }
 
 .conteudo-rodape{
+
     width: 100%;
 }
 
@@ -28,6 +30,7 @@
     font-size: 2.2rem;
     line-height: 2.75rem;
     font-weight: 600;
+    
 }
 
 .paragrafo{
@@ -52,7 +55,7 @@
     font-weight: 400;
     margin-top: 1rem ;
     color: #98A2B3;
-    ;
+    padding-bottom: 5rem;
 }
 
 input[type="email"] {
@@ -61,6 +64,7 @@ input[type="email"] {
     padding: 0.625rem;
     border: 0.00625rem solid #ccc;
     border-radius: .5rem;
+    border: 1px solid var(--cor-primaria);
 }
 
 input[type="submit"]{

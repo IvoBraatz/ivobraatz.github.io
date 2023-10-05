@@ -27,6 +27,11 @@ ul, li {
 main{
     margin-bottom: 5rem;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 /* Variaveis */
 :root{
     --cor-primaria: #666666;
