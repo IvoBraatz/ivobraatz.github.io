@@ -1,5 +1,6 @@
 .cabecalho {
     text-align: center;
+    
 
 }
 
@@ -12,6 +13,7 @@
     justify-content: space-between;
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
+    border: 1px solid var(--cor-primaria);
 }
 
 .cabecalho-nome{
@@ -27,13 +29,16 @@
     color: var(--cor-primaria);
     font-size: 1.125rem;
     padding-right: 3rem;
+
 }
 
 .cabecalho-sobre:hover,
 .cabecalho-projetos:hover,
 .cabecalho-conhecimentos:hover,
 .cabecalho-contato:hover {
-    color: #4d37b5;
+    color: var(--cor-hover);
+    transform: scale(1.1);
+    transition: transform 0.7s ease;
 }
 
 
@@ -54,8 +59,12 @@
     font-size: 2rem;
     display: flex;
     margin-right: 1.5rem;
+    margin-left: 1rem;
 }
 
 .cabecalho-nome:hover {
+    color: var(--cor-hover);
     text-decoration: none;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }

@@ -1,6 +1,6 @@
 .sobre-mim {
     max-width: 100%;
-    height: 19.5rem;
+    height: 20rem;
     display: flex;
     flex-direction: column;
     margin-bottom: 5rem;
@@ -9,16 +9,18 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     background: var(--cor-background);
+    border: 1px solid var(--cor-primaria);
 }
 
 .titulo-sobre {
-    margin-left: 2rem;
+    margin-left: 5rem;
     margin-bottom: 0.625rem;
     font-size: 2rem;
     font-style: italic;
 }
 
 .conteudo-sobre {
+    margin-left: 3rem;
     display: flex;
     align-items: center;
 }
@@ -33,7 +35,7 @@
     height: auto;
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
-
+    border: 1px solid var(--cor-primaria);
 }
 
 .descricao-container {
@@ -81,13 +83,13 @@
     margin-top: 3rem;
     margin-bottom: 3rem;
     text-align: center;
+    font-size: 2.5rem;
 }
 
 .card-linguagens {
     margin-top: 2rem;
-    margin-right: 2rem;
     max-width: 16rem;
-    height: 22rem;
+    height: 24rem;
     flex: 0 0 calc(33.333% - 20px);
     border: 1px solid #ccc;
     padding: 0.625rem;
@@ -96,11 +98,11 @@
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
     background: var(--cor-background);
     white-space: normal;
+    border: 1px solid var(--cor-primaria);
 }
 
 .card-projetos{
     margin-top: 2rem;
-    margin-right: 2rem;
     max-width: 16rem;
     height: 16rem;
     flex: 0 0 calc(33.333% - 20px);
@@ -111,18 +113,21 @@
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
     background: var(--cor-background);
     white-space: normal;
+    border: 1px solid var(--cor-primaria);
 }
 
 .card-image {
     padding-top: 1rem;
     max-width: 10rem;
     height: auto;
+    
 }
 
 .card-image-projetos{
-    padding-top: 1rem;
+    margin-top: 1rem;
     max-width: 14rem;
     height: auto;
+    border-radius: .5rem;
 }
 
 .card-title {
@@ -132,6 +137,12 @@
 
 .card-text {
     font-size: 0.875rem;
+    text-align: justify;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
 }
 
 /* Estilos responsivos */
