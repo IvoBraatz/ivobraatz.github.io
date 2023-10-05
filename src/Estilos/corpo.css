@@ -94,8 +94,13 @@
     height: auto;
 }
 
-.card-title {
+.card-image-projetos{
+    padding-top: 1rem;
+    max-width: 14rem;
+    height: auto;
+}
 
+.card-title {
     font-size: 18px;
     margin: 10px 0;
 }

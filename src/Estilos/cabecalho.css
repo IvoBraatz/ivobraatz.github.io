@@ -4,10 +4,13 @@
 }
 
 .cabecalho-conteudo {
+    padding: 1rem;
     display: flex;
     align-items: center;
     margin-bottom: 5rem;
     justify-content: space-between;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
 }
 
 .cabecalho-nome{
