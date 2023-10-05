@@ -1,10 +1,10 @@
 .sobre-mim {
     max-width: 100%;
-    height: 312px;
+    height: 19.5rem;
     display: flex;
     flex-direction: column;
     margin-bottom: 5rem;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -12,8 +12,10 @@
 }
 
 .titulo-sobre {
-    margin-left: 1rem;
-    margin-bottom: 10px;
+    margin-left: 2rem;
+    margin-bottom: 0.625rem;
+    font-size: 2rem;
+    font-style: italic;
 }
 
 .conteudo-sobre {
@@ -22,21 +24,21 @@
 }
 
 .imagem-sobre {
-    width: 200px; 
+    width: 12.5rem; 
 }
 
 .imagem-sobre img {
     margin-left: 1rem;
     max-width: 100%;
     height: auto;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
 
 }
 
 .descricao-container {
     flex: 1;
-    max-width: 400px;
+    max-width: 25rem;
     text-align: left;
     padding-left: 5rem;
     font-size: 1.250rem;
@@ -48,7 +50,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px;
+    gap: 1.25rem;
     overflow-x: auto;
 }
 
@@ -61,7 +63,15 @@
 
 .conhecimentos{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 5rem;
+}
+
+.projetos{
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 5rem;
@@ -73,18 +83,33 @@
     text-align: center;
 }
 
-.card {
+.card-linguagens {
+    margin-top: 2rem;
+    margin-right: 2rem;
+    max-width: 16rem;
+    height: 22rem;
+    flex: 0 0 calc(33.333% - 20px);
+    border: 1px solid #ccc;
+    padding: 0.625rem;
+    text-align: center;
+    border-radius: 0.3125rem;
+    box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+    background: var(--cor-background);
+    white-space: normal;
+}
+
+.card-projetos{
     margin-top: 2rem;
     margin-right: 2rem;
     max-width: 16rem;
     height: 16rem;
     flex: 0 0 calc(33.333% - 20px);
-    border: 1px solid #ccc;
+    border: 0.00625rem solid #ccc;
     padding: 10px;
     text-align: center;
-    border-radius: 5px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-    background-color: white;
+    border-radius: 0.3125rem;
+    box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+    background: var(--cor-background);
     white-space: normal;
 }
 
@@ -101,12 +126,12 @@
 }
 
 .card-title {
-    font-size: 18px;
-    margin: 10px 0;
+    font-size: 1.125rem;
+    margin: 0.625rem 0;
 }
 
 .card-text {
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 /* Estilos responsivos */
@@ -118,7 +143,7 @@
 
     .card {
         flex: 0 0 calc(33.333% - 20px);
-        margin-right: 10px;
+        margin-right: 0.625rem;
     }
 
     .card:last-child {

@@ -9,14 +9,14 @@
 }
 
 .apresentacao {
-    font-size: 50px;
+    font-size: 4rem;
     font-weight: 600;
     
 }
 
 .mini {
-    padding-top: 10px;
-    font-size: 20px;
+    padding-top: 0.625rem;
+    font-size: 1.125rem;
     font-style: oblique ;
     font-weight: 500;
 }
