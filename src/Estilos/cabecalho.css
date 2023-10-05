@@ -3,11 +3,6 @@
 
 }
 
-:root{
-    --cor-primaria: #666666;
-    --cor-secundaria: #000000;
-}
-
 .cabecalho-conteudo {
     display: flex;
     align-items: center;
