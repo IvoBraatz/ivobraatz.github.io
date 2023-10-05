@@ -44,9 +44,6 @@
     text-align: justify;
 }
 
-
-
-
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -60,6 +57,14 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.conhecimentos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 5rem;
 }
 
 .section-title{
@@ -78,13 +83,14 @@
     padding: 10px;
     text-align: center;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     background-color: white;
     white-space: normal;
 }
 
 .card-image {
-    max-width: 100%;
+    padding-top: 1rem;
+    max-width: 10rem;
     height: auto;
 }
 
