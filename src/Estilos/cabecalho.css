@@ -73,7 +73,7 @@
 /* Para telas com até 575px de largura */
 @media (max-width: 575px) {
     .cabecalho-conteudo {
-        flex-direction: column; /* Altera o layout para empilhar verticalmente */
+        flex-direction: column;
         text-align: center;
     }
 
@@ -81,8 +81,8 @@
     .cabecalho-projetos,
     .cabecalho-conhecimentos,
     .cabecalho-contato {
-        flex: 1; /* Ocupa toda a largura disponível */
-        padding: 1rem 0; /* Espaçamento vertical entre os itens */
+        flex: 1;
+        padding: 1rem 0;
     }
 
     .cabecalho-nome{
@@ -96,10 +96,10 @@
     .cabecalho-projetos,
     .cabecalho-conhecimentos,
     .cabecalho-contato {
-        padding: .5rem; /* Espaçamento uniforme ao redor dos itens */
+        padding: .5rem;
     }
 
-    /* O último item em cada linha não deve ter margem à direita */
+
     .cabecalho-sobre:nth-child(2n),
     .cabecalho-projetos:nth-child(2n),
     .cabecalho-conhecimentos:nth-child(2n),
@@ -129,7 +129,6 @@
         display: flex;
     }
 
-    /* O último item em cada linha não deve ter margem à direita */
     .cabecalho-sobre:nth-child(3n),
     .cabecalho-projetos:nth-child(3n),
     .cabecalho-conhecimentos:nth-child(3n),
