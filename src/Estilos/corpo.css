@@ -65,16 +65,17 @@
 
 .conhecimentos{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5rem;
 
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 5rem;
 }
 
 .projetos{
     display: flex;
-    justify-content: space-between;
+
     align-items: center;
+    flex-wrap: wrap;
     margin-bottom: 5rem;
 }
 
@@ -87,7 +88,7 @@
 
 .card-linguagens {
     margin-top: 2rem;
-    max-width: 24rem;
+    max-width: 22rem;
     height: 24rem;
     flex: 0 0 calc(33.333% - 20px);
     border: 1px solid #ccc;
@@ -101,9 +102,8 @@
 }
 
 .card-projetos{
-    gap: 1rem;
     margin-top: 2rem;
-    max-width: 24rem;
+    max-width: 22rem;
     height: 16rem;
     flex: 0 0 calc(33.333% - 20px);
     border: 0.00625rem solid #ccc;
@@ -145,111 +145,132 @@
     margin-bottom: 1rem;
 }
 
-/* Estilos para telas pequenas (até 768px de largura) */
-@media (max-width: 768px) {
-    .sobre-mim {
-      height: auto;
-      margin-bottom: 2rem;
-      padding: 1rem;
+
+/* Para telas com até 575px de largura */
+@media (max-width: 575px) {
+    .card-linguagens,
+    .card-projetos {
+        flex: 0 0 100%; /* Apenas 1 card por linha */
+        margin-right: 0; /* Nenhum espaço à direita entre os cards */
     }
 
-    .imagem-sobre img {
-        margin-left: 0;
+    .titulo-sobre{
+        margin: 0rem 6rem;
     }
-  
-    .titulo-sobre {
-      margin-left: 0;
-      text-align: center;
-      font-size: 1.5rem;
+
+    .sobre-min {
+        max-width: 100%;
     }
-  
-    .conteudo-sobre {
-      margin-left: 0;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .imagem-sobre {
-      width: 8rem;
-      margin: 1rem 0;
+
+    .conteudo-sobre{
+        margin: 0;
+        padding: 0;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
     .descricao-container{
-        padding-right: 1rem;
-        padding-left: 1rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
-  
-    .card-container {
-        flex-direction: column;
-        gap: 1rem;
-        overflow-x: hidden;
-      }
-  
-    .card-container {
-      flex-direction: column;
-      gap: 1rem;
-      overflow-x: hidden;
+    
+
+    .sobre-mim {
+        display: flex;
+        max-width: 100%;
+        height: 30rem;
     }
-  
+    
+    .imagem-sobre img {
+        margin: 0rem 5rem;
+        max-width: 100%;
+        height: auto;
+        
+    }
+}
+
+/* Para telas com largura entre 576px e 779px */
+@media (min-width: 576px) and (max-width: 779px) {
     .card-linguagens,
     .card-projetos {
-      max-width: 100%;
-      height: auto;
-      flex: 1;
-      margin-bottom: .5rem;
-    }
-  }
-
-    @media (min-width: 769px) and (max-width: 1024px) {
-    .conhecimentos .card-linguagens {
-        flex-basis: calc(50% - 20px); /* Dois cards por linha */
-      }
+        flex: 0 0 calc(50% - 10px); /* 2 cards por linha com algum espaço entre eles */
+        margin-right: 20px; /* Espaço à direita entre os cards */
     }
 
-    @media (max-width: 575px) {
-        .conhecimentos .card-linguagens {
-          flex-basis: 100%; /* Um card por linha */
+    .sobre-min {
+        max-width: 50%; /* 2 cards por linha */
+    }
+
+    
+    /* O último card em cada linha não deve ter margem à direita */
+    .card-linguagens:nth-child(2n),
+    .card-projetos:nth-child(2n) {
+        margin-right: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Para telas com 780px de largura ou mais */
+@media (min-width: 780px) {
+  
+    
+ 
+    .card-linguagens:nth-child(3n),
+    .card-projetos:nth-child(3n) {
+        margin-right: 0;
+    }
+
+        .card-linguagens,
+        .card-projetos {
+            flex: 0 0 calc(33.333% - 10px);
+            margin-right: 20px; 
         }
-      }
 
-    @media (min-width: 576px) and (max-width: 768px) {
-        .conhecimentos .card-linguagens {
-          flex-basis: calc(50% - 20px); /* Dois cards por linha */
+        .titulo-sobre{
+            margin: 0rem 6rem;
         }
-      }
-  
-  
-  /* Estilos para telas grandes (mais de 1024px de largura) */
-  @media (min-width: 1025px) {
-    .sobre-mim {
-      padding: 2rem;
-    }
-  
-    .titulo-sobre {
-      font-size: 2rem;
-    }
-  
-    .imagem-sobre {
-      width: 12.5rem;
-    }
-  
-    .descricao-container {
-      max-width: 25rem;
-      text-align: left;
-      padding-left: 5rem;
-      font-size: 1.25rem;
-    }
-  
-    .card-linguagens{
-        width: 26rem;
-        height: 22rem;
-        margin-right: 1rem;
-      }
 
-    .card-projetos {
-      width: 26rem;
-      height: 16rem;
-      margin-right: 1rem;
-    }
-  }
-  
+        .sobre-min {
+            max-width: 100%;
+        }
+
+        .conteudo-sobre{
+            margin: 0;
+            padding: 0;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .descricao-container{
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        
+
+        .sobre-mim {
+            display: flex;
+            max-width: 100%;
+            height: 30rem;
+        }
+        
+        .imagem-sobre img {
+            margin: 0rem 5rem;
+            max-width: 100%;
+            height: auto;
+            
+        }
+
+}

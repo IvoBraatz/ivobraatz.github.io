@@ -70,59 +70,68 @@
 }
 
 
-/* Estilos para telas pequenas (até 768px de largura) */
-@media (max-width: 768px) {
-
-
+/* Para telas com até 575px de largura */
+@media (max-width: 575px) {
     .cabecalho-conteudo {
-      flex-direction: column;
-      margin-bottom: 2rem;
-      padding: 1rem;
+        flex-direction: column; /* Altera o layout para empilhar verticalmente */
+        text-align: center;
     }
-  
+
     .cabecalho-sobre,
     .cabecalho-projetos,
     .cabecalho-conhecimentos,
     .cabecalho-contato {
-      padding: 1rem 0;
-      font-size: 1rem;
+        flex: 1; /* Ocupa toda a largura disponível */
+        padding: 1rem 0; /* Espaçamento vertical entre os itens */
+    }
+}
+
+/* Para telas com largura entre 576px e 779px */
+@media (min-width: 576px) and (max-width: 779px) {
+    .cabecalho-sobre,
+    .cabecalho-projetos,
+    .cabecalho-conhecimentos,
+    .cabecalho-contato {
+        flex: 0 0 calc(50% - 10px); /* 2 itens por linha com algum espaço entre eles */
+        padding: 1rem; /* Espaçamento uniforme ao redor dos itens */
     }
 
-    .cabecalho-nome {
-        padding: 0;
+    /* O último item em cada linha não deve ter margem à direita */
+    .cabecalho-sobre:nth-child(2n),
+    .cabecalho-projetos:nth-child(2n),
+    .cabecalho-conhecimentos:nth-child(2n),
+    .cabecalho-contato:nth-child(2n) {
+        margin-right: 0;
+    }
+}
+
+/* Para telas com 780px de largura ou mais */
+@media (min-width: 780px) {
+    .cabecalho-sobre,
+    .cabecalho-projetos,
+    .cabecalho-conhecimentos,
+    .cabecalho-contato {
         margin: 0;
-
+        padding: 0;
+        flex: 0 0 calc(33.333% - 10px); /* 3 itens por linha com algum espaço entre eles */
+        display: flex;
     }
 
-  }
-  
-  /* Estilos para telas médias (entre 768px e 1024px de largura) */
-  @media (min-width: 769px) and (max-width: 1024px) {
+    /* O último item em cada linha não deve ter margem à direita */
+    .cabecalho-sobre:nth-child(3n),
+    .cabecalho-projetos:nth-child(3n),
+    .cabecalho-conhecimentos:nth-child(3n),
+    .cabecalho-contato:nth-child(3n) {
+        margin: 0;
+        margin-right: 0;
+    }
+
     .cabecalho-conteudo {
-      padding: 1.5rem;
+        background: var(--cor-background);
+        margin: 0;
+        margin-bottom: 5rem;
+        box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+        border-radius: 1rem;
+        border: 1px solid var(--cor-primaria);
     }
-  
-    .cabecalho-sobre,
-    .cabecalho-projetos,
-    .cabecalho-conhecimentos,
-    .cabecalho-contato {
-      padding: 1.5rem 1rem;
-      font-size: 1.125rem;
-    }
-  }
-  
-  /* Estilos para telas grandes (mais de 1024px de largura) */
-  @media (min-width: 1025px) {
-    .cabecalho-conteudo {
-      padding: 2rem;
-    }
-  
-    .cabecalho-sobre,
-    .cabecalho-projetos,
-    .cabecalho-conhecimentos,
-    .cabecalho-contato {
-      padding: 2rem 1rem;
-      font-size: 1.25rem;
-    }
-  }
-  
+}
