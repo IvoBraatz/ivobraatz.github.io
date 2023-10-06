@@ -50,10 +50,12 @@ html {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    body{
-        margin-right: 1rem;
-        margin-left: 1rem;
-    }
+        body{
+            margin-right: 1rem;
+            margin-left: 1rem;
+        }
+
+
     }
 
     @media (min-width: 1025px){

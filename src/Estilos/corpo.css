@@ -50,32 +50,25 @@
 
 .card-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-wrap: nowrap;
     gap: 1.25rem;
     overflow-x: auto;
 }
 
 .section{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .conhecimentos{
+    justify-content: space-between;
     display: flex;
-
-    align-items: center;
-    flex-wrap: wrap;
     margin-bottom: 5rem;
 }
 
 .projetos{
+    justify-content: space-between;
     display: flex;
-
-    align-items: center;
-    flex-wrap: wrap;
     margin-bottom: 5rem;
 }
 
@@ -88,11 +81,9 @@
 
 .card-linguagens {
     margin-top: 2rem;
-    max-width: 22rem;
-    height: 24rem;
+    max-width: 20rem;
     flex: 0 0 calc(33.333% - 20px);
     border: 1px solid #ccc;
-    padding: 0.625rem;
     text-align: center;
     border-radius: 0.3125rem;
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
@@ -103,7 +94,7 @@
 
 .card-projetos{
     margin-top: 2rem;
-    max-width: 22rem;
+    max-width: 20rem;
     height: 16rem;
     flex: 0 0 calc(33.333% - 20px);
     border: 0.00625rem solid #ccc;
@@ -120,7 +111,6 @@
     padding-top: 1rem;
     max-width: 10rem;
     height: auto;
-    
 }
 
 .card-image-projetos{
@@ -145,17 +135,27 @@
     margin-bottom: 1rem;
 }
 
-
 /* Para telas com até 575px de largura */
 @media (max-width: 575px) {
     .card-linguagens,
     .card-projetos {
-        flex: 0 0 100%; /* Apenas 1 card por linha */
+   
         margin-right: 0; /* Nenhum espaço à direita entre os cards */
     }
 
+    .conhecimentos{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projetos{
+        flex-direction: column;
+        align-items: center;
+    }
+
     .titulo-sobre{
-        margin: 0rem 6rem;
+        margin: 0;
+        text-align: center;
     }
 
     .sobre-min {
@@ -184,10 +184,13 @@
     }
     
     .imagem-sobre img {
-        margin: 0rem 5rem;
+        margin-right: 5rem;
         max-width: 100%;
         height: auto;
-        
+    }
+
+    .card-image-projetos{
+        width: 50%;
     }
 }
 
@@ -195,37 +198,54 @@
 @media (min-width: 576px) and (max-width: 779px) {
     .card-linguagens,
     .card-projetos {
-        flex: 0 0 calc(50% - 10px); /* 2 cards por linha com algum espaço entre eles */
-        margin-right: 20px; /* Espaço à direita entre os cards */
+        justify-content: space-between;
+        flex: 0 0 calc(33.333% - 10px);
+        margin-right: 1rem; 
+        max-width: 9rem;
     }
 
-    .sobre-min {
-        max-width: 50%; /* 2 cards por linha */
+
+    .titulo-sobre{
+        margin: 0rem 6rem;
+    }
+
+
+    .conteudo-sobre{
+        margin-left: 1rem;
+        padding: 0;
+    }
+
+
+    .descricao-container{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
+    
+    .imagem-sobre img {
+        margin: 0rem 1rem;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .card-image{
+        width: 6rem;
+    }
+
+    .card-text{
+        font-size: .8rem;
+    }
+
+    .card-image-projetos{
+        width: 8rem;
     }
 
     
-    /* O último card em cada linha não deve ter margem à direita */
-    .card-linguagens:nth-child(2n),
-    .card-projetos:nth-child(2n) {
-        margin-right: 0;
-    }
 }
-
-
-
-
-
-
-
-
-
-
 
 /* Para telas com 780px de largura ou mais */
 @media (min-width: 780px) {
   
-    
- 
     .card-linguagens:nth-child(3n),
     .card-projetos:nth-child(3n) {
         margin-right: 0;
@@ -241,29 +261,23 @@
             margin: 0rem 6rem;
         }
 
-        .sobre-min {
-            max-width: 100%;
-        }
-
         .conteudo-sobre{
+            padding-top: 2rem;
             margin: 0;
-            padding: 0;
-            display: block;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            display: flex;
         }
 
         .descricao-container{
+            font-size: 1.5rem;
+            margin-left: 6rem;
             padding-left: 2rem;
             padding-right: 2rem;
         }
         
-
-        .sobre-mim {
+        .sobre-mim { 
             display: flex;
             max-width: 100%;
-            height: 30rem;
+            height: 25rem;
         }
         
         .imagem-sobre img {
@@ -271,6 +285,30 @@
             max-width: 100%;
             height: auto;
             
+        }
+        .projetos,
+        .conhecimentos{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-image{
+            width: 80%;
+        }
+    
+        .card-text{
+            margin-right: 2rem;
+            margin-left: 2rem;
+            padding-top: 1rem;
+            font-size: .8rem;
+        }
+    
+        .card-image-projetos{
+            width: 80%;
+        }
+
+        .card-projetos{
+            max-width: 16rem;
         }
 
 }

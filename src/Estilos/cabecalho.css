@@ -84,6 +84,10 @@
         flex: 1; /* Ocupa toda a largura disponível */
         padding: 1rem 0; /* Espaçamento vertical entre os itens */
     }
+
+    .cabecalho-nome{
+        padding: 0;
+    }
 }
 
 /* Para telas com largura entre 576px e 779px */
@@ -92,8 +96,7 @@
     .cabecalho-projetos,
     .cabecalho-conhecimentos,
     .cabecalho-contato {
-        flex: 0 0 calc(50% - 10px); /* 2 itens por linha com algum espaço entre eles */
-        padding: 1rem; /* Espaçamento uniforme ao redor dos itens */
+        padding: .5rem; /* Espaçamento uniforme ao redor dos itens */
     }
 
     /* O último item em cada linha não deve ter margem à direita */
@@ -103,6 +106,16 @@
     .cabecalho-contato:nth-child(2n) {
         margin-right: 0;
     }
+
+    .cabecalho-nome{
+        padding: 0;
+        margin: 0;
+    }
+
+    .lista-links{
+        display: none;
+    }
+
 }
 
 /* Para telas com 780px de largura ou mais */
@@ -113,7 +126,6 @@
     .cabecalho-contato {
         margin: 0;
         padding: 0;
-        flex: 0 0 calc(33.333% - 10px); /* 3 itens por linha com algum espaço entre eles */
         display: flex;
     }
 
