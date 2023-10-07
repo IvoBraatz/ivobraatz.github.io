@@ -121,18 +121,22 @@
 }
 
 .card-title {
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     margin: 0.625rem 0;
 }
 
 .card-text {
-    font-size: 0.875rem;
+    font-size: 1rem;
     text-align: justify;
-    padding-left: 1rem;
-    padding-right: 1rem;
     font-size: 1rem;
     font-weight: 400;
     margin-bottom: 1rem;
+}
+
+.card-linguagens:hover,
+.card-projetos:hover,
+.sobre-mim:hover{
+    border: 1px solid var(--cor-hover);
 }
 
 /* Para telas com até 575px de largura */
@@ -300,7 +304,7 @@
             margin-right: 2rem;
             margin-left: 2rem;
             padding-top: 1rem;
-            font-size: .8rem;
+            font-size: 1rem;
         }
     
         .card-image-projetos{
@@ -309,6 +313,7 @@
 
         .card-projetos{
             max-width: 16rem;
+            height: 18rem;
         }
 
 }

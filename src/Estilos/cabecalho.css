@@ -41,6 +41,10 @@
     transition: transform 0.7s ease;
 }
 
+.cabecalho-conteudo:hover{
+    border: 1px solid var(--cor-hover);
+}
+
 
 
 .cabecalho-titulo:hover {

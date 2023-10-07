@@ -3,8 +3,8 @@
 }
 
 .ola {
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 2.2rem;
+    font-weight: 6800;
     padding-bottom: 0.5rem;
     font-style: italic;
     background-image: url(../imgs/background.jpeg);
@@ -15,8 +15,8 @@
 }
 
 .apresentacao {
-    font-size: 5rem;
-    font-weight: 600;
+    font-size: 6rem;
+    font-weight: 800;
     background-image: url(../imgs/background.jpeg);
     background-size: cover;
     -webkit-background-clip: text;
@@ -27,7 +27,7 @@
 
 .mini {
     padding-top: 0.625rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-style: oblique ;
     font-weight: 600;
     background-image: url(../imgs/background.jpeg);
