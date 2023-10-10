@@ -3,7 +3,7 @@
 .rodape{
     padding-top: 2rem;
     width: 100%;
-    height: 13.5rem;
+    height: 16.5rem;
     background:  var(--cor-background);
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
@@ -42,10 +42,32 @@
     margin-top: 1rem  
 }
 
-.area-email{
-    text-align: center;
-    width: 100%;
-    height: 3rem;
+.area-contato{
+  display: flex;
+  margin-top: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.links-contato{
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+  padding: .8rem;
+  text-decoration: none;
+  color: var(--cor-primaria);
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.links-imagem{
+  width: 1.2rem;
+  height: 1.2rem;
+  padding-right: .5rem;
+  text-align: center;
+  
 }
 
 .copy{
@@ -53,39 +75,13 @@
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 400;
-    margin-top: 1rem ;
+    padding-top: 1rem;
     color: #98A2B3;
     padding-bottom: 5rem;
 }
 
-input[type="email"] {
-    width: 300px;
-    height: 50%;
-    padding: 0.625rem;
-    border: 0.00625rem solid #ccc;
-    border-radius: .5rem;
-    border: 1px solid var(--cor-primaria);
-}
-
-input[type="email"]:hover{
-  border: 1px solid var(--cor-hover);
-}
-
-input[type="submit"]{
-    width: 7.25rem;
-    height: 100%;
-    padding: 075rem, 1.125rem, 0.75rem, 1.125rem;
-    border-radius: .5rem;
-    border: 0.00625rem;
-    gap: .8rem;
-    background: #DEDFE0;
-    color: var(--cor-hover);
-    cursor: pointer;
-}
-
-input[type="submit"]:hover{
-    color: #DEDFE0;
-    background: var(--cor-hover);
+.links-contato:hover{
+  color: var(--cor-hover);
 }
 
 .rodape:hover{
@@ -112,15 +108,6 @@ input[type="submit"]:hover{
     .container-rodape {
       padding: 0;
     }
-  
-    input[type="email"] {
-      width: 18rem;
-      margin-bottom: 2rem;
-    }
-  
-    input[type="submit"] {
-      width: 10rem;
-    }
 
     .copy{
         padding-top: 5rem;
@@ -138,14 +125,6 @@ input[type="submit"]:hover{
     .paragrafo {
       font-size: 1.125rem;
       line-height: 1.5rem;
-    }
-  
-    input[type="email"] {
-      width: 20rem;
-    }
-  
-    input[type="submit"] {
-      width: 25%;
     }
   }
   
@@ -165,13 +144,5 @@ input[type="submit"]:hover{
       justify-content: space-between;
     }
   
-    input[type="email"] {
-      width: 300px;
-    }
-  
-    input[type="submit"] {
-      width: auto;
-      padding: 0.625rem 1.125rem;
-    }
   }
   
