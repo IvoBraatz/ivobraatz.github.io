@@ -134,6 +134,11 @@
     margin-bottom: 1rem;
 }
 
+.card-negrito{
+    font-weight:900;
+    font-size: 1.1rem;
+}
+
 .card-linguagens:hover,
 .card-projetos:hover,
 .sobre-mim:hover{

@@ -43,6 +43,7 @@
 }
 
 .area-contato{
+  max-width: 100%;
   display: flex;
   margin-top: 3rem;
   align-items: center;
@@ -109,9 +110,21 @@
       padding: 0;
     }
 
+    .area-contato{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .links-contato{
+      width: 6rem;
+    }
+
     .copy{
         padding-top: 5rem;
         padding-bottom: 2rem;
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
   }
   
