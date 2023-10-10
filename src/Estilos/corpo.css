@@ -84,6 +84,7 @@
     max-width: 20rem;
     flex: 0 0 calc(33.333% - 20px);
     border: 1px solid #ccc;
+    padding: 10px;
     text-align: center;
     border-radius: 0.3125rem;
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
@@ -131,6 +132,23 @@
     font-size: 1rem;
     font-weight: 400;
     margin-bottom: 1rem;
+}
+
+.card-negrito{
+    text-decoration: none;
+    font-weight:900;
+    font-size: 1.1rem;
+}
+
+.ancora-text{
+    text-decoration: none;
+    text-align: justify;
+    font-size: 1.1rem;
+    color: var(--cor-primaria);
+}
+
+.ancora-text:hover{
+    color: var(--cor-hover);
 }
 
 .card-linguagens:hover,
@@ -196,6 +214,11 @@
     .card-image-projetos{
         width: 50%;
     }
+
+    .card-text{
+        margin-left: 2rem;
+        margin-right: 2rem ;
+    }
 }
 
 /* Para telas com largura entre 576px e 779px */
@@ -237,6 +260,8 @@
     }
 
     .card-text{
+        margin-left: 1rem;
+        margin-right: 1rem;
         font-size: .8rem;
     }
 

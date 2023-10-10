@@ -3,12 +3,11 @@
 .rodape{
     padding-top: 2rem;
     width: 100%;
-    height: 13.5rem;
+    height: 16.5rem;
     background:  var(--cor-background);
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
     border: 1px solid var(--cor-primaria);
-    margin-bottom: 2rem;
 }
 
 .container-rodape{
@@ -43,31 +42,46 @@
     margin-top: 1rem  
 }
 
-.contato-area{
+.area-contato{
+  max-width: 100%;
   display: flex;
-  justify-content: center;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-top: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10rem;
+  margin-right: 10rem;
 }
-.botoes-contato{
-  padding-left: 2rem;
-  max-width: 5rem;
+
+.links-contato{
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+  padding: .8rem;
   text-decoration: none;
   color: var(--cor-primaria);
-
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
+.links-imagem{
+  width: 1.2rem;
+  height: 1.2rem;
+  padding-right: .5rem;
+  text-align: center;
+  
+}
 
 .copy{
     text-align: center;
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 400;
-    margin-top: 2rem ;
+    padding-top: 1rem;
     color: #98A2B3;
+    padding-bottom: 5rem;
 }
 
-.botoes-contato:hover{
+.links-contato:hover{
   color: var(--cor-hover);
 }
 
@@ -95,7 +109,23 @@
     .container-rodape {
       padding: 0;
     }
-  
+
+    .area-contato{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .links-contato{
+      width: 6rem;
+    }
+
+    .copy{
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
   }
   
   /* Estilos para telas médias (entre 769px e 1024px de largura) */
@@ -109,7 +139,6 @@
       font-size: 1.125rem;
       line-height: 1.5rem;
     }
-  
   }
   
   /* Estilos para telas grandes (mais de 1024px de largura) */
