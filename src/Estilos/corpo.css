@@ -135,8 +135,20 @@
 }
 
 .card-negrito{
+    text-decoration: none;
     font-weight:900;
     font-size: 1.1rem;
+}
+
+.ancora-text{
+    text-decoration: none;
+    text-align: justify;
+    font-size: 1.1rem;
+    color: var(--cor-primaria);
+}
+
+.ancora-text:hover{
+    color: var(--cor-hover);
 }
 
 .card-linguagens:hover,
