@@ -13,7 +13,7 @@
     justify-content: space-between;
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
-    border: 1px solid var(--cor-primaria);
+    border: 2px solid var(--cor-primaria);
 }
 
 .cabecalho-nome{
@@ -27,7 +27,7 @@
 .cabecalho-contato {
     display: flex;
     text-decoration: none;
-    color: var(--cor-primaria);
+    color: var(--cor-terciaria);
     font-size: 1.125rem;
     padding-right: 3rem;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
@@ -44,7 +44,7 @@
 }
 
 .cabecalho-conteudo:hover{
-    border: 1px solid var(--cor-hover);
+    border: 2px solid var(--cor-hover);
 }
 
 
@@ -61,7 +61,7 @@
 
 .cabecalho-nome {
     text-decoration: none;
-    color: var(--cor-primaria);
+    color: var(--cor-terciaria);
     font-size: 2rem;
     display: flex;
     margin-right: 1.5rem;
@@ -149,6 +149,6 @@
         margin-bottom: 5rem;
         box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
         border-radius: 1rem;
-        border: 1px solid var(--cor-primaria);
+        
     }
 }

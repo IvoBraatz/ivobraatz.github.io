@@ -9,7 +9,7 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     background: var(--cor-background);
-    border: 1px solid var(--cor-primaria);
+    border: 2px solid var(--cor-primaria);
 }
 
 .titulo-sobre {
@@ -17,6 +17,11 @@
     margin-bottom: 0.625rem;
     font-size: 2rem;
     font-style: italic;
+    color: var(--cor-terciaria);
+}
+
+.descricao-sobre{
+    color: var(--cor-terciaria)
 }
 
 .conteudo-sobre {
@@ -77,6 +82,7 @@
     margin-bottom: 3rem;
     text-align: center;
     font-size: 2.5rem;
+    color: var(--cor-terciaria);
 }
 
 .card-linguagens {
@@ -90,7 +96,7 @@
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
     background: var(--cor-background);
     white-space: normal;
-    border: 1px solid var(--cor-primaria);
+    border: 2px solid var(--cor-primaria);
 }
 
 .card-projetos{
@@ -105,7 +111,7 @@
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
     background: var(--cor-background);
     white-space: normal;
-    border: 1px solid var(--cor-primaria);
+    border: 2px solid var(--cor-primaria);
 }
 
 .card-image {
@@ -124,6 +130,7 @@
 .card-title {
     font-size: 1.5rem;
     margin: 0.625rem 0;
+    color: var(--cor-terciaria);
 }
 
 .card-text {
@@ -132,6 +139,7 @@
     font-size: 1rem;
     font-weight: 400;
     margin-bottom: 1rem;
+    color: var(--cor-terciaria);
 }
 
 .card-negrito{
@@ -154,7 +162,7 @@
 .card-linguagens:hover,
 .card-projetos:hover,
 .sobre-mim:hover{
-    border: 1px solid var(--cor-hover);
+    border: 2px solid var(--cor-hover);
 }
 
 /* Para telas com até 575px de largura */
