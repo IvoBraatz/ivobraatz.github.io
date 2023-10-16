@@ -3,7 +3,7 @@
 }
 
 .ola {
-    font-size: 2.2rem;
+    font-size: 3rem;
     font-weight: 6800;
     padding-bottom: 0.5rem;
     font-style: italic;
@@ -12,22 +12,25 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    filter: drop-shadow(.7px .7px .7px #FFFFFF);
 }
 
 .apresentacao {
-    font-size: 6rem;
+    font-size: 7rem;
     font-weight: 800;
     background-image: url(../imgs/background.jpeg);
     background-size: cover;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    filter: drop-shadow(.7px .7px .7px #FFFFFF);
+    opacity: 200%;
     
 }
 
 .mini {
     padding-top: 0.625rem;
-    font-size: 2rem;
+    font-size: 2.6rem;
     font-style: oblique ;
     font-weight: 600;
     background-image: url(../imgs/background.jpeg);
@@ -35,4 +38,5 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    filter: drop-shadow(.7px .7px .7px #FFFFFF);
 }

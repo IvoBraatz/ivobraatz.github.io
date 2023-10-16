@@ -1,19 +1,32 @@
 .cabecalho {
     text-align: center;
     padding-top: 2rem;  
-
+    
 }
 
 .cabecalho-conteudo {
-    background: var(--cor-background);
     padding: 1rem;
     display: flex;
     align-items: center;
     margin-bottom: 5rem;
-    justify-content: space-between;
+    justify-content: space-around;
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
-    border: 2px solid var(--cor-primaria);
+    border: 2px solid var(--cor-secundaria);
+    position: relative;
+}
+
+.cabecalho-conteudo::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--cor-background);
+    opacity: 0.3; /* Define a opacidade como 30% */
+    z-index: -1; /* Coloque-o atrás do conteúdo */
+    border-radius: .850rem;
 }
 
 .cabecalho-nome{
@@ -144,7 +157,6 @@
     }
 
     .cabecalho-conteudo {
-        background: var(--cor-background);
         margin: 0;
         margin-bottom: 5rem;
         box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);

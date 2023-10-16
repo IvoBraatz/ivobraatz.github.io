@@ -8,8 +8,26 @@
     border-radius: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    position: relative;
+    border: 2px solid var(--cor-secundaria);
+}
+
+.sobre-mim img{
+    position: relative;
+    margin-top: 1rem;
+}
+
+.sobre-mim::before { 
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: var(--cor-background);
-    border: 2px solid var(--cor-primaria);
+    opacity: 0.3;
+    z-index: -1;
+    border-radius: .850rem;
 }
 
 .titulo-sobre {
@@ -21,11 +39,11 @@
 }
 
 .descricao-sobre{
+    position: relative;
     color: var(--cor-terciaria)
 }
 
 .conteudo-sobre {
-    margin-left: 3rem;
     display: flex;
     align-items: center;
 }
@@ -40,7 +58,7 @@
     height: auto;
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
-    border: 1px solid var(--cor-primaria);
+    border: 2px solid var(--cor-secundaria);
 }
 
 .descricao-container {
@@ -66,13 +84,13 @@
 }
 
 .conhecimentos{
-    justify-content: space-between;
+    justify-content: space-around;
     display: flex;
     margin-bottom: 5rem;
 }
 
 .projetos{
-    justify-content: space-between;
+    justify-content: space-around;
     display: flex;
     margin-bottom: 5rem;
 }
@@ -92,11 +110,24 @@
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
-    border-radius: 0.3125rem;
+    border-radius: 1rem;
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
-    background: var(--cor-background);
     white-space: normal;
-    border: 2px solid var(--cor-primaria);
+    border: 2px solid var(--cor-secundaria);
+    position: relative;
+}
+
+.card-linguagens::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--cor-background);
+    opacity: 0.3;
+    z-index: -1;
+    border-radius: .850rem;
 }
 
 .card-projetos{
@@ -107,11 +138,24 @@
     border: 0.00625rem solid #ccc;
     padding: 10px;
     text-align: center;
-    border-radius: 0.3125rem;
+    border-radius: 1rem;
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
-    background: var(--cor-background);
     white-space: normal;
-    border: 2px solid var(--cor-primaria);
+    border: 2px solid var(--cor-secundaria);
+    position: relative;
+}
+
+.card-projetos::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--cor-background);
+    opacity: 0.3;
+    z-index: -1;
+    border-radius: .850rem;
 }
 
 .card-image {
@@ -211,12 +255,13 @@
         display: flex;
         max-width: 100%;
         height: 30rem;
+ 
     }
     
     .imagem-sobre img {
-        margin-left: 8rem;
         max-width: 100%;
         height: auto;
+        left: 25%;
     }
 
     .card-image-projetos{
@@ -233,7 +278,7 @@
 @media (min-width: 576px) and (max-width: 779px) {
     .card-linguagens,
     .card-projetos {
-        justify-content: space-between;
+        justify-content: space-around;
         flex: 0 0 calc(33.333% - 10px);
         margin-right: 1rem; 
         max-width: 9rem;
@@ -292,6 +337,7 @@
         .card-projetos {
             flex: 0 0 calc(33.333% - 10px);
             margin-right: 20px; 
+            padding: 0;
         }
 
         .titulo-sobre{
@@ -316,6 +362,8 @@
             max-width: 100%;
             height: 25rem;
         }
+
+        
         
         .imagem-sobre img {
             margin: 0rem 5rem;
@@ -326,7 +374,7 @@
         .projetos,
         .conhecimentos{
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
         }
 
         .card-image{
@@ -345,8 +393,7 @@
         }
 
         .card-projetos{
-            max-width: 16rem;
-            height: 18rem;
+            height: 20rem;
         }
 
 }
