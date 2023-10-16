@@ -81,8 +81,11 @@
   width: 1.2rem;
   height: 1.2rem;
   padding-right: .5rem;
-  text-align: center;
-  
+  text-align: center; 
+}
+
+.links-imagem:hover{
+  filter: drop-shadow(1px 1px .5px var(--cor-hover));
 }
 
 .copy{
