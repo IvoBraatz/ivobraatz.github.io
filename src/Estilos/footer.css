@@ -43,6 +43,7 @@
     line-height: 2.75rem;
     font-weight: 600;
     color: var(--cor-terciaria);
+    filter: drop-shadow(1px 1px .5px #000000);
     
 }
 
@@ -73,7 +74,7 @@
   padding: .8rem;
   text-decoration: none;
   color: var(--cor-terciaria);
-  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(1px 1px .5px #000000);
 }
 
 .links-imagem{

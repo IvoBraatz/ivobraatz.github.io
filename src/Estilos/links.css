@@ -29,5 +29,10 @@
     width: 1.5rem;
     height: 1.5rem;
     background-size: cover;
+    filter: drop-shadow(1px 1px .5px var(--cor-background));
+}
+
+.redes:hover{
+    filter: drop-shadow(1px 1px .5px var(--cor-hover));
 }
 
