@@ -3,8 +3,8 @@
     height: 20rem;
     display: flex;
     flex-direction: column;
-    margin-bottom: 5rem;
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+    margin-bottom: 5rem;
     border-radius: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -18,6 +18,36 @@
 }
 
 .sobre-mim::before { 
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--cor-background);
+    opacity: 0.3;
+    z-index: -1;
+    border-radius: .850rem;
+}
+
+.container-formacao{
+    border: 2px solid var(--cor-secundaria);
+    box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.conteudo-formacao{
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.container-formacao::before{
     content: "";
     position: absolute;
     top: 0;
