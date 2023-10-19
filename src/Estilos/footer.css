@@ -53,7 +53,8 @@
     line-height: 1.875rem;
     font-weight: 400;
     color: var(--cor-primaria);
-    margin-top: 1rem  
+    margin-top: 1rem;
+    filter: drop-shadow(1px 1px 1px #000000);
 }
 
 .area-contato{
