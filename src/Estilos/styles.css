@@ -40,6 +40,7 @@ html {
 
 /* Variaveis */
 :root{
+    --cor-branco: #FFFFFF;
     --cor-primaria: #8c8b8c;
     --cor-secundaria: #0d0c0d;
     --cor-terciaria: #000000;

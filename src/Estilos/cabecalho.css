@@ -31,7 +31,7 @@
 
 .cabecalho-nome{
     padding-right: 2rem;
-    filter: drop-shadow(1px 1px .5px var(--cor-background));
+    filter: drop-shadow(1px 1px .5px var(--cor-terciaria));
 }
 
 .cabecalho-sobre,
@@ -40,10 +40,10 @@
 .cabecalho-contato {
     display: flex;
     text-decoration: none;
-    color: var(--cor-terciaria);
+    color: var(--cor-primaria);
     font-size: 1.125rem;
     padding-right: 3rem;
-    filter: drop-shadow(1px 1px .5px var(--cor-background));
+    filter: drop-shadow(1px 1px .5px var(--cor-terciaria));
 
 }
 
@@ -74,7 +74,7 @@
 
 .cabecalho-nome {
     text-decoration: none;
-    color: var(--cor-terciaria);
+    color: var(--cor-primaria);
     font-size: 2rem;
     display: flex;
     margin-right: 1.5rem;
