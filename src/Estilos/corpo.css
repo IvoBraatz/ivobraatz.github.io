@@ -123,6 +123,14 @@
     overflow-x: auto;
 }
 
+.card-image-js{
+    width: 80%;
+    margin-bottom: 3.4rem;
+    padding-top: 1rem;
+    max-width: 10rem;
+    height: auto;
+}
+
 .section{
     display: flex;
     flex-wrap: nowrap;
@@ -151,7 +159,7 @@
 
 .card-linguagens {
     margin-top: 2rem;
-    max-width: 20rem;
+    max-width: 28rem;
     flex: 0 0 calc(33.333% - 20px);
     padding: 10px;
     text-align: center;
@@ -336,9 +344,8 @@
     .card-linguagens,
     .card-projetos {
         justify-content: space-around;
-        flex: 0 0 calc(33.333% - 10px);
         margin-right: 1rem; 
-        max-width: 9rem;
+        width: 28rem;
     }
 
     .sobre-mim{
