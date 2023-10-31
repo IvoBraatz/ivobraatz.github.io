@@ -185,7 +185,6 @@
 
 .card-projetos{
     margin-top: 2rem;
-    max-width: 20rem;
     height: 16rem;
     flex: 0 0 calc(33.333% - 20px);
     padding: 10px;
