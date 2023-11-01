@@ -5,7 +5,6 @@
     flex-direction: column;
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
     margin-bottom: 5rem;
-    border-radius: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     position: relative;
@@ -27,7 +26,6 @@
     background: var(--cor-background);
     opacity: 0.3;
     z-index: -1;
-    border-radius: .850rem;
 }
 
 .formacao{
@@ -68,7 +66,6 @@
     background: var(--cor-background);
     opacity: 0.3;
     z-index: -1;
-    border-radius: .850rem;
 }
 
 .titulo-sobre {
@@ -98,7 +95,6 @@
     max-width: 100%;
     height: auto;
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
-    border-radius: 1rem;
     border: 2px solid var(--cor-secundaria);
 }
 
@@ -159,11 +155,10 @@
 
 .card-linguagens {
     margin-top: 2rem;
-    max-width: 28rem;
-    flex: 0 0 calc(33.333% - 20px);
+    max-width: 100%;
+    gap: 1rem;
     padding: 10px;
     text-align: center;
-    border-radius: 1rem;
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
     white-space: normal;
     border: 2px solid var(--cor-secundaria);
@@ -180,16 +175,13 @@
     background: var(--cor-background);
     opacity: 0.3;
     z-index: -1;
-    border-radius: .850rem;
 }
 
 .card-projetos{
     margin-top: 2rem;
     height: 16rem;
-    flex: 0 0 calc(33.333% - 20px);
     padding: 10px;
     text-align: center;
-    border-radius: 1rem;
     box-shadow: 0.3125rem 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
     white-space: normal;
     border: 2px solid var(--cor-secundaria);
@@ -206,7 +198,6 @@
     background: var(--cor-background);
     opacity: 0.3;
     z-index: -1;
-    border-radius: .850rem;
 }
 
 .card-image {
@@ -219,7 +210,6 @@
     margin-top: 1rem;
     max-width: 14rem;
     height: auto;
-    border-radius: .5rem;
 }
 
 .card-title {
@@ -343,8 +333,7 @@
     .card-linguagens,
     .card-projetos {
         justify-content: space-around;
-        margin-right: 1rem; 
-        width: 28rem;
+        width: 34rem;
     }
 
     .sobre-mim{
@@ -403,6 +392,15 @@
         width: 8rem;
     }
 
+    .conhecimentos .card-linguagens,
+    .projetos .card-projetos {
+        margin-right: .8rem; /* Adiciona um espaçamento à direita dos cards */
+    }
+
+    .conhecimentos .card-linguagens:last-child,
+    .projetos .card-projetos:last-child {
+        margin-right: 0; /* Remove o espaçamento do último card na linha */
+    }
     
 }
 
@@ -416,7 +414,7 @@
 
         .card-linguagens,
         .card-projetos {
-            flex: 0 0 calc(33.333% - 10px);
+            flex: 0 0 calc(45% - 10px);
             margin-right: 20px; 
             padding: 0;
         }
@@ -486,6 +484,16 @@
 
         .card-projetos{
             height: 20rem;
+        }
+
+        .conhecimentos .card-linguagens,
+        .projetos .card-projetos {
+        margin-right: 8rem; /* Adiciona um espaçamento à direita dos cards */
+        }
+
+        .conhecimentos .card-linguagens:last-child,
+        .projetos .card-projetos:last-child {
+            margin-right: 0; /* Remove o espaçamento do último card na linha */
         }
 
 }

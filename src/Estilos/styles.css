@@ -13,12 +13,12 @@ body {
     font-family: Roboto, sans-serif;
     margin-left: 5rem;
     margin-right: 5rem;
-    font-family:  'Anonymous Pro', monospace;
-    background: rgb(245,89,157);
-    background: -moz-radial-gradient(circle, rgba(245,89,157,1) 0%, rgba(0,0,0,1) 90%);
-    background: -webkit-radial-gradient(circle, rgba(245,89,157,1) 0%, rgba(0,0,0,1) 90%);
-    background: radial-gradient(circle, rgba(245,89,157,1) 0%, rgba(0,0,0,1) 90%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f5599d",endColorstr="#000000",GradientType=1);
+    background: rgb(138,138,138);
+    background: -moz-radial-gradient(circle, rgba(138,138,138,1) 0%, rgba(54,54,54,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(138,138,138,1) 0%, rgba(54,54,54,1) 100%);
+    background: radial-gradient(circle, rgba(138,138,138,1) 0%, rgba(54,54,54,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8a8a8a",endColorstr="#363636",GradientType=1);
+    font-family: 'gruppo';
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -41,10 +41,10 @@ html {
 /* Variaveis */
 :root{
     --cor-branco: #FFFFFF;
-    --cor-primaria: #8c8b8c;
+    --cor-primaria: #ececec;
     --cor-secundaria: #0d0c0d;
     --cor-terciaria: #000000;
-    --cor-hover: #f5599d;
+    --cor-hover: #98DCE1;
     --cor-background:#d9d9d9;
 }
 
