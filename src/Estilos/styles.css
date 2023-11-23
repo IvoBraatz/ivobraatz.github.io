@@ -1,24 +1,15 @@
-@import url(cabecalho.css);
 @import url(descricao.css);
 @import url(links.css);
 @import url(normalize.css);
 @import url(reset.css);
 @import url(portifolio.css);
 @import url(footer.css);
-@import url(corpo.css);
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@200&family=Titillium+Web:wght@200&display=swap');
 
 /* Reset CSS */
 body {
-    font-family: Roboto, sans-serif;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    background: rgb(138,138,138);
-    background: -moz-radial-gradient(circle, rgba(138,138,138,1) 0%, rgba(54,54,54,1) 100%);
-    background: -webkit-radial-gradient(circle, rgba(138,138,138,1) 0%, rgba(54,54,54,1) 100%);
-    background: radial-gradient(circle, rgba(138,138,138,1) 0%, rgba(54,54,54,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8a8a8a",endColorstr="#363636",GradientType=1);
-    font-family: 'gruppo';
+    font-family: 'titillium Web';
+    color: var(--cor-branco);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -48,29 +39,59 @@ html {
     --cor-background:#d9d9d9;
 }
 
+/*Estilos*/
 
-@media (max-width: 768px) {
+/*Navigation style*/
+.container__header{
+    
+}
+.navigation__header{
+    display: flex;
+    height: 4rem;
+    justify-content: space-between;
+    margin: 0 1rem;
+    align-items: center;
 
-    body{
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
+}
+.name{
+    font-size: 2.4rem;
+}
+.navigation__lis{
+    display: flex;
+}
+.navigation__item{
+    list-style-type: none;
+    padding: .5rem;
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-        body{
-            margin-right: 1rem;
-            margin-left: 1rem;
-        }
+.container__header{
+    width: 100%;
+    height: 48rem;
+    background-image: url(../imgs/bg.87635d9.webp);
+    background-size: cover;
+}
+
+.content__about{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+.about__title{
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 4rem;
+    font-style: italic;
+    font-weight: 400;
+}
 
 
-    }
+.about__description{
+    width: 32rem;
+    font-size: 1.2rem;
+    font-weight: 100;
+    text-align: justify;
+    padding: 1rem;
+}
 
-    @media (min-width: 1025px){
-        body{
-            margin-left: 5rem;
-            margin-right: 5rem;
-        }
-    }
-
-    
