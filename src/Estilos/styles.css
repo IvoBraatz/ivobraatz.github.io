@@ -43,7 +43,8 @@ html {
 
 /*Navigation style*/
 .container__header{
-    
+    display: flex;
+    flex-direction: column;
 }
 .navigation__header{
     display: flex;
@@ -51,7 +52,7 @@ html {
     justify-content: space-between;
     margin: 0 1rem;
     align-items: center;
-
+    padding: 3rem;
 }
 .name{
     font-size: 2.4rem;
@@ -77,6 +78,7 @@ html {
     align-items: center;
     text-align: center;
     padding: 1rem;
+    margin-top: 12rem;
 }
 
 .about__title{
@@ -95,3 +97,56 @@ html {
     padding: 1rem;
 }
 
+/* conteudo body */
+
+.container__body{
+    background-color: #17151e ;
+}
+.content__body{
+}
+.content__projects{
+
+}
+.pojects{
+    display: flex;
+    padding:2rem ;
+    align-items: end;
+}
+
+.projects::before,
+.projects::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.projects::before {
+  top: -5px;
+  left: -5px;
+}
+
+.projects::after {
+  bottom: -5px;
+  right: -5px;
+}
+
+.projects:hover::before {
+  transform: rotate(45deg);
+}
+
+.projects:hover::after {
+  transform: rotate(-45deg);
+}
+
+.project__image{
+    margin: 0 1rem;
+    width: 32rem;
+}
+.project__title{
+    position: absolute;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
