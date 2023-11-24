@@ -1,32 +1,10 @@
-@import url(descricao.css);
-@import url(links.css);
-@import url(normalize.css);
 @import url(reset.css);
-@import url(portifolio.css);
-@import url(footer.css);
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@200&family=Titillium+Web:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@200&family=Titillium+Web:ital,wght@0,200;0,900;1,700&display=swap');
 
 /* Reset CSS */
 body {
-    font-family: 'titillium Web';
+    font-family: 'Titillium Web', sans-serif;
     color: var(--cor-branco);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 0;
-}
-
-ul, li {
-    padding: 0;
-}
-
-main{
-    margin-bottom: 5rem;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 /* Variaveis */
@@ -104,49 +82,61 @@ html {
 }
 .content__body{
 }
-.content__projects{
 
+.header__projects{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
-.pojects{
+.header__title__projects{
+    font-size: 4rem;
+}
+.header__subtitle__projects{
+    margin-top: 2.8rem;
+    color: #0f0d15;
+    font-size: 10rem;
+    position: absolute;
+    width: 100%;
+    font-weight: 900;
+}
+
+.content__projects{
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+.projects{
     display: flex;
     padding:2rem ;
     align-items: end;
+    perspective: 1000px;
+    
 }
 
-.projects::before,
-.projects::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: inherit;
-  transition: transform 0.2s ease;
+.projects:hover .project__image {
+    transform: rotateY(30deg);
 }
 
-.projects::before {
-  top: -5px;
-  left: -5px;
-}
-
-.projects::after {
-  bottom: -5px;
-  right: -5px;
-}
-
-.projects:hover::before {
-  transform: rotate(45deg);
-}
-
-.projects:hover::after {
-  transform: rotate(-45deg);
-}
-
-.project__image{
+.project__image {
     margin: 0 1rem;
     width: 32rem;
+    box-shadow: 0px 0px 15px #000000;
+    transition: transform 0.5s ease, box-shadow 0.5s ease .5s; 
 }
+
+.project__image:hover {
+    box-shadow: 0px 0px 15px #FFFFFF;
+}
+
 .project__title{
     position: absolute;
     font-size: 2rem;
     margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(2px 2px 5px #000000);
+}
+
+.project__link{
+    text-decoration: none;
+    color: #FFFFFF;
 }
