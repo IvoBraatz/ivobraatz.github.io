@@ -209,7 +209,7 @@ body {
     border-bottom: transparent;
   }
   
-  h2 {
+  .card__title {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
@@ -217,7 +217,7 @@ body {
     color: #ffffff;
   }
   
-  p {
+  .card__description {
     font-weight: 300;
     text-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
     color: #ff88c9;
