@@ -1,5 +1,5 @@
 @import url(reset.css);
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@200&family=Titillium+Web:ital,wght@0,200;0,900;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@200&family=Cormorant+Unicase:wght@700&family=Titillium+Web:ital,wght@0,200;0,900;1,700&display=swap');
 
 /* Reset CSS */
 body {
@@ -117,34 +117,38 @@ body {
   margin: 0;
   width: 36rem;
   height: 20rem;
-  box-shadow: 0px 0px 15px #000000;
+  box-shadow: 0 0 25px #000000;
   transition: box-shadow 0.3s ease-in-out;
   transform-style: preserve-3d;
 }
 
 
-.content{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 8rem;
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 8rem;
 }
 
 .centered {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    height: 100%;
-  }
-  
-  .card {
-    position: relative;
-    height: 20rem;
-    width: 36rem;
-    aspect-ratio: 5/7;
-    color: #2b2b2b;
-    perspective: 50rem;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto; 
+  width: calc(50% - 3rem); 
+  max-width: 36rem;
+  padding: 4rem 0; 
+}
+
+.card {
+  position: relative;
+  height: 20rem;
+  width: 100%; 
+  max-width: 36rem;
+  aspect-ratio: 5/7;
+  color: #2b2b2b;
+  perspective: 50rem;
+}
   .card .shadow {
     position: absolute;
     inset: 0;
@@ -152,7 +156,6 @@ body {
     background-size: cover;
     background-position: center;
     opacity: 0.8;
-    filter: blur(2rem) saturate(0.9);
     box-shadow: 0 -1.5rem 2rem -0.5rem rgba(0, 0, 0, 0.7);
     transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 2rem, -2rem);
   }
@@ -169,36 +172,49 @@ body {
     -webkit-mask-position: center;
             mask-position: center;
   }
-  .card .image.background {
+  .card .image.background__netflix {
     transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 0, 0rem);
+    background-image: url(../imgs/projetos/netflix.png);
+    filter: drop-shadow(0 0 45px #000000);
   }
-  .card .image.cutout {
-    transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 0, 4rem) scale(0.92);
-    z-index: 3;
+  .card .image.background__multipla {
+    transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 0, 0rem);
+    background-image: url(../imgs/projetos/multipla.jpg);
+    filter: drop-shadow(0 0 45px #000000);
   }
+  .card .image.background__optimus {
+    transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 0, 0rem);
+    background-image: url(../imgs/projetos/optimus.jpg);
+    filter: drop-shadow(0 0 45px #000000);
+  }
+  .card .image.background__age {
+    transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 0, 0rem);
+    background-image: url(../imgs/projetos/age-calc.jpg);
+    filter: drop-shadow(0 0 45px #000000);
+  }
+
   .card .content {
+    font-family: 'cormorant';
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    inset: 0;
-    padding: 3.5rem;
+    inset: -1rem;
+    width: 20rem;
     transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 0, 6rem);
     z-index: 4;
+    filter: drop-shadow(0 0 15px #000000);
   }
+
   .card::after, .card::before {
     content: "";
     position: absolute;
     inset: 1.5rem;
-    border: #ffff00 0.5rem solid;
     transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 0, 2rem);
-    box-shadow: 0 0 45px #000000;
     transition: transform 0.3s ease, border-color 0.3s ease;
   }
-  .card:hover::after,
-  .card:hover::before {
-    box-shadow: 0 0 10px #ffffff;
-  }
+
+  
   .card::before {
     z-index: 4;
   }
@@ -216,17 +232,15 @@ body {
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    text-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
     color: #ffffff;
+    text-decoration: underline;
   }
   
   .card__description {
-    letter-spacing: .1rem;
     font-size: 1rem;
-    font-weight: 900;
-    color: #000000;
+    font-weight: 700;
+    color: #ffffff;
   }
-
   /* Estilos para telas grandes */
 @media screen and (min-width: 1024px) {
   /* Exemplo de estilos para telas grandes */
@@ -265,13 +279,19 @@ body {
   /* Exemplo de estilos para telas pequenas */
   .container__header {
     height: 30rem;
-    /* Outras alterações para telas pequenas */
+  }
+
+  .name{
+    font-size: 1.2rem;
+  }
+
+  .navigation__item{
+    padding: .2rem;
   }
 
   .content__about {
     flex-direction: column;
     margin-top: 3rem;
-    /* Outras alterações para telas pequenas */
   }
 
   .about__description{
@@ -295,6 +315,9 @@ body {
     margin-top: 5rem;
   }
 
+  .centered{
+    width: 100%;
+  }
 
   .card{
     margin-bottom: 2rem;
