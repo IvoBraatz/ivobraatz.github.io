@@ -201,7 +201,8 @@ body {
     justify-content: flex-end;
     inset: -1rem;
     width: 20rem;
-    transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 0, 6rem);
+    transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 0, 3rem);
+    transition: transform 0.3s ease, border-color 0.3s ease;
     z-index: 4;
     filter: drop-shadow(0 0 15px #000000);
   }
@@ -346,7 +347,7 @@ body {
     content: "";
     position: absolute;
     inset: .5rem;
-    border: #ffff00 0.2rem solid;
+    border: #ffffff 0.2rem solid;
   }
   
   /* Mais estilos para telas pequenas */
