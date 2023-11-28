@@ -122,9 +122,6 @@ body {
   transform-style: preserve-3d;
 }
 
-.project__image:hover {
-  box-shadow: 0px 0px 15px #FFFFFF;
-}
 
 .content{
     display: flex;
@@ -193,8 +190,14 @@ body {
     content: "";
     position: absolute;
     inset: 1.5rem;
-    border: #ff88c9 0.5rem solid;
+    border: #ffff00 0.5rem solid;
     transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 0, 2rem);
+    box-shadow: 0 0 45px #000000;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .card:hover::after,
+  .card:hover::before {
+    box-shadow: 0 0 10px #ffffff;
   }
   .card::before {
     z-index: 4;
@@ -218,7 +221,110 @@ body {
   }
   
   .card__description {
-    font-weight: 300;
-    text-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
-    color: #ff88c9;
+    letter-spacing: .1rem;
+    font-size: 1rem;
+    font-weight: 900;
+    color: #000000;
   }
+
+  /* Estilos para telas grandes */
+@media screen and (min-width: 1024px) {
+  /* Exemplo de estilos para telas grandes */
+  .container__header {
+    height: 100%;
+    /* Outras alterações para telas grandes */
+  }
+
+  .content__about {
+    margin-top: 10rem;
+    margin-bottom: 12rem;
+    /* Outras alterações para telas grandes */
+  }
+
+  /* Mais estilos para telas grandes */
+}
+
+/* Estilos para telas médias */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  /* Exemplo de estilos para telas médias */
+  .container__header {
+    height: 100%;
+    /* Outras alterações para telas médias */
+  }
+
+  .content__about {
+    margin-top: 14rem;
+    /* Outras alterações para telas médias */
+  }
+
+  /* Mais estilos para telas médias */
+}
+
+/* Estilos para telas pequenas */
+@media screen and (max-width: 767px) {
+  /* Exemplo de estilos para telas pequenas */
+  .container__header {
+    height: 30rem;
+    /* Outras alterações para telas pequenas */
+  }
+
+  .content__about {
+    flex-direction: column;
+    margin-top: 3rem;
+    /* Outras alterações para telas pequenas */
+  }
+
+  .about__description{
+    font-size: 1rem;
+    width: 75%;
+  }
+  .about__title{
+    font-size: 3rem;
+  }
+
+  .header__title__projects{
+    font-size: 2rem;
+  }
+
+  .header__subtitle__projects{
+    font-size: 3rem;
+  }
+
+  .content{
+    flex-direction: column;
+    margin-top: 5rem;
+  }
+
+
+  .card{
+    margin-bottom: 2rem;
+    width: 18rem;
+    height: 10rem;
+  }
+
+  .card .content{
+    padding: 0 0 1rem 1rem;
+  }
+
+  .project__image{
+    width: 18rem;
+    height: 10rem;
+  }
+
+  .card__title{
+    font-size: .825rem;
+  }
+
+  .card__description{
+    font-size: .715rem;
+  }
+  
+  .card::after, .card::before {
+    content: "";
+    position: absolute;
+    inset: .5rem;
+    border: #ffff00 0.2rem solid;
+  }
+  
+  /* Mais estilos para telas pequenas */
+}
