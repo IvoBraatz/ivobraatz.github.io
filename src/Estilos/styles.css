@@ -262,7 +262,7 @@ body {
 
 @media screen and (max-width: 767px) {
   .container__header {
-    height: 30rem;
+    height: 42rem;
   }
 
   .name{
@@ -293,6 +293,7 @@ body {
   .header__subtitle__projects{
     font-size: 3rem;
   }
+
 
   .content{
     flex-direction: column;
@@ -330,7 +331,6 @@ body {
     content: "";
     position: absolute;
     inset: .5rem;
-    border: #ffffff 0.2rem solid;
   }
   
 }
