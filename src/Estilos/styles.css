@@ -85,7 +85,8 @@ body {
 /* conteudo body */
 
 .container__body{
-    background-color: #17151e ;
+    /* background-color: #17151e ; */
+    background-color: #FFF;
 }
 
 .header__projects{
@@ -106,7 +107,7 @@ body {
     position: absolute;
     width: 100%;
     font-weight: 900;
-    filter: drop-shadow( 0 0 10px var(--cor-terciaria));
+    filter: drop-shadow( 0 1px 5px var(--cor-terciaria));
 }
 
 .content__projects{
@@ -127,8 +128,6 @@ body {
   margin: 0;
   width: 36rem;
   height: 20rem;
-  box-shadow: 0 0 25px #000000;
-  transition: box-shadow 0.3s ease-in-out;
   transform-style: preserve-3d;
 }
 
@@ -166,7 +165,6 @@ body {
     background-size: cover;
     background-position: center;
     opacity: 0.8;
-    box-shadow: 0 -1.5rem 2rem -0.5rem rgba(0, 0, 0, 0.7);
     transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 2rem, -2rem);
   }
   .card .image {
@@ -184,12 +182,23 @@ body {
   }
   .card .image.background__Prestige {
     transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 0, 0rem);
-    filter: drop-shadow(0 0 45px #000000);
+    box-shadow: rgba(50, 50, 50, 0.8) 0px 0px 0px 2px inset,
+            rgba(100, 100, 100, 0.8) 10px -10px 0px -3px,
+            rgba(150, 150, 150, 0.8) 10px -10px,
+            rgba(180, 180, 180, 0.8) 20px -20px 0px -3px,
+            rgba(210, 210, 210, 0.8) 20px -20px,
+            rgba(240, 240, 240, 0.8) 30px -30px 0px -3px,
+            rgba(200, 200, 200, 0.8) 30px -30px,
+            rgba(160, 160, 160, 0.8) 40px -40px 0px -3px,
+            rgba(120, 120, 120, 0.8) 40px -40px;
+
+
+
   }
 
   .video__card{
     position: relative;
-    height: 20rem;
+    height: 100%;
     width: 100%; 
     max-width: 36rem;
     aspect-ratio: 5/7;
@@ -200,17 +209,14 @@ body {
   .card .image.background__multipla {
     transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 0, 0rem);
     background-image: url(../imgs/projetos/multipla.jpg);
-    filter: drop-shadow(0 0 45px #000000);
   }
   .card .image.background__optimus {
     transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 0, 0rem);
     background-image: url(../imgs/projetos/optimus.jpg);
-    filter: drop-shadow(0 0 45px #000000);
   }
   .card .image.background__age {
     transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 0, 0rem);
     background-image: url(../imgs/projetos/age-calc.jpg);
-    filter: drop-shadow(0 0 45px #000000);
   }
 
   .card .content {
@@ -224,7 +230,6 @@ body {
     transform: rotateX(var(--rotateX)) rotateY(var(--rotateY)) translate3d(0, 0, 3rem);
     transition: transform 0.3s ease, border-color 0.3s ease;
     z-index: 4;
-    filter: drop-shadow(0 0 15px #000000);
   }
 
   .card::after, .card::before {
