@@ -1,80 +1,195 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/Estilos/styles.css">
-    <link rel="icon" href="src/imgs/dev.png" type="image/x-icon">
-    <title>Ivo Braatz</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfólio</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText3.min.js"></script>
+  <link rel="stylesheet" href="src/css/styles.css">
 </head>
-<body> 
-    <div class="container__header">
-        <div class="navigation__header">
-            <h1 class="name"> Ivo />dev </h1>
-            <ul class="navigation__lis">
-                <li class="navigation__item"><a href="">About/></a></li>
-                <li class="navigation__item"><a href="#work">Work/></a></li>
-                <li class="navigation__item"><a href="">Contact/></a></li>
-            </ul>
-        </div>
-        <div class="about">
-            <div class="content__about">
-                <h2 class="about__title">ABOUT</h2>
-                <p class="about__description">Full Stack Web Developer proficient in HTML5, CSS3, JavaScript, Node.js, SASS, and SQL, adept at crafting dynamic websites and applications. Currently pursuing a Bachelor's degree in Software Engineering and Information Technology Management.</p>
+<body>
+    <section id="sobre" class="section first">
+      <div class="outer">
+        <div class="inner">
+          <div class="bg one">
+            <div class="section-heading">
+              <h2 class="name">Ivo Braatz</h2>
+              <p class="location">Santa Catarina, Brazil ・ +55 47 99748-6918 ・ braatzivo@hotmail.com</p>
+              <p class="item-description">Como desenvolvedor full stack, minha especialidade é conceber soluções inovadoras e altamente eficientes para resolver problemas e impulsionar o sucesso do seu negócio.</p>
             </div>
+          </div>
         </div>
+      </div>
+
+    </section>
+    <section id="experiencia" class="section second">
+      <div class="outer">
+        <div class="inner">
+          <div class="bg">
+            <div class="section-heading">
+              <h2 class="section-title">Experiência</h2>
+              <div class="section-item">
+                <div class="item-one">
+                  <h4 class="item-title">Fiel Service Analyst</h4>
+                  <p class="item-subtitle">Eiti Soluções</p>
+                  <p class="item-description">Durante esse período, minhas principais responsabilidades envolviam o suporte de primeiro nível, o monitoramento utilizando Zabbix, a abertura e o despacho de chamados, o escalonamento de analistas, o acompanhamento de chamados e a criação de procedimentos operacionais. Adicionalmente, possuo habilidades em backup utilizando Veeam Backup, administração de servidores Windows, suporte ao Help Desk, Sophos, atendimento e suporte ao cliente, atividades de integração de equipes, suporte técnico, administração de redes, comunicação eficaz e administração de sistemas.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="habilidades" class="section third">
+      <div class="outer">
+        <div class="inner">
+          <div class="bg">
+            <div class="section-heading">
+              <h2 class="section-title">Habilidades</h2>
+              <p class="item-subtitle">Linguagens de programação e ferramentas</p>
+              <div class="slider-images">
+                <img src="src/images/icons/css.png" alt="Logo CSS">
+                <img src="src/images/icons/js.png" alt="Logo JavaScript">
+                <img src="src/images/icons/node-js.png" alt="Logo Node.JS">
+                <img src="src/images/icons/html.png" alt="Logo HTML">
+                <img src="src/images/icons/sql.png" alt="Logo SQL">
+                <img src="src/images/icons/apache.png" alt="Logo Apache">
+              </div>
+              <div class="item-description">
+                <p class="description-item">✔ Acessibilidade Web</p>
+                <p class="description-item">✔ Arquitetura CSS</p>
+                <p class="description-item">✔ Responsividade Web</p>
+                <p class="description-item">✔ Manipulação do DOM</p>
+                <p class="description-item">✔ Entre outos...</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projetos" class="section fourth">
+      <div class="outer">
+        <div class="inner">
+          <div class="bg">
+            <div class="section-heading">
+              <h2 class="section-title">Projetos</h2>
+              <p class="item-subtitle">Mostre seus projetos realizados.</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="certificacoes" class="section fifth">
+      <div class="outer">
+        <div class="inner">
+          <div class="bg">
+            <div class="section-heading">
+              <h2 class="section-title">Certificações</h2>
+              <p class="item-subtitle">Diversos cerificados em cursos abrangentes</p>
+              <p class="item-description">Baixe meus certificados!</p>
+              <a href="Certificates.zip" download>
+                <button class="button">
+                  <p class="text">
+                  Download 
+                  </p>
+                  <div class="svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-download" viewBox="0 0 16 16"> <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path> <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path> </svg>
+                  </div>
+                </button>
+            </a>
+            
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <div class="container">
+    <nav id="menu" class="menu">
+      <div class="profile-pic">
+        <img src="src/images/square_ivo.png" alt="Imagem de Ivo Braatz">
+      </div>
+      <ul class="menu-links">
+        <li><a href="#sobre" class="menu-link">Sobre Mim</a></li>
+        <li><a href="#habilidades" class="menu-link">Habilidades</a></li>
+        <li><a href="#projetos" class="menu-link">Projetos</a></li>
+        <li><a href="#experiencia" class="menu-link">Experiência</a></li>
+        <li><a href="#certificacoes" class="menu-link">Certificações</a></li>
+      </ul>
+    </nav>
     </div>
-    <div class="container__body">
-        <div class="content__body">
-            <div class="header__projects id=" id="work">
-                <h6 class="header__title__projects">work/></h6>
-                <h3 class="header__subtitle__projects">WEB PROJECTS</h3>
-            </div>
-            <div class="content">
-                <div class="centered">
-                    <div class="card border-left-behind">
-                        <div class="shadow"></div>
-                        <div class="image background__Prestige"><video class="video__card" src="src/videos/Projects/Prestige Autohaus.mp4" autoplay loop muted></video></div>
-                        <div class="content">
-                            <h2 class="card__title Prestige"><a class="card__title Prestige" href="https://ivobraatz.github.io/Prestige-Autohaus/">Prestige Autohaus</a></h2>
-                            <p class="card__description Prestige__description">Luxury cars</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="centered">
-                    <div class="card border-left-behind">
-                        <div class="shadow"></div>
-                        <div class="image background__age"><video class="video__card" src="src/videos/Projects/Age calculator.mp4" autoplay loop muted></video></div>
-                        <div class="content">
-                            <h2 class="card__title age"><a class="card__title age" href="https://ivobraatz.github.io/Age-Calculator/">AGE CALC</a></h2>
-                            <p class="card__description age__description">calculate your exact age including days and months</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="centered">
-                    <div class="card border-left-behind">
-                        <div class="shadow"></div>
-                        <div class="image background__multipla" >></div>
-                        <div class="content">
-                            <h2 class="card__title multipla"><a class="card__title multipla" href="https://ivobraatz.github.io/multipla">Multipla</a></h2>
-                            <p class="card__description multipla__description">
-                                civil construction company located in Blumenau, SC</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="centered">
-                    <div class="card border-left-behind">
-                        <div class="shadow"></div>
-                        <div class="image background__optimus"></div>
-                        <div class="content">
-                            <h2 class="card__title optimus"><a class="card__title optimus" href="https://ivobraatz.github.io/OptimusTech/">OptimusTech</a></h2>
-                            <p class="card__description optimus__description">fictitious page for the company Optimus Tech</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+  </div>
+  <script>
+    gsap.registerPlugin(Observer);
+
+  let sections = document.querySelectorAll("section"),
+    images = document.querySelectorAll(".bg"),
+    headings = gsap.utils.toArray(".section-heading"),
+    outerWrappers = gsap.utils.toArray(".outer"),
+    innerWrappers = gsap.utils.toArray(".inner"),
+    splitHeadings = headings.map(heading => new SplitText(heading, { type: "chars,words,lines", linesClass: "clip-text" })),
+    currentIndex = -1,
+    wrap = gsap.utils.wrap(0, sections.length),
+    animating;
+
+  gsap.set(outerWrappers, { yPercent: 100 });
+  gsap.set(innerWrappers, { yPercent: -100 });
+
+  function gotoSection(index, direction) {
+    index = wrap(index); // make sure it's valid
+    animating = true;
+    let fromTop = direction === -1,
+        dFactor = fromTop ? -1 : 1,
+        tl = gsap.timeline({
+          defaults: { duration: 1.25, ease: "power1.inOut" },
+          onComplete: () => animating = false
+        });
+    if (currentIndex >= 0) {
+      // The first time this function runs, current is -1
+      gsap.set(sections[currentIndex], { zIndex: 0 });
+      tl.to(images[currentIndex], { yPercent: -15 * dFactor })
+        .set(sections[currentIndex], { autoAlpha: 0 });
+    }
+    gsap.set(sections[index], { autoAlpha: 1, zIndex: 1 });
+    tl.fromTo([outerWrappers[index], innerWrappers[index]], { 
+        yPercent: i => i ? -100 * dFactor : 100 * dFactor
+      }, { 
+        yPercent: 0 
+      }, 0)
+      .fromTo(images[index], { yPercent: 15 * dFactor }, { yPercent: 0 }, 0)
+      .fromTo(splitHeadings[index].chars, { 
+          autoAlpha: 0, 
+          yPercent: 150 * dFactor
+      }, {
+          autoAlpha: 1,
+          yPercent: 0,
+          duration: 1,
+          ease: "power2",
+          stagger: {
+            each: 0.02,
+            from: "random"
+          }
+        }, 0.2);
+
+    currentIndex = index;
+  }
+
+  Observer.create({
+    type: "wheel,touch,pointer",
+    wheelSpeed: -1,
+    onDown: () => !animating && gotoSection(currentIndex - 1, -1),
+    onUp: () => !animating && gotoSection(currentIndex + 1, 1),
+    tolerance: 10,
+    preventDefault: true
+  });
+
+  gotoSection(0, 1);
+
+</script>
 </body>
 </html>
