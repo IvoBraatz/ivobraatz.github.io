@@ -341,6 +341,34 @@ body {
   scale: 0.97;
 }
 
+.projects {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-project {
+  width: 20rem;
+  height: 20rem;
+  border: 2px solid #fff;
+  background-color: rgba(160, 160, 160, 0.2);
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title-project {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.subtitle-project {
+  font-size: 2rem;
+  width: 20rem;
+  text-align: center;
+}
+
 @media screen and (max-width: 768px) {
   .menu {
     width: 100%;
