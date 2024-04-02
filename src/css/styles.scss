@@ -396,12 +396,12 @@ body {
   text-align: center;
 }
 
-.description-project {}
 
-@media screen and (max-width: 768px) {
+
+
+@media screen and (min-width: 769px) {
   .menu {
-    width: 100%;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     position: fixed;
     z-index: 1000;
@@ -409,6 +409,18 @@ body {
     left: 0;
     height: 100vh;
     overflow-y: auto;
+  }
+
+  .profile-pic{
+    margin-top: 2rem;
+  }
+
+  .section{
+    margin-left: 17rem;
+  }
+
+  section .bg{
+    padding-left: 1.5rem;
   }
 
   .menu ul {
@@ -423,5 +435,218 @@ body {
 
   .content {
     margin-left: 0;
+  }
+
+  .name{
+    font-size: 2.8rem;
+  }
+
+  .location{
+    font-size: 1rem;
+  }
+
+  .item-description{
+    font-size: 1rem;
+  }
+
+  .section-heading{
+    width: 48rem;
+  }
+
+  
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    padding: 5px;
+    text-align: center;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .profile-pic{
+    margin-top: 2rem;
+  }
+
+  .section{
+    margin-left: 17rem;
+  }
+
+  section .bg{
+    padding-left: 1.5rem;
+  }
+
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-link {
+    margin-bottom: 5px;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
+  .name{
+    font-size: 2.8rem;
+  }
+
+  .location{
+    font-size: 1rem;
+  }
+
+  .item-description{
+    font-size: 1rem;
+  }
+
+  .section-heading{
+    width: 26rem;
+  }
+
+}
+@media screen and (min-width: 601px) and (max-width: 767px) {
+  .menu {
+    padding: 0;
+    text-align: center;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    width: 10rem;
+  }
+
+  .profile-pic{
+    margin-top: 2rem;
+  }
+
+  .section{
+    margin-left: 0;
+  }
+
+.section-title{
+  font-size: 2.2rem;
+}
+
+.item-title,
+.item-subtitle{
+  font-size:1.8rem;
+}
+
+.item-description{
+  font-size: .8rem;
+}
+
+  section .bg{
+    padding-left: 0;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4rem;
+  }
+
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-links{
+    margin-top: 2rem;
+  }
+
+  .menu-link {
+    margin-bottom: 5px;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
+  .name{
+    font-size: 2.8rem;
+  }
+
+  .location{
+    font-size: 1rem;
+  }
+
+  .section-heading{
+    width: 25rem;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    position: fixed;
+    height: 6rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .profile-pic {
+    margin-top: 0; 
+    margin-bottom: 0;
+  }
+
+  .profile-pic img{
+    width: 4rem;
+  }
+
+  .section {
+    margin-left: 0; /* Removendo a margem lateral para aproveitar o espaço na tela */
+  }
+
+  section .bg {
+    padding-left: 0; /* Reduzindo ainda mais o padding do background */
+  }
+
+  .section-heading{
+    margin: 0 2rem;
+  }
+
+  .slider-images{
+    margin: 1rem 0;
+  }
+
+  .menu ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .menu-links{
+    margin-top: 0;
+  }
+
+  .menu-link {
+    margin-bottom: 0; /* Ajustando o espaçamento entre os links do menu */
+  }
+
+  .name {
+    font-size: 1.8rem; /* Reduzindo mais o tamanho da fonte para se adequar à tela menor */
+  }
+
+  .location,
+  .item-description {
+    font-size: 0.7rem; /* Reduzindo mais o tamanho da fonte para se adequar à tela menor */
+  }
+
+  .section-heading {
+    width: auto; /* Removendo a largura fixa para que se ajuste ao conteúdo */
   }
 }
