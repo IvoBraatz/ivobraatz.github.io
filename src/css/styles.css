@@ -393,7 +393,7 @@ label {
 }
 
 input[type=email],
-input[type=text] {
+.textarea {
   border: none;
   background-color: black;
   color: white;
@@ -407,7 +407,7 @@ input[type=text] {
 }
 
 input[type=email],
-input[type=text]:focus {
+.textarea:focus {
   outline: none;
 }
 

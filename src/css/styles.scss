@@ -416,7 +416,7 @@ label {
   display: inline-block; /* Adicionado */
 }
 input[type="email"],
-input[type="text"] {
+.textarea {
   border: none;
   background-color: black;
   color: white;
@@ -429,7 +429,7 @@ input[type="text"] {
   border-bottom: 1px solid lime;
 }
 input[type="email"],
-input[type="text"]:focus {
+.textarea:focus {
   outline: none;
 }
 
