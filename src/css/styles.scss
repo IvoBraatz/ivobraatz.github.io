@@ -30,7 +30,7 @@ body {
   height: 100vh;
   color: white;
   background: black;
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--fonte-principal);
   text-transform: uppercase;
 }
 
@@ -120,12 +120,7 @@ h2 * {
   will-change: transform;
 }
 
-body {
-  display: flex;
-  font-family: var(--fonte-principal);
-  margin: 0;
-  height: 100%;
-}
+
 
 .container {
   display: flex;
@@ -276,7 +271,6 @@ body {
   background: rgb(47, 93, 197);
   background: linear-gradient(160deg, rgba(47, 93, 197, 1) 0%, rgba(46, 86, 194, 1) 5%, rgba(47, 93, 197, 1) 11%, rgba(59, 190, 230, 1) 57%, rgba(0, 212, 255, 1) 71%);
   color: #fff;
-  font-family: Roboto, sans-serif;
   font-weight: 505;
   font-size: 16px;
   line-height: 1;
@@ -431,10 +425,6 @@ form{
   margin-top: 2rem;
 }
 
-
-body {
-  font-family: 'Courier New', Courier, monospace;
-}
 .form-group {
   margin-bottom: 15px;
 }
