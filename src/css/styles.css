@@ -100,18 +100,6 @@ h2 * {
   display: flex;
 }
 
-.menu {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  height: 100%;
-  width: 17rem;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: #fff;
-  padding: 20px;
-  z-index: 999;
-}
-
 .profile-pic {
   text-align: center;
   margin-bottom: 20px;
@@ -168,7 +156,7 @@ h2 * {
 }
 
 .section-heading {
-  width: 48rem;
+  max-width: 48rem;
 }
 
 .name {
@@ -575,9 +563,15 @@ input[type=email],
     left: 0;
     height: 100vh;
     overflow-y: auto;
+    width: 17rem;
   }
   .profile-pic {
     margin-top: 2rem;
+  }
+  .section-heading {
+    width: 34rem;
+    display: flex;
+    flex-direction: column;
   }
   .section {
     margin-left: 17rem;
@@ -604,9 +598,6 @@ input[type=email],
   }
   .item-description {
     font-size: 1rem;
-  }
-  .section-heading {
-    width: 48rem;
   }
 }
 @media screen and (max-width: 768px) {
@@ -655,7 +646,7 @@ input[type=email],
 }
 @media screen and (min-width: 601px) and (max-width: 767px) {
   .menu {
-    padding: 0;
+    padding: 5px;
     text-align: center;
     position: fixed;
     z-index: 1000;
@@ -663,7 +654,8 @@ input[type=email],
     left: 0;
     height: 100vh;
     overflow-y: auto;
-    width: 10rem;
+    width: 12rem;
+    background-color: black;
   }
   .profile-pic {
     margin-top: 2rem;
@@ -763,5 +755,15 @@ input[type=email],
   }
   .section-heading {
     width: auto; /* Removendo a largura fixa para que se ajuste ao conteúdo */
+  }
+  .content-project {
+    width: 14rem;
+    height: 14rem;
+  }
+  .project-image {
+    width: 12rem;
+  }
+  .subtitle-project {
+    font-size: 2rem;
   }
 }/*# sourceMappingURL=styles.css.map */
