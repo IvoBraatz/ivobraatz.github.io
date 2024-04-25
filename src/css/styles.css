@@ -107,7 +107,7 @@ h2 * {
 
 .profile-pic img {
   border-radius: 50%;
-  max-width: 7rem;
+  max-width: 5rem;
   height: auto;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
@@ -333,7 +333,7 @@ h2 * {
   margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.4rem;
 }
 
 .content-project {
@@ -609,7 +609,7 @@ input[type=email],
     height: 13rem;
   }
   .projects {
-    gap: 0.5rem;
+    gap: 0.2rem;
   }
   .project-image {
     width: 12rem;
@@ -659,16 +659,20 @@ input[type=email],
     display: flex;
     flex-direction: column;
     width: 30rem;
+    text-align: center;
   }
   .section-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   .item-subtitle {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
   .content-project {
-    width: 14rem;
-    height: 14rem;
+    width: 10rem;
+    height: 10rem;
+  }
+  .project-image {
+    width: 8rem;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 767px) {
@@ -682,7 +686,7 @@ input[type=email],
     z-index: 1000;
     top: 0;
     left: 0;
-    height: 10rem;
+    height: 7rem;
     width: 100%;
     overflow-y: auto;
   }
@@ -723,11 +727,11 @@ input[type=email],
     display: flex;
   }
   .content-project {
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
   }
   .project-image {
-    width: 11rem;
+    width: 8rem;
   }
   .menu-link {
     margin-bottom: 5px;
@@ -749,6 +753,7 @@ input[type=email],
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
   }
   .section-title,
   .item-subtitle,
