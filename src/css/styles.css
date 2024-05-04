@@ -100,6 +100,12 @@ h2 * {
   display: flex;
 }
 
+.certifications {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .profile-pic {
   text-align: center;
   margin-bottom: 20px;
@@ -333,6 +339,8 @@ h2 * {
   margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 0.4rem;
 }
 
@@ -382,6 +390,8 @@ form {
 
 .form-group {
   margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 label {
@@ -411,6 +421,14 @@ input[type=email],
 input[type=email],
 .textarea:focus {
   outline: none;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
 }
 
 @keyframes blink-animation {
@@ -596,7 +614,10 @@ input[type=email],
     justify-content: center;
     display: flex;
     flex-direction: column;
-    width: 28rem;
+    width: 30rem;
+  }
+  .certifications {
+    display: block;
   }
   .section-title {
     font-size: 2.2rem;
@@ -609,73 +630,14 @@ input[type=email],
     height: 13rem;
   }
   .projects {
-    gap: 0.2rem;
+    gap: 0.5rem;
   }
   .project-image {
     width: 12rem;
     height: 12rem;
   }
 }
-@media screen and (max-width: 768px) {
-  .menu {
-    padding: 5px;
-    text-align: center;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    overflow-y: auto;
-  }
-  .profile-pic {
-    margin-top: 2rem;
-  }
-  .section {
-    margin-left: 17rem;
-  }
-  section .bg {
-    padding-left: 1.5rem;
-  }
-  .menu ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .menu-link {
-    margin-bottom: 5px;
-  }
-  .content {
-    margin-left: 0;
-  }
-  .name {
-    font-size: 2.8rem;
-  }
-  .location {
-    font-size: 1rem;
-  }
-  .section-heading {
-    height: 100vh;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    width: 30rem;
-    text-align: center;
-  }
-  .section-title {
-    font-size: 2rem;
-  }
-  .item-subtitle {
-    font-size: 1.2rem;
-  }
-  .content-project {
-    width: 10rem;
-    height: 10rem;
-  }
-  .project-image {
-    width: 8rem;
-  }
-}
-@media screen and (min-width: 601px) and (max-width: 767px) {
+@media screen and (min-width: 601px) and (max-width: 768px) {
   .menu {
     padding: 5px;
     display: flex;
@@ -859,5 +821,12 @@ input[type=email],
   .item-title,
   .item-description {
     text-align: center;
+  }
+  .content-project {
+    width: 10rem;
+    height: 10rem;
+  }
+  .project-image {
+    width: 8rem;
   }
 }/*# sourceMappingURL=styles.css.map */
