@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "gsap": "^3.12.5"
+    "particlesjs": "^2.2.3"
   }
 }

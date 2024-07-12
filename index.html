@@ -1,246 +1,299 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Portfólio</title>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
-  <link rel="stylesheet" href="src/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="shortcut icon" href="public/img/Ivo.jpg" type="image/x-icon">
+    <title>Ivo Braatz</title>
 </head>
+
 <body>
-    <section id="sobre" class="section first">
-      <div class="outer">
-        <div class="inner">
-          <div class="bg one">
-            <div class="section-heading">
-              <h2 class="name">Ivo Braatz</h2>
-              <p class="location">Santa Catarina, Brazil ・ +55 47 99748-6918 ・ braatzivo@hotmail.com</p>
-              <p class="item-description">Como desenvolvedor full stack, minha especialidade é conceber soluções inovadoras e altamente eficientes para resolver problemas e impulsionar o sucesso do seu negócio.</p>
-            </div>
-          </div>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <h1 href="#" class="navbar-logo">Ivo</h1>
+            <ul class="navbar-menu">
+                <li class="navbar-item"><a href="#home" class="navbar-link">Home</a></li>
+                <li class="navbar-item"><a href="#timeline" class="navbar-link">Timeline</a></li>
+                <li class="navbar-item"><a href="#Projects" class="navbar-link">Projects</a></li>
+                <li class="navbar-item"><a href="#contact" class="navbar-link">Contact</a></li>
+            </ul>
         </div>
-      </div>
-
-    </section>
-    <section id="experiencia" class="section second">
-      <div class="outer">
-        <div class="inner">
-          <div class="bg">
-            <div class="section-heading">
-              <h2 class="section-title">Experiência</h2>
-              <div class="section-item">
-                <div class="item-one">
-                  <h4 class="item-title">Field Service Analyst</h4>
-                  <p class="item-subtitle">Eiti Soluções</p>
-                  <p class="item-description">Durante esse período, minhas principais responsabilidades envolviam o suporte de primeiro nível, o monitoramento utilizando Zabbix, a abertura e o despacho de chamados, o escalonamento de analistas, o acompanhamento de chamados e a criação de procedimentos operacionais. Adicionalmente, possuo habilidades em backup utilizando Veeam Backup, administração de servidores Windows, suporte ao Help Desk, Sophos, atendimento e suporte ao cliente, atividades de integração de equipes, suporte técnico, administração de redes, comunicação eficaz e administração de sistemas.</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="habilidades" class="section third">
-      <div class="outer">
-        <div class="inner">
-          <div class="bg">
-            <div class="section-heading">
-              <h2 class="section-title">Habilidades</h2>
-              <p class="item-subtitle">Linguagens de programação e ferramentas</p>
-              <div class="slider-images">
-                <img src="src/images/icons/css.png" alt="Logo CSS">
-                <img src="src/images/icons/js.png" alt="Logo JavaScript">
-                <img src="src/images/icons/node-js.png" alt="Logo Node.JS">
-                <img src="src/images/icons/html.png" alt="Logo HTML">
-                <img src="src/images/icons/sql.png" alt="Logo SQL">
-                <img src="src/images/icons/apache.png" alt="Logo Apache">
-              </div>
-              <div class="item-description">
-                <p class="description-item">✔ Acessibilidade Web</p>
-                <p class="description-item">✔ Arquitetura CSS</p>
-                <p class="description-item">✔ Responsividade Web</p>
-                <p class="description-item">✔ Manipulação do DOM</p>
-                <p class="description-item">✔ Entre outos...</p>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="projetos" class="section fourth">
-      <div class="outer">
-        <div class="inner">
-          <div class="bg">
-            <div class="section-heading">
-              <h2 class="section-title">Projetos</h2>
-              <p class="item-subtitle">Projetos desenvolvidos</p>
-              <div class="projects">
-                <div class="content-project">
-                  <a class="link-project" href="https://ivobraatz.github.io/Prestige-Autohaus/">
-                    <img class="project-image" src="src/images/project-images/Untitled.png" alt="imagem do projeto prestige AutoHaus">
-                  </a>
-                  <p class="title-project"></p>
-                  <h2 class="subtitle-project"></h2>
-                  <p class="description-project"></p>
-                </div>
-                <div class="content-project">
-                  <a class="link-project" href="https://ivobraatz.github.io/SENAI/Question%206/index.html">
-                    <img class="project-image" src="src/images/project-images/BS.png" alt="imagem do projeto BLOG BLUSOFT">
-                  </a>
-                </div>
-                <div class="content-project">
-                  <a class="link-project" href="https://ivobraatz.github.io/eclat-eternel/">
-                    <img class="project-image" src="src/images/project-images/ECLAT-LOGO.png" alt="imagem do projeto eclat eternel">
-                  </a>
-                </div>
-                <div class="content-project">
-                  <a class="link-project" href="https://ivobraatz.github.io/passwd-generator/">
-                    <img class="project-image" src="src/images/project-images/YTLG.png" alt="imagem do projeto youtools-passwd generator">
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="certificacoes" class="section fifth">
-      <div class="outer">
-        <div class="inner">
-          <div class="bg">
-            <div class="section-heading">
-              <h2 class="section-title">Certificações</h2>
-              <p class="item-subtitle">Diversos cerificados em cursos abrangentes</p>
-              <p class="item-description">Baixe meus certificados!</p>
-              <a class="certifications" href="Certificates.zip" download>
-                <button class="button">
-                  <p class="text">
-                  Download 
-                  </p>
-                  <div class="svg">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" class="bi bi-download" viewBox="0 0 16 16"> <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path> <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path> </svg>
-                  </div>
-                </button>
-            </a>
-            
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="contact" class="section sixth">
-      <div class="outer">
-          <div class="inner">
-              <div class="bg">
-                  <div class="section-heading">
-                      <h2 class="section-title">Contato</h2>
-                      <form form action="https://formspree.io/f/mjvnaqea" method="POST">
-                          <div class="form-group">
-                              <label>&gt; user@admin&gt; Insira seu e-mail</label>
-                              <div class="input-container">
-                                  <input type="email" name="_replyto" class="input-user" required>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label>&gt; user@admin&gt; Qual sua mensagem?</label>
-                              <div class="input-container">
-                                <textarea class="textarea" name="message" rows="4" class="input-user" required></textarea>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <button type="submit" class="ui-btn">
-                                  <span>
-                                      Enviar
-                                  </span>
-                              </button>
-                          </div>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-  <div class="container">
-    <nav id="menu" class="menu">
-      <div class="profile-pic">
-        <img src="src/images/square_ivo.png" alt="Imagem de Ivo Braatz">
-      </div>
-      <ul class="menu-links">
-        <li><a href="https://github.com/IvoBraatz" class="menu-link"><img class="menu-icon" src="src/images/icons/github.png" alt="icone github">Git Hub</a></li>
-        <li><a href="https://www.linkedin.com/in/ivo-braatz/" class="menu-link"><img class="menu-icon" src="src/images/icons/linkedin.png" alt="">Linkedin</a></li>
-      </ul>
     </nav>
+    <canvas id="particles-js" class="background"></canvas>
+    <header>
+        <img src="public/img/Ivo.jpg" alt="" class="profile">
+        <h1 class="name">Ivo Braatz</h1>
+        <h2 class="description">Student, Web developer and automotive enthusiast</h2>
+        <div class="social-links">
+            <a class="link-icon" href="https://github.com/IvoBraatz"><img src="public/img/logos/github.svg"
+                    alt="logo github"></a>
+            <a class="link-icon" href="https://www.linkedin.com/in/ivo-braatz/"><img src="public/img/logos/linkedin.svg"
+                    alt="logo linkedin"></a>
+            <a class="link-icon" href="https://www.instagram.com/ivo.braatz/"><img src="public/img/logos/instagram.svg"
+                    alt="logo instagram"></a>
+            <a class="link-icon" href="mailto:braatzivo@hotmail.com"><img src="public/img/logos/outlook.svg"
+                    alt="logo outlook"></a>
+            <a class="link-icon" href="https://wa.me/554797486918"><img src="public/img/logos/whatsapp.svg"
+                    alt="logo whatsapp"></a>
+        </div>
+    </header>
+    <div class="section-hello">
+        <div class="container-hello">
+            <div class="content-hello">
+
+                <h1 class="title">Hello World</h1>
+                <h2 class="description">Hi, my name is Ivo, I'm Brazilian, I study software engineering and information
+                    technology management, I also took several programming courses in different languages, including the main
+                    ones: Javascript, C#, MySQL, node.js, npm, Sass, css3, html5. in my free time I'm an automotive enthusiast,
+                    I love cars and technology and I think it's a perfect combination</h2>
+            </div>
+        </div>
     </div>
-  </div>
-  <script>
-      gsap.registerPlugin(Observer);
+    <div class="section">
+        <div class="container" id="timeline">
 
-let sections = document.querySelectorAll("section"),
-  images = document.querySelectorAll(".bg"),
-  headings = gsap.utils.toArray(".section-heading"),
-  outerWrappers = gsap.utils.toArray(".outer"),
-  innerWrappers = gsap.utils.toArray(".inner"),
-  currentIndex = -1,
-  wrap = gsap.utils.wrap(0, sections.length),
-  animating;
+            <h1 class="timeline-title">Timeline</h1>
+            <div class="timeline">
+                <div class="timeline-element">
+                    <span class="timeline-element-icon" style="background-color: #f44336; color: #fff;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z">
+                            </path>
+                        </svg>
+                    </span>
+                    <div class="timeline-element-content">
+                        <h4 class="content-title">Desenvolvedor Back-end c#</h4>
+                        <h5 class="content-subtitle">SENAI - ENTRA 21</h5>
 
-gsap.set(outerWrappers, { yPercent: 100 });
-gsap.set(innerWrappers, { yPercent: -100 });
+                        <div>
+                            <p>Através do programa Entra 21 proporcionado pela Blusoft, tive a oportunidade de aprimorar
+                                meu currículo com a formação de Desenvolvedor Back-end em C#. O curso, realizado no
+                                SENAI/SC, abordou os seguintes tópicos:</p>
+                            <ul class="item-list">
+                                <li>Lógica de Programação</li>
+                                <li>HTML e CSS</li>
+                                <li>JavaScript</li>
+                                <li>Versionamento</li>
+                                <li>C#</li>
+                                <li>Banco de Dados</li>
+                                <li>Softskills em TIC</li>
+                                <li>Metodologias Ágeis</li>
+                                <li>Boas práticas em programação</li>
+                            </ul>
 
-function gotoSection(index, direction) {
-  index = wrap(index); // make sure it's valid
-  animating = true;
-  let fromTop = direction === -1,
-      dFactor = fromTop ? -1 : 1,
-      tl = gsap.timeline({
-        defaults: { duration: 1.25, ease: "power1.inOut" },
-        onComplete: () => animating = false
-      });
-  if (currentIndex >= 0) {
-    // The first time this function runs, current is -1
-    gsap.set(sections[currentIndex], { zIndex: 0 });
-    tl.to(images[currentIndex], { yPercent: -15 * dFactor })
-      .set(sections[currentIndex], { autoAlpha: 0 });
-  }
-  gsap.set(sections[index], { autoAlpha: 1, zIndex: 1 });
-  tl.fromTo([outerWrappers[index], innerWrappers[index]], { 
-      yPercent: i => i ? -100 * dFactor : 100 * dFactor
-    }, { 
-      yPercent: 0 
-    }, 0)
-    .fromTo(images[index], { yPercent: 15 * dFactor }, { yPercent: 0 }, 0)
-    .fromTo(headings[index], { 
-        autoAlpha: 0, 
-        yPercent: 150 * dFactor
-    }, {
-        autoAlpha: 1,
-        yPercent: 0,
-        duration: 1,
-        ease: "power2",
-        stagger: {
-          each: 0.02,
-          from: "random"
-        }
-      }, 0.2);
+                            <span class="timeline-element-date">May 2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-element">
+                    <span class="timeline-element-icon" style="background-color: #0aa0d2; color: #fff;">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            width="24" height="24" viewBox="0 0 24 24">
+                            <path
+                                d="M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z">
+                            </path>
+                        </svg>
+                    </span>
+                    <div class="timeline-element-content">
+                        <h4 class="content-title">English</h4>
 
-  currentIndex = index;
-}
+                        <h5 class="content-subtitle">Open English</h5>
 
-Observer.create({
-  type: "wheel,touch,pointer",
-  wheelSpeed: -1,
-  onDown: () => !animating && gotoSection(currentIndex - 1, -1),
-  onUp: () => !animating && gotoSection(currentIndex + 1, 1),
-  tolerance: 10,
-  preventDefault: true
-});
+                        <div>
+                            <p>
+                                I started studying English to expand my professional career</p>
 
-gotoSection(0, 1);
+                        </div>
+                        <span class="timeline-element-date">January 2024</span>
+                    </div>
+                </div>
 
-</script>
+                <div class="timeline-element">
+                    <span class="timeline-element-icon" style="background-color: #0aa0d2; color: #fff;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z">
+                            </path>
+                        </svg>
+                    </span>
+                    <div class="timeline-element-content">
+                        <h4 class="content-title">Software engineering - Cursando</h4>
+                        <h5 class="content-subtitle">Centro Universitário Leonardo da Vinci</h5>
+
+                        <div>
+                            <p>Iniciado estudos em bacharelado em engenharia de software pelo centro universitario
+                                leonardo da vinci</p>
+
+                            <span class="timeline-element-date">November 2023</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-element">
+                    <span class="timeline-element-icon" style="background-color: #0aa0d2; color: #fff;">
+                        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                            <path class="graphic"
+                                d="M17.328 7.582h-.833v6.206H14.69V7.582h-.832V6.337h3.469v1.245zM12.886 4.36v11.407c0 1.48-1.21 2.245-2.702 2.245-1.49 0-2.71-.647-2.71-1.902 0-.493.404-.892.902-.892a.896.896 0 0 1 .9.892c0 .912.074 1.53.908 1.53.897 0 .897-.62.897-1.873l.001-11.407c0-1.477 1.21-2.243 2.7-2.243 1.491 0 2.711.644 2.711 1.9a.897.897 0 0 1-.902.893.896.896 0 0 1-.9-.892c0-.912-.074-1.53-.908-1.53-.898 0-.898.62-.898 1.872zm-5.41 1.977h1.798l.003 7.447H7.474zM1.993.008v10.067c0 9.062 9.989 13.917 9.989 13.917s10.026-4.855 10.026-13.917V.009z"
+                                fill="#fff" fill-rule="evenodd"></path>
+                        </svg>
+                    </span>
+                    <div class="timeline-element-content">
+                        <h4 class="content-title">Iformation Tecnology management</h4>
+
+                        <h5 class="content-subtitle">Centro Universitário Leonardo da Vinci</h5>
+
+                        <div>
+                            <p>Ao longo da graduação, adquiri conhecimentos em arquitetura de computadores, programação,
+                                segurança em TI, governança de TI, redes de computadores, sistemas distribuídos, banco
+                                de dados, gestão de TI, aspectos legais e éticos, engenharia de software, modelagem de
+                                processos de negócios, big data e finanças em TI. Essa formação me capacita para
+                                implementar e gerenciar sistemas informatizados, projetar soluções de TI e realizar
+                                avaliações técnicas na área de tecnologia da informação.</p>
+
+                        </div>
+                        <span class="timeline-element-date">January 2022</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="section">
+            <div class="container" id="Projects">
+
+                <h1 class="timeline-title">Projects</h1>
+                <div class="projects">
+                    <div class="card" style="background-color: #0aa0d2; color: #fff;">
+                        <div class="card-content">
+                          
+                          <img src="public/img/projects/pah.png" alt="Prestige AutoHaus">
+                          <h4>Prestige AutoHaus</h4>
+                          <div>
+                            <p>This is a fictional webpage for showcasing website development skills. </p>
+              
+                          </div>
+                        </div>
+                        <div class="card-actions">
+                          <a href="https://ivobraatz.github.io/Prestige-Autohaus/" target="_blank" rel="noopener" class="button">
+                            Visite
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="card" style="background-color: #0B1215; color: #fff;">
+                        <div class="card-content">
+                          
+                          <img src="public/img/projects/ECLAT-LOGO.png" alt="Prestige AutoHaus">
+                          <h4>Éclat Éternel</h4>
+                          <div>
+                            <p>This is a fictional webpage for showcasing website development skills. </p>
+              
+                          </div>
+                        </div>
+                        <div class="card-actions">
+                          <a href="https://ivobraatz.github.io/eclat-eternel/" target="_blank" rel="noopener" class="button">
+                            Visite
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="card" style="background-color: #22313f; color: #fff;">
+                        <div class="card-content">
+                          
+                          <img src="public/img/projects/YTLG.png" alt="Prestige AutoHaus">
+                          <h4>Youtools</h4>
+                          <div>
+                            <p>This is a fictional webpage for showcasing website development skills. </p>
+              
+                          </div>
+                        </div>
+                        <div class="card-actions">
+                          <a href="https://ivobraatz.github.io/passwd-generator/" target="_blank" rel="noopener" class="button">
+                            Visite
+                          </a>
+                        </div>
+                      </div>
+                      <div class="card" style="background-color: #22313f; color: #fff;">
+                        <div class="card-content">
+                          
+                          <img src="public/img/icons/progress.png" alt="Prestige AutoHaus">
+                          <h4>Em breve</h4>
+                          <div>
+                            <p>Em constante desenvolvimento, novos projetos apareceram em breve</p>
+              
+                          </div>
+                        </div>
+                        <div class="card-actions">
+                          <a href="#" target="_blank" rel="noopener" class="button">
+                            Visite
+                          </a>
+                        </div>
+                      </div>
+                </div>
+        </div>
+        <footer>
+            <div class="container footer-sections">
+              <div class="footer-section">
+                <h2>Contact me</h2>
+                <ul>
+                  
+                    <li>
+                      <span class="social-label">Email: </span>
+                      <a href="mailto:braatzivo@hotmail.com" target="_blank" rel="me noopener" data-umami-event="mail-social-footer">
+                        braatzivo@hotmail.com
+                      </a>
+                    </li>
+                  
+                    <li>
+                      <span class="social-label">whatsapp: </span>
+                      <a href="https://wa.me/554797486918" target="_blank" rel="me noopener" data-umami-event="discord-social-footer">
+                        Ivo Braatz
+                      </a>
+                    </li>
+                  
+                    <li>
+                      <span class="social-label">Github: </span>
+                      <a href="https://github.com/IvoBraatz" target="_blank" rel="me noopener" data-umami-event="matrix-social-footer">
+                        github.com/IvoBraatz
+                      </a>
+                    </li>
+                  
+                    <li>
+                      <span class="social-label">MInstagram </span>
+                      <a href="https://www.instagram.com/ivo.braatz/" target="_blank" rel="me noopener" data-umami-event="mastodon-social-footer">
+                        ivo.braatz
+                      </a>
+                    </li>
+                  
+                </ul>
+              </div>
+              <div class="footer-section">
+                <h2>Site map</h2>
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Impossible List</a></li>
+                  <li><a href="#">CV</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="copyright">
+              <div class="container">
+                <p class="copyright-text">&copy; 2023-2024 Ivo Braatz</p>
+                <p>
+                </p>
+              </div>
+            </div>
+          </footer>
+        <script>
+            window.onload = function () {
+                Particles.init({
+                    selector: '.background'
+                });
+            };
+        </script>
+        <script src="public/js/particles.js"></script>
 </body>
+
 </html>
