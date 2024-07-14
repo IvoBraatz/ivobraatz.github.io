@@ -19,6 +19,11 @@ body {
   padding: 0;
 }
 
+html {
+    scrollbar-width:none;
+    scrollbar-color: transparent transparent 
+}
+
 .navbar {
     position: fixed;
     width: 100%;
@@ -132,6 +137,10 @@ header{
     font-size: 2rem;
 }
 
+.description{
+    line-height: 1rem;
+    margin-top: .6rem;
+}
 
 #particles-js {
     position: fixed;
@@ -392,27 +401,3 @@ footer .copyright .container{
 .social-label{
     color: #fff;
 }
-
-/* @media only screen and (min-width: 1170px){
-    .timeline{
-        margin: 3em auto;
-        width: 90%;
-    }
-
-    .timeline-element-date{
-        position: absolute;
-        left: 124%;
-        top: 6px;
-    }
-    .timeline-element-content{
-        width: 44%;
-        padding: 1.5em;
-        margin-left: 0;
-    }
-    .timeline-element-icon{
-        width: 60px;
-        height: 60px;
-        left: 50%;
-        margin-left: -30px;
-    }
-} */
