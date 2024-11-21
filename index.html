@@ -1,321 +1,272 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/style.css">
-    <link rel="shortcut icon" href="public/img/Ivo.jpg" type="image/x-icon">
-    <title>Ivo Braatz</title>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./src/css/styles.css">
 </head>
-
 <body>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <h1 href="#" class="navbar-logo">Ivo</h1>
-            <ul class="navbar-menu">
-                <li class="navbar-item"><a href="#home" class="navbar-link">Home</a></li>
-                <li class="navbar-item"><a href="#timeline" class="navbar-link">Timeline</a></li>
-                <li class="navbar-item"><a href="#Projects" class="navbar-link">Projects</a></li>
-                <li class="navbar-item"><a href="#contact" class="navbar-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-    <canvas id="particles-js" class="background"></canvas>
+    <div class="vertical-social">
+        <div class="vertical-line"></div>
+        <a href="https://github.com" target="_blank" class="social-icon">
+            <img src="./src/img/icons/Github.png" alt="GitHub">
+        </a>
+        <a href="https://dribbble.com" target="_blank" class="social-icon">
+            <img src="./src/img/icons/WhatsApp.png" alt="whatsapp">
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon">
+            <img src="./src/img/icons/Gmail.png" alt="gmail">
+        </a>
+    </div>
+    
     <header>
-        <img src="public/img/Ivo.webp" alt="" class="profile">
-        <h1 class="name">Ivo Braatz</h1>
-        <h2 class="description">Student, Web developer and automotive enthusiast</h2>
-        <div class="social-links">
-            <a class="link-icon" href="https://github.com/IvoBraatz"><img src="public/img/logos/github.svg"
-                    alt="logo github"></a>
-            <a class="link-icon" href="https://www.linkedin.com/in/ivo-braatz/"><img src="public/img/logos/linkedin.svg"
-                    alt="logo linkedin"></a>
-            <a class="link-icon" href="https://www.instagram.com/ivo.braatz/"><img src="public/img/logos/instagram.svg"
-                    alt="logo instagram"></a>
-            <a class="link-icon" href="mailto:braatzivo@hotmail.com"><img src="public/img/logos/outlook.svg"
-                    alt="logo outlook"></a>
-            <a class="link-icon" href="https://wa.me/554797486918"><img src="public/img/logos/whatsapp.svg"
-                    alt="logo whatsapp"></a>
+        <div class="container">
+            <div class="container-header">
+                <div class="container-header__logo">
+                    <img src="./src/img/icons/prog.png" alt="Logo">
+                    braatz
+                </div>
+                <nav class="container-header__nav">
+                    <ul class="header-links">
+                        <li><a class="header-links__link active" href="/#"><span class="link-emphasis">#</span>Home</a></li>
+                        <li><a class="header-links__link" href="/about"><span class="link-emphasis">#</span>About</a></li>
+                        <li><a class="header-links__link" href="/services"><span class="link-emphasis">#</span>Services</a></li>
+                        <li><a class="header-links__link" href="/contact"><span class="link-emphasis">#</span>Contact</a></li>
+                    </ul>                    
+                </nav>
+            </div>
         </div>
     </header>
-    <div class="section-hello">
-        <div class="container-hello">
-            <div class="content-hello">
-
-                <h1 class="title">Hello World</h1>
-                <h2 class="description">Meu chamo Ivo, sou brasileiro, estudo engenharia de software e gestão de tecnologia da informação, também fiz vários cursos de programação em diferentes linguagens, incluindo as principais: Javascript, C#, MySQL, node.js, npm, Sass, css3, html5. No meu tempo livre, sou entusiasta automotivo, adoro carros e tecnologia e acho que é uma combinação perfeita.</h2>
+    
+    <section class="hero">
+        <div class="container">
+            <div class="container-hero">
+                <!-- Texto principal -->
+                <div class="hero-content">
+                    <h1>am i a <span class="highlight">web designer</span> and <br> <span class="highlight">full stack developer</span></h1>
+                    <p class="hero-description">
+                        He crafts responsive websites where technologies <br>
+                        meet creativity.
+                    </p>
+                    <button class="hero-button">Contact me !!</button>
+                </div>
+    
+                <!-- Imagem -->
+                <div class="hero-image-container">
+                    <img src="./src/img/image.png" alt="Person" class="hero-image">
+                    <div class="hero-status">
+                        <p>Currently working on <strong>Portfolio</strong><span>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="section">
-        <div class="container" id="timeline">
-
-            <h1 class="timeline-title">Timeline</h1>
-            <div class="timeline">
-                <div class="timeline-element">
-                    <span class="timeline-element-icon" style="background-color: #f44336; color: #fff;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z">
-                            </path>
-                        </svg>
-                    </span>
-                    <div class="timeline-element-content">
-                        <h4 class="content-title">Desenvolvedor Back-end c#</h4>
-                        <h5 class="content-subtitle">SENAI - ENTRA 21</h5>
-
-                        <div>
-                            <p>Através do programa Entra 21 proporcionado pela Blusoft, tive a oportunidade de aprimorar
-                                meu currículo com a formação de Desenvolvedor Back-end em C#. O curso, realizado no
-                                SENAI/SC, abordou os seguintes tópicos:</p>
-                            <ul class="item-list">
-                                <li>Lógica de Programação</li>
-                                <li>HTML e CSS</li>
-                                <li>JavaScript</li>
-                                <li>Versionamento</li>
-                                <li>C#</li>
-                                <li>Banco de Dados</li>
-                                <li>Softskills em TIC</li>
-                                <li>Metodologias Ágeis</li>
-                                <li>Boas práticas em programação</li>
-                            </ul>
-
-                            <span class="timeline-element-date">May 2024</span>
+    </section>
+    
+    <section class="quote-section">
+        <div class="container">
+            <blockquote class="quote">
+                <p>With great power comes great electricity bill</p>
+                <div class="author">
+                    <span>- Dr. Who</span>
+                </div>
+            </blockquote>
+        </div>
+    </section>
+    
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="projects-header">
+                <h2><span class="link-emphasis">#</span>projects</h2>
+                <a href="#" class="view-all">View all ➝</a>
+            </div>
+            <div class="projects-grid">
+                <!-- Card 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./src/img/projects/trendcard.png" alt="ChertNodes">
+                    </div>
+                    <div class="project-content">
+                        <p class="project-tags">HTML SCSS Python Flask</p>
+                        <div class="content-project-card">
+                            <h3 class="project-title">ChertNodes</h3>
+                            <p class="project-description">Minecraft servers hosting</p>
+                            <div class="project-buttons">
+                                <a href="#" class="button live">Live</a>
+                                <a href="#" class="button cached">Cached</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="timeline-element">
-                    <span class="timeline-element-icon" style="background-color: #0aa0d2; color: #fff;">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-                            width="24" height="24" viewBox="0 0 24 24">
-                            <path
-                                d="M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z">
-                            </path>
-                        </svg>
-                    </span>
-                    <div class="timeline-element-content">
-                        <h4 class="content-title">English</h4>
-
-                        <h5 class="content-subtitle">Open English</h5>
-
-                        <div>
-                            <p>
-                                Inicie meus estudos em inglês já com conhecimento basico da lingua, para me desenvolver pessoalmente e profissionalmente no mercado de trabalho.</p>
-
-                        </div>
-                        <span class="timeline-element-date">January 2024</span>
+                <!-- Card 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./src/img/projects/eclatcard.png" alt="ProtectX">
                     </div>
-                </div>
-
-                <div class="timeline-element">
-                    <span class="timeline-element-icon" style="background-color: #0aa0d2; color: #fff;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z">
-                            </path>
-                        </svg>
-                    </span>
-                    <div class="timeline-element-content">
-                        <h4 class="content-title">Software engineering - Cursando</h4>
-                        <h5 class="content-subtitle">Centro Universitário Leonardo da Vinci</h5>
-
-                        <div>
-                            <p>Iniciado estudos em bacharelado em engenharia de software pelo centro universitario
-                                leonardo da vinci</p>
-
-                            <span class="timeline-element-date">November 2023</span>
+                    <div class="project-content">
+                        <p class="project-tags">React Express Discord.js Node.js</p>
+                        <div class="content-project-card">
+                            <h3 class="project-title">ProtectX</h3>
+                            <p class="project-description">Discord anti-crash bot</p>
+                            <div class="project-buttons">
+                                <a href="#" class="button live">Live</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="timeline-element">
-                  <span class="timeline-element-icon" style="background-color: #9CD917; color: #fff;">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z"></path></svg>
-                  </span>
-                  <div class="timeline-element-content">
-                      <h4 class="content-title">Field Service Analyst</h4>
-
-                      <h5 class="content-subtitle">Eiti Soluções</h5>
-
-                      <div>
-                          <p>Analista de Field Service na Eiti Soluções, especializado em suporte ao usuário, help-desk como OTRS e monitoramento com Zabbix, habilidades em Active Directory, Cloud Computing e Service Desk, SQL, programação. Eficiencia em solução de problemas e colaborador em equipes multidisciplinares.</p>
-
-                      </div>
-                      <span class="timeline-element-date">May 2022</span>
-                  </div>
-              </div>
-                <div class="timeline-element">
-                    <span class="timeline-element-icon" style="background-color: #0aa0d2; color: #fff;">
-                        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                            <path class="graphic"
-                                d="M17.328 7.582h-.833v6.206H14.69V7.582h-.832V6.337h3.469v1.245zM12.886 4.36v11.407c0 1.48-1.21 2.245-2.702 2.245-1.49 0-2.71-.647-2.71-1.902 0-.493.404-.892.902-.892a.896.896 0 0 1 .9.892c0 .912.074 1.53.908 1.53.897 0 .897-.62.897-1.873l.001-11.407c0-1.477 1.21-2.243 2.7-2.243 1.491 0 2.711.644 2.711 1.9a.897.897 0 0 1-.902.893.896.896 0 0 1-.9-.892c0-.912-.074-1.53-.908-1.53-.898 0-.898.62-.898 1.872zm-5.41 1.977h1.798l.003 7.447H7.474zM1.993.008v10.067c0 9.062 9.989 13.917 9.989 13.917s10.026-4.855 10.026-13.917V.009z"
-                                fill="#fff" fill-rule="evenodd"></path>
-                        </svg>
-                    </span>
-                    <div class="timeline-element-content">
-                        <h4 class="content-title">Iformation Tecnology management</h4>
-
-                        <h5 class="content-subtitle">Centro Universitário Leonardo da Vinci</h5>
-
-                        <div>
-                            <p>Ao longo da graduação, adquiri conhecimentos em arquitetura de computadores, programação,
-                                segurança em TI, governança de TI, redes de computadores, sistemas distribuídos, banco
-                                de dados, gestão de TI, aspectos legais e éticos, engenharia de software, modelagem de
-                                processos de negócios, big data e finanças em TI. Essa formação me capacita para
-                                implementar e gerenciar sistemas informatizados, projetar soluções de TI e realizar
-                                avaliações técnicas na área de tecnologia da informação.</p>
-
+                <!-- Card 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./src/img/projects/advocatecard.png" alt="Kahoot Answers Viewer">
+                    </div>
+                    <div class="project-content">
+                        <p class="project-tags">CSS Express Node.js</p>
+                        <div class="content-project-card">
+                            <h3 class="project-title">Kahoot Answers Viewer</h3>
+                            <p class="project-description">Get answers to your kahoot quiz</p>
+                            <div class="project-buttons">
+                                <a href="#" class="button live">Live</a>
+                            </div>
                         </div>
-                        <span class="timeline-element-date">January 2022</span>
                     </div>
                 </div>
-          </div>
-
+            </div>
+        </div>
+    </section>
+    
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <!-- Header -->
+            <div class="skills-header">
+                <h2><span class="link-emphasis">#</span>skills</h2>
             </div>
             
-        </div>
-        <div class="section">
-            <div class="container" id="Projects">
-
-                <h1 class="timeline-title">Projects</h1>
-                <div class="projects">
-                    <div class="card" style="background-color: #0aa0d2; color: #fff;">
-                        <div class="card-content">
-                          
-                          <img src="public/img/projects/pah.webp" alt="Prestige AutoHaus">
-                          <h4 class="content-title">Prestige AutoHaus</h4>
-                          <div>
-                            <p>Está é uma pagina ficticia desenvolvida apenas para exibir minhas habilidades em programação focadas no front-end.</p>
-              
-                          </div>
-                        </div>
-                        <div class="card-actions">
-                          <a href="https://ivobraatz.github.io/Prestige-Autohaus/" target="_blank" rel="noopener" class="button">
-                            Visite
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="card" style="background-color: #0B1215; color: #fff;">
-                        <div class="card-content">
-                          
-                          <img src="public/img/projects/ECLAT-LOGO.webp" alt="Prestige AutoHaus">
-                          <h4 class="content-title">Éclat Éternel</h4>
-                          <div>
-                            <p>Está é uma pagina ficticia desenvolvida apenas para exibir minhas habilidades em programação focadas no front-end.</p>
-              
-                          </div>
-                        </div>
-                        <div class="card-actions">
-                          <a href="https://eclat-eternel.up.railway.app/" target="_blank" rel="noopener" class="button">
-                            Visite
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="card" style="background-color: #22313f; color: #fff;">
-                        <div class="card-content">
-                          
-                          <img src="public/img/projects/YTLG.webp" alt="Youtools">
-                          <h4 class="content-title">Youtools</h4>
-                          <div>
-                            <p>Gerador de senhas seguras para uso pessoal e empresarial. </p>
-              
-                          </div>
-                        </div>
-                        <div class="card-actions">
-                          <a href="https://ivobraatz.github.io/passwd-generator/" target="_blank" rel="noopener" class="button">
-                            Visite
-                          </a>
-                        </div>
-                      </div>
-                      <div class="card" style="background-color: #a80000; color: #fff;">
-                        <div class="card-content">
-                          
-                          <img src="public/img/projects/fow.webp" alt="Fow">
-                          <h4 class="content-title">Fow</h4>
-                          <div>
-                            <p>Site e Ecommerce para entusiastas automotivos.</p>
-              
-                          </div>
-                        </div>
-                        <div class="card-actions">
-                          <a href="https://fow-garage.up.railway.app/" target="_blank" rel="noopener" class="button">
-                            Visite
-                          </a>
-                        </div>
-                      </div>
-                      <div class="card" style="background-color: #858585; color: #fff;">
-                        <div class="card-content">
-                          
-                          <img src="public/img/icons/progress.png" alt="Em breve">
-                          <h4>Em breve</h4>
-                          <div>
-                            <p>Em constante desenvolvimento, novos projetos apareceram em breve.</p>
-              
-                          </div>
-                        </div>
-                        <div class="card-actions">
-                          <a href="#" target="_blank" rel="noopener" class="button">
-                            Visite
-                          </a>
-                        </div>
-                      </div>
+            <!-- Skills Grid -->
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <h3>Languages</h3>
+                    <p>TypeScript Lua</p>
+                    <p>Python JavaScript</p>
                 </div>
+                <div class="skill-box">
+                    <h3>Databases</h3>
+                    <p>SQLite PostgreSQL</p>
+                    <p>Mongo</p>
+                </div>
+                <div class="skill-box">
+                    <h3>Tools</h3>
+                    <p>VSCode Neovim Linux</p>
+                    <p>Figma XFCE Arch</p>
+                    <p>Git Font Awesome</p>
+                </div>
+                <div class="skill-box">
+                    <h3>Other</h3>
+                    <p>HTML CSS EJS SCSS</p>
+                    <p>REST Jinja</p>
+                </div>
+                <div class="skill-box">
+                    <h3>Frameworks</h3>
+                    <p>React Vue</p>
+                    <p>Disnake Discord.js</p>
+                    <p>Flask Express.js</p>
+                </div>
+            </div>
         </div>
-        <footer>
-            <div class="container footer-sections" id="contact">
-              <div class="footer-section">
-                <h2>Contact me</h2>
-                <ul>
-                  
-                    <li>
-                      <span class="social-label">Email: </span>
-                      <a href="mailto:braatzivo@hotmail.com" target="_blank" rel="me noopener" data-umami-event="mail-social-footer">
-                        braatzivo@hotmail.com
-                      </a>
-                    </li>
-                  
-                    <li>
-                      <span class="social-label">Github: </span>
-                      <a href="https://github.com/IvoBraatz" target="_blank" rel="me noopener" data-umami-event="matrix-social-footer">
-                        github.com/IvoBraatz
-                      </a>
-                    </li>
+    </section>
+    
+    <section class="about-section" id="about-me">
+        <div class="container">
+            <!-- Header -->
+            <div class="about-header">
+                <h2><span class="link-emphasis">#</span>about-me</h2>
+            </div>
+            
+            <div class="about-content">
+                <!-- Texto -->
+                <div class="about-text">
+                    <p>Hello, I’m Elias!</p>
+                    <p>
+                        I’m a self-taught front-end developer based in Kyiv, Ukraine. I can develop responsive websites from
+                        scratch and raise them into modern user-friendly web experiences.
+                    </p>
+                    <p>
+                        Transforming my creativity and knowledge into websites has been my passion for over a year. I have been
+                        helping various clients to establish their presence online. I always strive to learn about the newest
+                        technologies and frameworks.
+                    </p>
+                    <a href="#" class="about-button">Read more ➝</a>
+                </div>
+    
+                <!-- Imagem -->
+                <div class="about-image">
+                    <img src="./src/img/el.png" alt="Elias">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contacts-section" id="contacts">
+        <div class="container">
+            <!-- Header -->
+            <div class="contacts-header">
+                <h2><span class="link-emphasis">#</span>contacts</h2>
+            </div>
+            
+            <div class="contacts-content">
+                <!-- Texto -->
+                <div class="contact-text">
+                    <p>
+                        I'm interested in freelance opportunities. However, if you have other requests or questions, don't
+                        hesitate to contact me.
+                    </p>
+                </div>
+    
+                <!-- Informações de Contato -->
+                <div class="contact-info">
+                    <h3>Message me here</h3>
+                    <p>📧 <span>elias@elias.me</span></p>
+                    <p>💬 <span>@Elias#3519</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="container-footer__logo">
+                        <img src="./src/img/icons/prog.png" alt="Logo">
+                        <p> braatz <span>elias@elias-dev.ml</span></p>
+                    </div>
+                    <p>Web designer and front-end developer</p>
+                </div>
+                <div class="footer-media">
+                    <h3>Media</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="./src/img/icons/Github.png" alt="GitHub"></a>
+                        <a href="#"><img src="./src/img/icons/Gmail.png" alt="Email"></a>
+                        <a href="#"><img src="./src/img/icons/WhatsApp.png" alt="WhatsApp"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Copyright 2024. Made by Element</p>
+            </div>
+        </div>
+    </footer>
+    
 
-                    <li>
-                      <span class="social-label">whatsapp: </span>
-                      <a href="https://wa.me/554797486918" target="_blank" rel="me noopener" data-umami-event="discord-social-footer">
-                        Ivo Braatz
-                      </a>
-                    </li>
-                  
-                    <li>
-                      <span class="social-label">Instagram </span>
-                      <a href="https://www.instagram.com/ivo.braatz/" target="_blank" rel="me noopener" data-umami-event="mastodon-social-footer">
-                        ivo.braatz
-                      </a>
-                    </li>
-                  
-                </ul>
-              </div>
-            </div>
-            <div class="copyright">
-              <div class="container">
-                <p class="copyright-text">&copy; 2023-2024 Ivo Braatz</p>
-                <p>
-                </p>
-              </div>
-            </div>
-          </footer>
-        <script>
-            window.onload = function () {
-                Particles.init({
-                    selector: '.background'
-                });
-            };
-        </script>
-        <script src="public/js/particles.js"></script>
+    <script>
+        const links = document.querySelectorAll('.header-links__link');
+
+        links.forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+
+    </script>
 </body>
-
 </html>

@@ -1,0 +1,78 @@
+/* Quote Section */
+.quote-section {
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    height: 10vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Estilo do blockquote */
+.quote {
+    position: relative;
+    border: 1px solid #aaa;
+    padding: 1.5rem 2rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ccc;
+    font-family: 'Courier New', Courier, monospace;
+    display: inline-block;
+    width: fit-content;
+}
+
+.quote p {
+    margin: 0;
+    padding-right: 4rem; /* Espaço para alinhar o autor */
+}
+
+.quote .author {
+    padding: 1rem;
+    position: absolute;
+    border: 1px solid #aaa;
+    bottom: -4.555rem;
+    right: 1rem;
+    font-size: 1rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quote .author::before,
+.quote .author::after {
+    content: '“';
+    font-size: 1.5rem;
+    color: #888;
+}
+
+.quote .author::after {
+    content: '”';
+}
+
+/* Aspas estilizadas */
+.quote::before,
+.quote::after {
+    content: '“';
+    font-size: 2rem;
+    color: #aaa;
+    position: absolute;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.quote::before {
+    top: -1rem;
+    left: -1rem;
+}
+
+.quote::after {
+    content: '”';
+    bottom: -1rem;
+    right: -1rem;
+}

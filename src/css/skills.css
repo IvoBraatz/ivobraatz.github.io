@@ -1,0 +1,76 @@
+/* Skills Section */
+.skills-section {
+    color: #fff;
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.skills-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.skills-header h2 {
+    font-size: 2rem;
+    position: relative;
+    padding-right: 1.5rem;
+}
+
+.skills-header h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 1px;
+    background-color: #a49de0;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Três colunas para organizar o layout */
+    gap: 2rem;
+    justify-content: center;
+    margin: 4rem 0;
+}
+
+.skill-box {
+    border: 1px solid var(--grey-color);
+    padding: 1.2rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.skill-box h3 {
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--grey-color);
+    color: #a49de0;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.skill-box p {
+    font-size: 1rem;
+    color: #ccc;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* Ajusta para uma única coluna em telas menores */
+    }
+}
