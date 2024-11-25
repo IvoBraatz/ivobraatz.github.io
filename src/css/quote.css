@@ -5,13 +5,7 @@
     justify-content: center;
     align-items: center;
     color: #fff;
-    height: 10vh;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 1rem;
+    min-height: 15vh; /* Altura mínima */
 }
 
 /* Estilo do blockquote */
@@ -24,25 +18,37 @@
     color: #ccc;
     font-family: 'Courier New', Courier, monospace;
     display: inline-block;
-    width: fit-content;
+    max-width: 600px; /* Limita a largura */
+    width: 100%; /* Ocupa a largura disponível */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Texto principal */
 .quote p {
     margin: 0;
     padding-right: 4rem; /* Espaço para alinhar o autor */
+    text-align: center;
 }
 
+/* Autor */
 .quote .author {
     padding: 1rem;
     position: absolute;
-    border: 1px solid #aaa;
-    bottom: -4.555rem;
+    bottom: -3rem;
     right: 1rem;
     font-size: 1rem;
     color: #888;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.5rem; /* Espaço entre o texto e as aspas */
+    border: 1px solid #aaa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
+    text-align: center;
+}
+
+.quote .author span {
+    font-weight: bold;
+    color: #a49de0; /* Cor para o autor */
 }
 
 .quote .author::before,
@@ -75,4 +81,54 @@
     content: '”';
     bottom: -1rem;
     right: -1rem;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .quote {
+        padding: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .quote .author {
+        bottom: -2.5rem;
+        right: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .quote::before,
+    .quote::after {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .quote {
+        padding: 1.2rem;
+        font-size: 1rem;
+        max-width: 90%; /* Reduz largura para telas menores */
+    }
+
+    .quote .author {
+        position: static; /* Alinha o autor diretamente abaixo */
+        margin-top: 1rem;
+        border: none; /* Remove borda em telas menores */
+        box-shadow: none; /* Remove sombra em telas menores */
+    }
+
+    .quote::before,
+    .quote::after {
+        display: none; /* Remove aspas estilizadas em telas pequenas */
+    }
+}
+
+@media (max-width: 480px) {
+    .quote {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .quote .author {
+        font-size: 0.8rem;
+    }
 }

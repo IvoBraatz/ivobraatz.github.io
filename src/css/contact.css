@@ -37,36 +37,124 @@
     flex-wrap: wrap;
 }
 
+/* Contact Text */
 .contact-text {
     flex: 1;
     max-width: 600px;
     font-size: 1rem;
     color: #ccc;
+    line-height: 1.6;
 }
 
+.contact-text p {
+    margin-bottom: 1rem;
+}
+
+/* Contact Info */
 .contact-info {
     flex: 1;
     max-width: 300px;
     border: 1px solid var(--grey-color);
     padding: 1.5rem;
     text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para realce */
 }
 
 .contact-info h3 {
     font-size: 1.2rem;
     color: #a49de0;
     margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
 .contact-info p {
     font-size: 1rem;
     color: #ccc;
     margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espaço entre ícone e texto */
+}
+
+.contact-info span {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .contacts-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .contacts-header h2::after {
+        width: 80px; /* Reduz linha decorativa */
+    }
+
+    .contacts-content {
+        gap: 1.5rem;
+    }
+
+    .contact-text {
+        font-size: 0.95rem;
+    }
+
+    .contact-info {
+        max-width: 100%; /* Alinha melhor em telas médias */
+    }
 }
 
 @media (max-width: 768px) {
     .contacts-content {
         flex-direction: column;
         text-align: center;
+        gap: 2rem;
+    }
+
+    .contact-info {
+        padding: 1rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .contact-info p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacts-header h2 {
+        font-size: 1.6rem;
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .contacts-header h2::after {
+        display: none; /* Remove linha decorativa em telas pequenas */
+    }
+
+    .contacts-content {
+        gap: 1.5rem;
+    }
+
+    .contact-text {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .contact-info {
+        padding: 0.8rem;
+        text-align: center; /* Centraliza texto para telas pequenas */
+    }
+
+    .contact-info h3 {
+        font-size: 1rem;
+    }
+
+    .contact-info p {
+        font-size: 0.85rem;
+        gap: 0.3rem; /* Reduz espaço entre ícone e texto */
     }
 }

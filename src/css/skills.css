@@ -38,7 +38,7 @@
 /* Skills Grid */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Três colunas para organizar o layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta dinamicamente com base no espaço */
     gap: 2rem;
     justify-content: center;
     margin: 4rem 0;
@@ -51,6 +51,12 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .skill-box h3 {
@@ -69,8 +75,68 @@
 }
 
 /* Responsividade */
+@media (max-width: 1024px) {
+    .skills-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .skills-header h2::after {
+        width: 200px; /* Reduz a linha decorativa */
+    }
+
+    .skill-box {
+        padding: 1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .skills-grid {
-        grid-template-columns: 1fr; /* Ajusta para uma única coluna em telas menores */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta para se adaptar a telas menores */
+    }
+
+    .skills-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .skill-box h3 {
+        font-size: 1.1rem;
+    }
+
+    .skill-box p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .skills-header h2 {
+        font-size: 1.5rem;
+        padding-right: 0;
+    }
+
+    .skills-header h2::after {
+        display: none; /* Remove a linha decorativa em telas muito pequenas */
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr; /* Uma coluna para telas muito pequenas */
+        gap: 1.5rem;
+    }
+
+    .skill-box {
+        padding: 0.8rem;
+    }
+
+    .skill-box h3 {
+        font-size: 1rem;
+    }
+
+    .skill-box p {
+        font-size: 0.85rem;
     }
 }

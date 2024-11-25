@@ -4,12 +4,6 @@
     padding: 4rem 2rem;
 }
 
-.container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
 /* Hero Layout */
 .container-hero {
     display: flex;
@@ -66,9 +60,6 @@
 }
 
 .hero-image {
-    background-image: url(../img/Group\ 46.png);
-    background-position: center;
-    background-repeat: no-repeat;
     max-width: 100%;
     height: auto;
     border-radius: 10px;
@@ -101,13 +92,83 @@
 }
 
 /* Responsividade */
+@media (max-width: 1024px) {
+    .container-hero {
+        gap: 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .hero-button {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.3rem;
+    }
+
+    .hero-status {
+        width: 18rem;
+    }
+}
+
 @media (max-width: 768px) {
     .container-hero {
         flex-direction: column;
         text-align: center;
     }
 
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content .hero-description {
+        font-size: 0.9rem;
+    }
+
+    .hero-button {
+        font-size: 0.85rem;
+        padding: 0.6rem 1.2rem;
+    }
+
     .hero-image-container {
         margin-top: 2rem;
+    }
+
+    .hero-status {
+        width: 16rem;
+        bottom: -20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-hero {
+        gap: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content .hero-description {
+        font-size: 0.85rem;
+    }
+
+    .hero-button {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .hero-status {
+        width: 14rem;
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
     }
 }

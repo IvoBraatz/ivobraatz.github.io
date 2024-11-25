@@ -16,7 +16,8 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
-    position: relative;
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+    gap: 1rem;
 }
 
 .projects-header h2 {
@@ -47,11 +48,10 @@
     color: #fff;
 }
 
-
 /* Projects Grid */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adapta o número de colunas automaticamente */
     gap: 2rem;
 }
 
@@ -72,7 +72,7 @@
 /* Image */
 .project-image img {
     width: 100%;
-    height: 350px;
+    height: 250px; /* Ajusta a altura para ser mais responsiva */
     object-fit: cover;
     border-bottom: 1px solid var(--grey-color);
 }
@@ -86,20 +86,20 @@
 
 .project-tags {
     font-size: 0.9rem;
-    padding: .5rem;
+    padding: 0.5rem;
     color: #aaa;
     border-bottom: 1px solid var(--grey-color);
 }
 
-.content-project-card{
+.content-project-card {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
-    padding: .5rem;
+    gap: 0.5rem;
+    padding: 0.5rem;
 }
 
 .project-title {
-    margin: .4rem 0;
+    margin: 0.4rem 0;
     font-size: 1.5rem;
     color: #fff;
 }
@@ -143,4 +143,77 @@
 .button.cached:hover {
     background-color: var(--grey-color);
     color: var(--text-color-black);
+}
+
+/* Responsividade com Media Queries */
+@media (max-width: 1024px) {
+    .projects-header {
+        flex-direction: column;
+        align-items: flex-start; /* Alinha o texto à esquerda */
+        gap: 1rem;
+    }
+
+    .projects-header h2 {
+        font-size: 1.8rem; /* Reduz o tamanho do texto */
+    }
+
+    .projects-header h2::after {
+        width: 150px; /* Reduz a linha decorativa */
+    }
+
+    .projects-header .view-all {
+        font-size: 0.9rem;
+    }
+
+    .project-image img {
+        height: 200px; /* Reduz altura da imagem */
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-header {
+        align-items: center; /* Centraliza o texto */
+        text-align: center;
+    }
+
+    .projects-header h2 {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .projects-header h2::after {
+        display: none; /* Remove a linha decorativa em telas muito pequenas */
+    }
+
+    .projects-header .view-all {
+        font-size: 0.8rem;
+    }
+
+    .project-image img {
+        height: 180px; /* Ajusta a altura da imagem para dispositivos menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-header {
+        gap: 0.5rem;
+    }
+
+    .projects-header h2 {
+        font-size: 1.5rem; /* Reduz o tamanho do título */
+    }
+
+    .project-card {
+        flex-direction: column;
+    }
+
+    .project-buttons {
+        flex-direction: column; /* Alinha os botões verticalmente */
+        gap: 0.5rem;
+    }
+
+    .button {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem; /* Reduz o tamanho dos botões */
+    }
 }
