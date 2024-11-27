@@ -7,9 +7,22 @@
     <link rel="stylesheet" href="./src/css/styles.css">
 </head>
 <body>
+    <canvas id="particles-js" class="background"></canvas>
+    <div class="vertical-social fade-in">
+        <div class="vertical-line"></div>
+        <a href="https://github.com" target="_blank" class="social-icon">
+            <img src="./src/img/icons/Github.png" alt="GitHub">
+        </a>
+        <a href="https://dribbble.com" target="_blank" class="social-icon">
+            <img src="./src/img/icons/WhatsApp.png" alt="WhatsApp">
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon">
+            <img src="./src/img/icons/Gmail.png" alt="Gmail">
+        </a>
+    </div>
     <header>
         <div class="container">
-            <div class="container-header">
+            <div class="container-header fade-in">
                 <div class="container-header__logo">
                     <img src="./src/img/icons/prog.png" alt="Logo">
                     braatz
@@ -27,16 +40,16 @@
     </header>
 
     <main>
-        <section class="projects-section" id="projects">
+        <section class="projects-section fade-in" id="projects">
             <div class="container">
                 <div class="projects-header">
-                    <h2><span class="link-emphasis">#</span>projetos</h2>
+                    <h2><span class="link-emphasis">#</span>grandes projetos</h2>
                     <a href="#" class="view-all">Ver todos ➝</a>
                 </div>
-                <div class="projects-grid">
+                <div class="projects-grid fade-in">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="./src/img/projects/fow.webp" alt="ChertNodes">
+                            <img src="./src/img/projects/fow.webp" alt="Fow Garage">
                         </div>
                         <div class="project-content">
                             <p class="project-tags">Javascript, EJS, CSS, MySQL...</p>
@@ -51,7 +64,7 @@
                     </div>
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="./src/img/projects/trendcard.png" alt="ChertNodes">
+                            <img src="./src/img/projects/trendcard.png" alt="TrendSETTERS">
                         </div>
                         <div class="project-content">
                             <p class="project-tags">Javascript, EJS, CSS, MySQL...</p>
@@ -66,7 +79,7 @@
                     </div>
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="./src/img/projects/eclatcard.png" alt="ProtectX">
+                            <img src="./src/img/projects/eclatcard.png" alt="Eclát Éternel">
                         </div>
                         <div class="project-content">
                             <p class="project-tags">Javascript, EJS, CSS, MySQL...</p>
@@ -79,9 +92,23 @@
                             </div>
                         </div>
                     </div>
+                    
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-section fade-in" id="projects">
+            <div class="container">
+                <div class="projects-header">
+                    <h2><span class="link-emphasis">#</span>pequenos projetos</h2>
+                    <a href="#" class="view-all">Ver todos ➝</a>
+                </div>
+                <div class="projects-grid">
+                    
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="./src/img/projects/arka1.png" alt="ChertNodes">
+                            <img src="./src/img/projects/arka1.png" alt="ARKA3D">
                         </div>
                         <div class="project-content">
                             <p class="project-tags">HTML, CSS and JavaScript</p>
@@ -96,15 +123,30 @@
                     </div>
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="./src/img/projects/advocatecard.png" alt="Kahoot Answers Viewer">
+                            <img src="./src/img/projects/advocatecard.png" alt="Lawliet advogados">
                         </div>
                         <div class="project-content">
                             <p class="project-tags">HTML, CSS and JavaScript</p>
                             <div class="content-project-card">
-                                <h3 class="project-title">Advocacia</h3>
+                                <h3 class="project-title">Lawliet</h3>
                                 <p class="project-description">Portifólio de alta conversão ramo advocacia</p>
                                 <div class="project-buttons">
                                     <a href="https://ivobraatz.github.io/advocate/" class="button live">acessar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="./src/img/projects/" alt="em breve">
+                        </div>
+                        <div class="project-content">
+                            <p class="project-tags">HTML, CSS and JavaScript</p>
+                            <div class="content-project-card">
+                                <h3 class="project-title">em breve</h3>
+                                <p class="project-description">Engenharia civil website</p>
+                                <div class="project-buttons">
+                                    <a href="https://ivobraatz.github.io/arka3D/" class="button live">acessar</a>
                                 </div>
                             </div>
                         </div>
@@ -113,7 +155,7 @@
             </div>
         </section>
         
-        <section class="skills-section" id="skills">
+        <section class="skills-section fade-in" id="skills">
             <div class="container">
                 <!-- Header -->
                 <div class="skills-header">
@@ -150,5 +192,42 @@
             </div>
         </section>
     </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="container-footer__logo">
+                        <img src="./src/img/icons/prog.png" alt="Logo">
+                        <p> braatz <span>braatzivo@hotmail.com</span></p>
+                    </div>
+                    <p>Designer web e desenvolvedor front-end</p>
+                </div>
+                <div class="footer-media">
+                    <h3>Mídias</h3>
+                    <div class="social-icons">
+                        <a href="https://github.com/IvoBraatz"><img src="./src/img/icons/Github.png" alt="GitHub"></a>
+                        <a href="mailto:braatzivo@hotmail.com"><img src="./src/img/icons/Gmail.png" alt="Email"></a>
+                        <a href="https://w.app/element"><img src="./src/img/icons/WhatsApp.png" alt="WhatsApp"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© Copyright 2024. Feito por Element</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        window.onload = function () {
+            // Inicializa o particles.js
+            Particles.init({
+                selector: '#particles-js'
+            });
+    
+            const fadeIns = document.querySelectorAll('.fade-in');
+            fadeIns.forEach((el) => el.classList.add('loaded'));
+        };
+    </script>
+    <script src="/src/js/particles.js"></script>
+    
 </body>
 </html>

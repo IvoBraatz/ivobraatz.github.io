@@ -204,30 +204,45 @@ var Particles = (function(window, document) {
   Plugin.prototype._checkResponsive = function() {
     var _ = this, breakpoint, targetBreakpoint = false, windowWidth = window.innerWidth;
 
-    if(_.options.responsive && _.options.responsive.length && _.options.responsive !== null) {
-      targetBreakpoint = null;
-
-      for(breakpoint in _.breakpoints) {
-        if(_.breakpoints.hasOwnProperty(breakpoint)) {
-          if(windowWidth <= _.breakpoints[breakpoint]) {
-            targetBreakpoint = _.breakpoints[breakpoint];
-          }
-        }
+      // Ajusta maxParticles dinamicamente com base no tamanho da tela
+      if (windowWidth <= 480) {
+          _.options.maxParticles = 20; // Pequenas telas (mobile)
+      } else if (windowWidth <= 768) {
+          _.options.maxParticles = 40; // Telas médias (tablets)
+      } else if (windowWidth <= 1024) {
+          _.options.maxParticles = 60; // Telas maiores
+      } else {
+          _.options.maxParticles = _.originalSettings.maxParticles; // Configuração padrão
       }
 
-      if(targetBreakpoint !== null) {
-        _.activeBreakpoint = targetBreakpoint;
-        _.options = _._extend(_.options, _.breakpointSettings[targetBreakpoint]);
-      } else {
-        if(_.activeBreakpoint !== null) {
-          _.activeBreakpoint = null;
+      if (_.options.responsive && _.options.responsive.length && _.options.responsive !== null) {
           targetBreakpoint = null;
 
-          _.options = _._extend(_.options, _.originalSettings);
-        }
+          for (breakpoint in _.breakpoints) {
+              if (_.breakpoints.hasOwnProperty(breakpoint)) {
+                  if (windowWidth <= _.breakpoints[breakpoint]) {
+                      targetBreakpoint = _.breakpoints[breakpoint];
+                  }
+              }
+          }
+
+          if (targetBreakpoint !== null) {
+              _.activeBreakpoint = targetBreakpoint;
+              _.options = _._extend(_.options, _.breakpointSettings[targetBreakpoint]);
+          } else {
+              if (_.activeBreakpoint !== null) {
+                  _.activeBreakpoint = null;
+                  targetBreakpoint = null;
+
+                  _.options = _._extend(_.options, _.originalSettings);
+              }
+          }
       }
-    }
+
+      // Atualiza o armazenamento de partículas com o novo valor de maxParticles
+      _._refresh();
   };
+
 
   /**
    * Rebuild the storage and update the canvas.

@@ -43,9 +43,7 @@
     max-width: 600px; /* Limita a largura */
     width: 90%; /* Ocupa quase toda a largura em telas pequenas */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border-radius: 8px; /* Adiciona bordas arredondadas */
-    animation: float 5s ease-in-out infinite, float-sideways 7s ease-in-out infinite; /* Animação suave e lateral */
-    background: rgba(0, 0, 0, 0.2); /* Fundo levemente transparente */
+    animation: float 5s ease-in-out infinite, float-sideways 7s ease-in-out infinite; 
 }
 
 /* Texto principal */
@@ -69,8 +67,7 @@
     border: 1px solid #aaa;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
     text-align: center;
-    background: #121212; /* Fundo para destacar o autor */
-    border-radius: 5px; /* Adiciona bordas arredondadas */
+    background: #121212;
 }
 
 .quote .author span {

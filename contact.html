@@ -7,9 +7,24 @@
     <link rel="stylesheet" href="./src/css/styles.css">
 </head>
 <body>
+    <canvas id="particles-js" class="background"></canvas>
+    <div class="vertical-social fade-in">
+        <div class="vertical-line"></div>
+        <a href="https://github.com" target="_blank" class="social-icon">
+            <img src="./src/img/icons/Github.png" alt="GitHub">
+        </a>
+        <a href="https://dribbble.com" target="_blank" class="social-icon">
+            <img src="./src/img/icons/WhatsApp.png" alt="WhatsApp">
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon">
+            <img src="./src/img/icons/Gmail.png" alt="Gmail">
+        </a>
+    </div>
+        
+    </div>
     <header>
         <div class="container">
-            <div class="container-header">
+            <div class="container-header fade-in">
                 <div class="container-header__logo">
                     <img src="./src/img/icons/prog.png" alt="Logo">
                     braatz
@@ -27,7 +42,7 @@
     </header>
 
     <main>
-        <section class="contacts-section" id="contacts">
+        <section class="contacts-section fade-in" id="contacts">
             <div class="container">
                 <!-- Header -->
                 <div class="contacts-header">
@@ -51,7 +66,31 @@
                 </div>
             </div>
         </section>
-        
+        <div class="form-container container fade-in">
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <input type="text" id="title" name="title" placeholder="Title" required>
+                <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h2>40+</h2>
+                    <p>Certificados Profissionais</p>
+                </div>
+                <div class="stat-item">
+                    <h2>2+</h2>
+                    <p>Anos de experiência</p>
+                </div>
+                <div class="stat-item">
+                    <h2>10+</h2>
+                    <p>Projetos concluídos</p>
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="footer">
         <div class="container">
@@ -77,5 +116,18 @@
             </div>
         </div>
     </footer>
+    <script>
+        window.onload = function () {
+            // Inicializa o particles.js
+            Particles.init({
+                selector: '#particles-js'
+            });
+    
+            const fadeIns = document.querySelectorAll('.fade-in');
+            fadeIns.forEach((el) => el.classList.add('loaded'));
+        };
+    </script>
+    <script src="/src/js/particles.js"></script>
+    
 </body>
 </html>

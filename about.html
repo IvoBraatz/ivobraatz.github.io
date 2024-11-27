@@ -7,9 +7,22 @@
     <link rel="stylesheet" href="./src/css/styles.css">
 </head>
 <body>
+    <canvas id="particles-js" class="background"></canvas>
+    <div class="vertical-social fade-in">
+        <div class="vertical-line"></div>
+        <a href="https://github.com" target="_blank" class="social-icon">
+            <img src="./src/img/icons/Github.png" alt="GitHub">
+        </a>
+        <a href="https://dribbble.com" target="_blank" class="social-icon">
+            <img src="./src/img/icons/WhatsApp.png" alt="WhatsApp">
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon">
+            <img src="./src/img/icons/Gmail.png" alt="Gmail">
+        </a>
+    </div>
     <header>
         <div class="container">
-            <div class="container-header">
+            <div class="container-header fade-in">
                 <div class="container-header__logo">
                     <img src="./src/img/icons/prog.png" alt="Logo">
                     braatz
@@ -27,7 +40,7 @@
     </header>
 
     <main>
-        <section class="about-section" id="about-me">
+        <section class="about-section fade-in" id="about-me">
             <div class="container">
                 <!-- Header -->
                 <div class="about-header">
@@ -50,6 +63,20 @@
                 </div>
             </div>
         </section>
+        
     </main>
+    <script>
+        window.onload = function () {
+            // Inicializa o particles.js
+            Particles.init({
+                selector: '#particles-js'
+            });
+    
+            const fadeIns = document.querySelectorAll('.fade-in');
+            fadeIns.forEach((el) => el.classList.add('loaded'));
+        };
+    </script>
+    <script src="/src/js/particles.js"></script>
+    
 </body>
 </html>

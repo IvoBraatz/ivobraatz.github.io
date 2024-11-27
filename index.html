@@ -9,7 +9,7 @@
 <body>
     <canvas id="particles-js" class="background"></canvas>
 
-    <div class="vertical-social">
+    <div class="vertical-social fade-in">
         <div class="vertical-line"></div>
         <a href="https://github.com" target="_blank" class="social-icon">
             <img src="./src/img/icons/Github.png" alt="GitHub">
@@ -22,9 +22,10 @@
         </a>
     </div>
     
+    
     <header>
         
-        <div class="container">
+        <div class="container fade-in">
             <div class="container-header">
                 <div class="container-header__logo">
                     <img src="./src/img/icons/prog.png" alt="Logo">
@@ -42,17 +43,17 @@
         </div>
     </header>
     
-    <section class="hero">
+    <section class="hero fade-in">
         <div class="container">
             <div class="container-hero">
                 <!-- Texto principal -->
                 <div class="hero-content">
-                    <h1>Sou um <span class="highlight">Engenheiro de software</span> e <span class="highlight">web Designer</span></h1>
+                    <h1><span class="highlight">Engenharia de Software</span> e <span class="highlight">Web Design</span> unindo tecnologia e criatividade.</h1>
                     <p class="hero-description">
                         Criação sites responsivos onde tecnologia <br>
                         encontra criatividade.
                     </p>
-                    <button class="hero-button">Entre em contato !!</button>
+                    <a href="/contact.html" class="hero-button">Entre em contato !!</a>
                 </div>
     
                 <!-- Imagem -->
@@ -66,7 +67,7 @@
         </div>
     </section>
     
-    <section class="quote-section">
+    <section class="quote-section fade-in">
         <div class="container">
             <blockquote class="quote">
                 <p>Não espere. O momento nunca será perfeito</p>
@@ -77,7 +78,7 @@
         </div>
     </section>
     
-    <section class="projects-section" id="projects">
+    <section class="projects-section fade-in" id="projects">
         <div class="container">
             <div class="projects-header">
                 <h2><span class="link-emphasis">#</span>projetos</h2>
@@ -163,7 +164,7 @@
         </div>
     </section>
     
-    <section class="skills-section" id="skills">
+    <section class="skills-section fade-in" id="skills">
         <div class="container">
             <!-- Header -->
             <div class="skills-header">
@@ -200,7 +201,7 @@
         </div>
     </section>
     
-    <section class="about-section" id="about-me">
+    <section class="about-section fade-in" id="about-me">
         <div class="container">
             <!-- Header -->
             <div class="about-header">
@@ -224,7 +225,7 @@
         </div>
     </section>
     
-    <section class="contacts-section" id="contacts">
+    <section class="contacts-section fade-in" id="contacts">
         <div class="container">
             <!-- Header -->
             <div class="contacts-header">
@@ -275,12 +276,17 @@
         </div>
     </footer>
     <script>
-       window.onload = function () {
+        window.onload = function () {
+            // Inicializa o particles.js
             Particles.init({
                 selector: '#particles-js'
             });
+    
+            const fadeIns = document.querySelectorAll('.fade-in');
+            fadeIns.forEach((el) => el.classList.add('loaded'));
         };
     </script>
     <script src="/src/js/particles.js"></script>
+    
 </body>
 </html>
