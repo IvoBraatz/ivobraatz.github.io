@@ -3,6 +3,7 @@
     color: #fff;
     padding: 4rem 2rem;
     position: relative;
+    overflow: hidden; /* Garante que elementos não fiquem visíveis fora da seção */
 }
 
 .container {
@@ -32,7 +33,7 @@
     transform: translateY(-50%);
     width: 300px;
     height: 1px;
-    background-color: #a49de0;
+    background-color: var(--emphasis-color);
 }
 
 /* Skills Grid */
@@ -44,6 +45,23 @@
     margin: 4rem 0;
 }
 
+/* Animação de flutuação */
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(-10px, -10px);
+    }
+    50% {
+        transform: translate(10px, 10px);
+    }
+    75% {
+        transform: translate(-5px, 10px);
+    }
+}
+
+/* Cards com animação */
 .skill-box {
     border: 1px solid var(--grey-color);
     padding: 1.2rem;
@@ -52,17 +70,41 @@
     flex-direction: column;
     gap: 0.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: float 8s ease-in-out infinite;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adiciona sombra */
+}
+
+/* Movimentos distintos para cada card */
+.skill-box:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.skill-box:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.skill-box:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.skill-box:nth-child(4) {
+    animation-delay: 3s;
+}
+
+.skill-box:nth-child(5) {
+    animation-delay: 4s;
 }
 
 .skill-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05); /* Aumenta o card ao passar o mouse */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.6); /* Sombra mais intensa */
 }
 
+/* Títulos dos cards */
 .skill-box h3 {
     font-size: 1.2rem;
     border-bottom: 1px solid var(--grey-color);
-    color: #a49de0;
+    color: var(--emphasis-color);
     margin-bottom: 0.5rem;
     text-transform: uppercase;
 }

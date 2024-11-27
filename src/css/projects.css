@@ -34,7 +34,7 @@
     transform: translateY(-50%);
     width: 300px; /* Ajuste o tamanho da linha aqui */
     height: 1px;
-    background-color: #a49de0; /* Cor da linha */
+    background-color: var(--emphasis-color); /* Cor da linha */
 }
 
 .projects-header .view-all {

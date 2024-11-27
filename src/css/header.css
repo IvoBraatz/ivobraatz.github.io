@@ -3,13 +3,15 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
-    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+    flex-wrap: wrap;
+    z-index: 1000;
 }
 
 .container-header__logo {
     display: flex;
     align-items: center;
     gap: 1rem;
+    color: var(--emphasis-color);
 }
 
 .container-header__logo img{

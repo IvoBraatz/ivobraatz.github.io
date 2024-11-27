@@ -1,3 +1,23 @@
+/* Animação para flutuar */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px); /* Movimento mais perceptível */
+    }
+}
+
+/* Animação lateral */
+@keyframes float-sideways {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px); /* Pequeno movimento lateral */
+    }
+}
+
 /* Quote Section */
 .quote-section {
     padding: 3rem 2rem;
@@ -6,27 +26,32 @@
     align-items: center;
     color: #fff;
     min-height: 15vh; /* Altura mínima */
+    position: relative; /* Para alinhar o elemento filho */
+    overflow: hidden; /* Evita elementos saírem da área */
 }
 
 /* Estilo do blockquote */
 .quote {
-    position: relative;
+    position: relative; /* Mantém o contexto */
     border: 1px solid #aaa;
-    padding: 1.5rem 2rem;
+    padding: 2rem;
     font-size: 1.2rem;
     line-height: 1.6;
     color: #ccc;
     font-family: 'Courier New', Courier, monospace;
     display: inline-block;
     max-width: 600px; /* Limita a largura */
-    width: 100%; /* Ocupa a largura disponível */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 90%; /* Ocupa quase toda a largura em telas pequenas */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 8px; /* Adiciona bordas arredondadas */
+    animation: float 5s ease-in-out infinite, float-sideways 7s ease-in-out infinite; /* Animação suave e lateral */
+    background: rgba(0, 0, 0, 0.2); /* Fundo levemente transparente */
 }
 
 /* Texto principal */
 .quote p {
     margin: 0;
-    padding-right: 4rem; /* Espaço para alinhar o autor */
+    padding: 0;
     text-align: center;
 }
 
@@ -44,11 +69,13 @@
     border: 1px solid #aaa;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
     text-align: center;
+    background: #121212; /* Fundo para destacar o autor */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
 }
 
 .quote .author span {
     font-weight: bold;
-    color: #a49de0; /* Cor para o autor */
+    color: var(--emphasis-color); /* Cor para o autor */
 }
 
 .quote .author::before,
@@ -88,6 +115,7 @@
     .quote {
         padding: 1.5rem;
         font-size: 1.1rem;
+        animation: float 6s ease-in-out infinite; /* Suaviza a animação */
     }
 
     .quote .author {
@@ -107,6 +135,7 @@
         padding: 1.2rem;
         font-size: 1rem;
         max-width: 90%; /* Reduz largura para telas menores */
+        animation: float 7s ease-in-out infinite; /* Animação mais suave */
     }
 
     .quote .author {

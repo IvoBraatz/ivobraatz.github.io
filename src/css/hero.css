@@ -26,7 +26,7 @@
 }
 
 .hero-content .highlight {
-    color: #a49de0; /* Cor de destaque */
+    color: var(--emphasis-color); /* Cor de destaque */
 }
 
 .hero-content .hero-description {
@@ -60,9 +60,8 @@
 }
 
 .hero-image {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
-    border-radius: 10px;
 }
 
 /* Status flutuante */
@@ -87,7 +86,7 @@
 }
 
 .hero-status strong {
-    color: #a49de0;
+    color: var(--emphasis-color);
     font-size: 1rem;
 }
 

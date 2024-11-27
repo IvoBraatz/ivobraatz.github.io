@@ -6,8 +6,18 @@ body {
     background-color: var(--background-color);
     color: #fff;
 }
+/* Certifique-se de que o canvas cobre toda a página */
+#particles-js {
+    position: fixed; /* Fixa o canvas no fundo */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Cobre toda a largura da viewport */
+    height: 100vh; /* Cobre toda a altura da viewport */
+    z-index: -1; /* Coloca o canvas atrás de todos os elementos */
+    pointer-events: none; /* Impede interações com o canvas */
+}
 
-/* Limit container width */
+
 .container {
     max-width: 1440px;
     margin: 0 auto;

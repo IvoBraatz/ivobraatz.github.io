@@ -45,7 +45,7 @@
 
 .footer-media h3 {
     font-size: 1.2rem;
-    color: #a49de0;
+    color: var(--emphasis-color);
     margin-bottom: 1rem;
     text-transform: uppercase;
 }
