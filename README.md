@@ -54,10 +54,6 @@
 
 ## 🛠️ **Stack Tecnológica**
 
-<details>
-<summary><b>🔧 Frontend & UI</b></summary>
-<br>
-
 <div align="center">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white&labelColor=2E3440" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white&labelColor=2E3440" alt="CSS3">
@@ -66,51 +62,22 @@
   <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white&labelColor=2E3440" alt="TypeScript">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB&labelColor=2E3440" alt="React">
   <img src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D&labelColor=2E3440" alt="Vue.js">
-</div>
-
-</details>
-
-<details>
-<summary><b>⚙️ Backend & Banco de Dados</b></summary>
-<br>
-
-<div align="center">
   <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white&labelColor=2E3440" alt="Node.js">
   <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white&labelColor=2E3440" alt="NestJS">
   <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white&labelColor=2E3440" alt="C#">
   <img src="https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white&labelColor=2E3440" alt="SQL Server">
   <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white&labelColor=2E3440" alt="MongoDB">
-</div>
-
-</details>
-
-<details>
-<summary><b>☁️ DevOps & Cloud</b></summary>
-<br>
-
-<div align="center">
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white&labelColor=2E3440" alt="Docker">
   <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white&labelColor=2E3440" alt="AWS">
   <img src="https://img.shields.io/badge/VMware-607078?style=for-the-badge&logo=vmware&logoColor=white&labelColor=2E3440" alt="VMware">
   <img src="https://img.shields.io/badge/Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white&labelColor=2E3440" alt="Railway">
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white&labelColor=2E3440" alt="Git">
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=2E3440" alt="GitHub">
-</div>
-
-</details>
-
-<details>
-<summary><b>🛠️ Ferramentas de Desenvolvimento</b></summary>
-<br>
-
-<div align="center">
   <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white&labelColor=2E3440" alt="VS Code">
   <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white&labelColor=2E3440" alt="Postman">
   <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black&labelColor=2E3440" alt="Swagger">
   <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white&labelColor=2E3440" alt="Notion">
 </div>
-
-</details>
 
 ---
 
@@ -125,7 +92,7 @@
 ## 🏆 **Conquistas**
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=ivobraatz&theme=github_dark&no-frame=true&no-bg=true&margin-w=4&row=2&column=4&title=Conquistas&rank=SECRET,SSS,SS,S,AAA&title=Conquistas" alt="GitHub Trophies" />
+  <img src="https://github-profile-trophy.vercel.app/?username=ivobraatz&theme=github_dark&no-frame=true&no-bg=true&margin-w=4&row=2&column=4" alt="GitHub Trophies" />
 </div>
 
 ---
@@ -134,6 +101,10 @@
 
 <div align="center">
   <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=github_dark&quote=Desenvolvedor%20apaixonado%20por%20criar%20soluções%20inovadoras%20e%20experiências%20digitais%20excepcionais&author=Ivo%20Braatz" alt="Quote" />
+</div>
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=ivobraatz&theme=github_dark&hide_border=true&bg_color=0D1117&title_color=5E81AC&text_color=D8DEE9&layout=compact&custom_title=Tempo%20de%20Codificação" alt="Tempo de Codificação" />
 </div>
 
 Sou um **Desenvolvedor Full Stack** apaixonado por tecnologia e inovação. Foco em desenvolvimento de aplicações web modernas e soluções digitais que fazem a diferença. Sempre em busca de aprender novas tecnologias e melhorar minhas habilidades.
