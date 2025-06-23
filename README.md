@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=2E3440&height=200&section=header&text=Ivo%20Braatz&fontSize=60&fontAlignY=35&desc=Full%20Stack%20Developer%20|%20Solution%20Architect&descAlignY=55&descAlign=50&animation=twinkling" alt="Header" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=2E3440&height=200&section=header&text=Ivo%20Braatz&fontSize=60&fontAlignY=35&desc=Full%20Stack%20Developer%20|%20Cloud%20Specialist&descAlignY=55&descAlign=50&animation=twinkling" alt="Header" />
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.vercel.app/?lines=Desenvolvedor%20Full%20Stack;Arquiteto%20de%20Soluções;Especialista%20em%20Cloud%20Computing&center=true&width=600&height=60&color=5E81AC&size=28&font=JetBrains%20Mono&weight=600" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.vercel.app/?lines=Desenvolvedor%20Full%20Stack;Especialista%20em%20Cloud%20Computing;Apaixonado%20por%20Tecnologia&center=true&width=600&height=60&color=5E81AC&size=28&font=JetBrains%20Mono&weight=600" alt="Typing SVG" />
 </div>
 
 ---
@@ -77,6 +77,7 @@
 <div align="center">
   <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white&labelColor=2E3440" alt="Node.js">
   <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white&labelColor=2E3440" alt="NestJS">
+  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white&labelColor=2E3440" alt="C#">
   <img src="https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white&labelColor=2E3440" alt="SQL Server">
   <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white&labelColor=2E3440" alt="MongoDB">
 </div>
@@ -90,6 +91,8 @@
 <div align="center">
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white&labelColor=2E3440" alt="Docker">
   <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white&labelColor=2E3440" alt="AWS">
+  <img src="https://img.shields.io/badge/VMware-607078?style=for-the-badge&logo=vmware&logoColor=white&labelColor=2E3440" alt="VMware">
+  <img src="https://img.shields.io/badge/Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white&labelColor=2E3440" alt="Railway">
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white&labelColor=2E3440" alt="Git">
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=2E3440" alt="GitHub">
 </div>
@@ -103,6 +106,7 @@
 <div align="center">
   <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white&labelColor=2E3440" alt="VS Code">
   <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white&labelColor=2E3440" alt="Postman">
+  <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black&labelColor=2E3440" alt="Swagger">
   <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white&labelColor=2E3440" alt="Notion">
 </div>
 
@@ -136,7 +140,7 @@
 ## 🏆 **Conquistas**
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=ivobraatz&theme=github_dark&no-frame=true&no-bg=true&margin-w=4&row=2&column=4&title=Conquistas" alt="GitHub Trophies" />
+  <img src="https://github-profile-trophy.vercel.app/?username=ivobraatz&theme=github_dark&no-frame=true&no-bg=true&margin-w=4&row=2&column=4&title=Conquistas&rank=SECRET,SSS,SS,S,AAA&title=Conquistas" alt="GitHub Trophies" />
 </div>
 
 ---
@@ -152,23 +156,32 @@
 ## 💡 **Sobre Mim**
 
 <div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=github_dark&quote=Arquiteto%20de%20soluções%20digitais%2C%20transformando%20desafios%20em%20oportunidades%20de%20inovação&author=Ivo%20Braatz" alt="Quote" />
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=github_dark&quote=Desenvolvedor%20apaixonado%20por%20criar%20soluções%20inovadoras%20e%20experiências%20digitais%20excepcionais&author=Ivo%20Braatz" alt="Quote" />
 </div>
 
-Sou um **Desenvolvedor Full Stack** especializado em arquitetura de soluções escaláveis e desenvolvimento de aplicações modernas. Com foco em tecnologias de ponta e boas práticas de desenvolvimento, busco criar soluções robustas e eficientes.
+Sou um **Desenvolvedor Full Stack** apaixonado por tecnologia e inovação. Especializado em desenvolvimento de aplicações modernas e soluções em nuvem, busco sempre aprender novas tecnologias e criar experiências digitais que fazem a diferença.
 
 ### **🎯 Especializações**
-- 🏗️ **Arquitetura de Software** e Design Patterns
+- 🌐 **Desenvolvimento Web** Full Stack
 - ☁️ **Cloud Computing** e DevOps
-- 🔒 **Segurança** e Performance
-- 📱 **Desenvolvimento Web** Moderno
-- 🚀 **Microserviços** e APIs
+- 🔒 **APIs** e Microserviços
+- 📱 **Aplicações Web** Modernas
+- 🚀 **Soluções Escaláveis**
 
 ### **📚 Em Constante Evolução**
 - **Kubernetes** - Orquestração de containers
 - **GraphQL** - Query language para APIs
 - **Serverless** - Arquitetura sem servidor
 - **Machine Learning** - Integração com IA
+
+---
+
+## 🌟 **Destaques**
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=ivobraatz&repo=erp-system&theme=github_dark&hide_border=true&bg_color=0D1117&title_color=5E81AC&text_color=D8DEE9" alt="ERP System" />
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=ivobraatz&repo=ecommerce&theme=github_dark&hide_border=true&bg_color=0D1117&title_color=5E81AC&text_color=D8DEE9" alt="E-commerce" />
+</div>
 
 ---
 
@@ -192,7 +205,7 @@ Sou um **Desenvolvedor Full Stack** especializado em arquitetura de soluções e
 ---
 
 <div align="center">
-  <img src="https://readme-typing-svg.vercel.app/?lines=Obrigado%20por%20visitar%20meu%20perfil!;Vamos%20construir%20o%20futuro%20juntos!&center=true&width=600&height=60&color=5E81AC&size=24&font=JetBrains%20Mono&weight=600" alt="Typing SVG">
+  <img src="https://readme-typing-svg.vercel.app/?lines=Obrigado%20por%20visitar%20meu%20perfil!;Vamos%20criar%20algo%20incrível%20juntos!&center=true&width=600&height=60&color=5E81AC&size=24&font=JetBrains%20Mono&weight=600" alt="Typing SVG">
 </div>
 
 <div align="center">
