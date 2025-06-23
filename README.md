@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=2E3440&height=200&section=header&text=Ivo%20Braatz&fontSize=60&fontAlignY=35&desc=Full%20Stack%20Developer%20|%20Cloud%20Specialist&descAlignY=55&descAlign=50&animation=twinkling" alt="Header" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=2E3440&height=200&section=header&text=Ivo%20Braatz&fontSize=60&fontAlignY=35&desc=Full%20Stack%20Developer%20|%20Web%20Developer&descAlignY=55&descAlign=50&animation=twinkling" alt="Header" />
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.vercel.app/?lines=Desenvolvedor%20Full%20Stack;Especialista%20em%20Cloud%20Computing;Apaixonado%20por%20Tecnologia&center=true&width=600&height=60&color=5E81AC&size=28&font=JetBrains%20Mono&weight=600" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.vercel.app/?lines=Desenvolvedor%20Full%20Stack;Desenvolvedor%20Web;Apaixonado%20por%20Tecnologia&center=true&width=600&height=60&color=5E81AC&size=28&font=JetBrains%20Mono&weight=600" alt="Typing SVG" />
 </div>
 
 ---
@@ -114,21 +114,6 @@
 
 ---
 
-## 🚀 **Projetos em Destaque**
-
-<div align="center">
-
-| Projeto | Descrição | Status | Stack |
-|---------|-----------|--------|-------|
-| **[Sistema ERP](https://github.com/ivobraatz/erp-system)** | Sistema completo de gestão empresarial | ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-brightgreen&style=for-the-badge&labelColor=2E3440) | React, NestJS, SQL Server |
-| **[E-commerce Platform](https://github.com/ivobraatz/ecommerce)** | Plataforma de vendas online | ![Status](https://img.shields.io/badge/Status-Lançado-blue&style=for-the-badge&labelColor=2E3440) | Vue.js, TypeScript, AWS |
-| **[API Gateway](https://github.com/ivobraatz/api-gateway)** | Gateway de APIs com autenticação | ![Status](https://img.shields.io/badge/Status-Ativo-green&style=for-the-badge&labelColor=2E3440) | NestJS, Docker, MongoDB |
-| **[Dashboard Analytics](https://github.com/ivobraatz/dashboard)** | Dashboard de analytics em tempo real | ![Status](https://img.shields.io/badge/Status-Beta-orange&style=for-the-badge&labelColor=2E3440) | React, TypeScript, AWS |
-
-</div>
-
----
-
 ## 📈 **Atividade Recente**
 
 <div align="center">
@@ -145,28 +130,20 @@
 
 ---
 
-## 📊 **Análise Detalhada**
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=ivobraatz&theme=github_dark&hide_border=true&bg_color=0D1117&title_color=5E81AC&text_color=D8DEE9&layout=compact&custom_title=Tempo%20de%20Codificação" alt="Tempo de Codificação" />
-</div>
-
----
-
 ## 💡 **Sobre Mim**
 
 <div align="center">
   <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=github_dark&quote=Desenvolvedor%20apaixonado%20por%20criar%20soluções%20inovadoras%20e%20experiências%20digitais%20excepcionais&author=Ivo%20Braatz" alt="Quote" />
 </div>
 
-Sou um **Desenvolvedor Full Stack** apaixonado por tecnologia e inovação. Especializado em desenvolvimento de aplicações modernas e soluções em nuvem, busco sempre aprender novas tecnologias e criar experiências digitais que fazem a diferença.
+Sou um **Desenvolvedor Full Stack** apaixonado por tecnologia e inovação. Foco em desenvolvimento de aplicações web modernas e soluções digitais que fazem a diferença. Sempre em busca de aprender novas tecnologias e melhorar minhas habilidades.
 
 ### **🎯 Especializações**
 - 🌐 **Desenvolvimento Web** Full Stack
-- ☁️ **Cloud Computing** e DevOps
-- 🔒 **APIs** e Microserviços
 - 📱 **Aplicações Web** Modernas
-- 🚀 **Soluções Escaláveis**
+- 🔒 **APIs** e Backend Development
+- 🎨 **Interfaces** Responsivas
+- 🚀 **Soluções** Escaláveis
 
 ### **📚 Em Constante Evolução**
 - **Kubernetes** - Orquestração de containers
