@@ -142,32 +142,6 @@ const ivo = {
 
 ---
 
-## 🎯 **Projetos em Destaque**
-
-<div align="center">
-  
-### 🏢 **Sistema ERP Completo**
-*Sistema de gestão empresarial com módulos integrados*
-- **Tech Stack:** React, Node.js, SQL Server, Docker
-- **Features:** Gestão financeira, estoque, vendas, relatórios
-- ⭐ **Status:** Em produção
-
-### 🛒 **Plataforma E-commerce**
-*Marketplace moderno com painel administrativo*
-- **Tech Stack:** Next.js, NestJS, MongoDB, AWS
-- **Features:** Pagamentos, gestão de produtos, analytics
-- 🚀 **Status:** MVP concluído
-
-### 📊 **Dashboard Analytics**
-*Painel de métricas e KPIs em tempo real*
-- **Tech Stack:** Vue.js, C#, PostgreSQL, Redis
-- **Features:** Visualizações interativas, relatórios automáticos
-- 💡 **Status:** Em desenvolvimento
-
-</div>
-
----
-
 ## 📈 **Estatísticas Detalhadas**
 
 <div align="center">
@@ -200,15 +174,6 @@ Certificações_Planejadas:
   - Docker Certified Associate
 ```
 
-### **🎯 Metas 2024**
-- [ ] 🚀 Contribuir para 5 projetos Open Source
-- [ ] 📝 Escrever 12 artigos técnicos
-- [ ] 🎤 Palestrar em 3 eventos de tecnologia
-- [ ] 🏆 Obter certificação AWS
-- [ ] 💻 Lançar 2 projetos pessoais
-
-</div>
-
 ---
 
 ## 💭 **Filosofia de Desenvolvimento**
@@ -227,13 +192,6 @@ Certificações_Planejadas:
 
 ---
 
-## 📊 **Métricas de Produtividade**
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=ivobraatz&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=5E81AC&text_color=D8DEE9&layout=compact&custom_title=⏰+Tempo+de+Codificação+Semanal" alt="Wakatime Stats" />
-</div>
-
----
 
 ## 🌐 **Presença Digital**
 
