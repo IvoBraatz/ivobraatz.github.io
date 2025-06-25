@@ -1,0 +1,327 @@
+/* Importação das variáveis globais para consistência de tema */
+/* Certifique-se de que 'variables.css' seja importado antes de 'ContactSection.css' */
+@import url('../../styles/variables.css');
+
+.contact-section {
+  background: linear-gradient(135deg, var(--color-light) 0%, var(--color-light-alt) 100%); /* Fundo claro com gradiente sutil */
+  color: var(--color-dark); /* Texto principal escuro */
+  padding: 80px 0 72px 0; /* Mais padding para espaçamento */
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 -8px 32px 0 rgba(0,0,0,0.3); /* Sombra para o topo da seção */
+  border-top: 1.5px solid var(--color-light-alt);
+  position: relative; /* Para posicionamento do modal */
+}
+
+.contact-title {
+  color: var(--color-dark); /* Título em preto/cinza escuro */
+  font-family: var(--font-title);
+  font-size: 3rem; /* Título maior e mais impactante */
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-align: center;
+  margin-bottom: 1.8rem;
+  text-shadow: 0 4px 12px rgba(255,255,255,0.8), 0 0 8px var(--color-primary); /* Sombra clara e glow vermelho */
+}
+
+.contact-desc {
+  color: var(--color-dark-alt); /* Descrição em cinza escuro discreto */
+  font-family: var(--font-main);
+  font-size: 1.18rem; /* Texto da descrição um pouco maior */
+  font-weight: 400;
+  text-align: center;
+  max-width: 600px; /* Largura máxima maior para a descrição */
+  margin: 0 0 3.5rem 0; /* Mais espaço abaixo da descrição */
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Permite mais linhas, se necessário */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-shadow: 0 1px 4px rgba(255,255,255,0.4);
+}
+
+.contact-actions {
+  display: flex;
+  gap: 2rem; /* Mais espaço entre os botões */
+  justify-content: center;
+  margin-bottom: 3.5rem; /* Mais espaço abaixo dos botões */
+}
+
+.contact-btn {
+  font-family: var(--font-title);
+  font-size: 1.15rem; /* Fonte dos botões um pouco maior */
+  font-weight: 800;
+  letter-spacing: 0.15em; /* Espaçamento de letras mais pronunciado */
+  padding: 0.9em 2.5em; /* Mais padding */
+  border-radius: var(--radius-lg); /* Botões bem arredondados */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(.4,0,.2,1); /* Transição mais suave e uniforme */
+  box-shadow: none;
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  position: relative; /* Para efeitos de brilho */
+  overflow: hidden; /* Para o efeito de brilho */
+  text-decoration: none; /* Para o link */
+}
+
+/* Botão Primário (Enviar Mensagem) */
+.contact-btn.primary {
+  background: linear-gradient(90deg, var(--color-primary) 0%, rgba(225,6,0,0.8) 100%); /* Gradiente de vermelho */
+  color: var(--color-light); /* Texto branco */
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 0 20px 0 rgba(225,6,0,0.4), 0 0 0 0 rgba(255,255,255,0); /* Glow inicial */
+}
+.contact-btn.primary:hover, .contact-btn.primary:focus {
+  background: var(--color-primary); /* Fundo vermelho sólido no hover */
+  color: var(--color-light);
+  box-shadow: 0 0 40px 0 rgba(225,6,0,0.8), 0 4px 12px 0 rgba(255,255,255,0.2) inset; /* Glow mais intenso e sombra interna */
+  filter: brightness(1.15); /* Leve brilho no hover */
+  transform: scale(1.05); /* Pequeno scale */
+}
+.contact-btn.primary::before { /* Efeito de brilho "automotivo" */
+  content: '';
+  position: absolute;
+  left: -80%;
+  top: 0;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent 60%, rgba(255,255,255,0.7) 100%);
+  opacity: 0.3;
+  transform: skewX(-30deg);
+  transition: left 0.6s cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+}
+.contact-btn.primary:hover::before {
+  left: 120%;
+  opacity: 0.6;
+}
+
+/* Botão Secundário (Ver LinkedIn) */
+.contact-btn.secondary {
+  background: linear-gradient(90deg, var(--color-light-alt) 0%, var(--color-light) 100%); /* Fundo claro com gradiente */
+  color: var(--color-dark-alt); /* Texto cinza escuro */
+  border: 2px solid var(--color-dark-alt); /* Borda cinza escuro */
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.1);
+}
+.contact-btn.secondary:hover, .contact-btn.secondary:focus {
+  background: var(--color-light); /* Fundo mais claro no hover */
+  color: var(--color-primary); /* Texto vermelho no hover */
+  border-color: var(--color-primary); /* Borda vermelha no hover */
+  box-shadow: 0 0 24px 0 rgba(225,6,0,0.2), 0 2px 0 rgba(0,0,0,0.1) inset;
+  transform: scale(1.05);
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 480px; /* Largura máxima maior para o formulário */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem; /* Mais espaço entre os campos */
+  align-items: center;
+  padding: 0 1rem; /* Padding para evitar grudar nas bordas em mobile */
+}
+
+.form-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0.8rem; /* Ajuste no espaçamento inferior */
+}
+
+.form-group label {
+  position: absolute;
+  left: 1.2rem;
+  top: 1.2rem; /* Posição inicial da label */
+  color: var(--color-dark-alt); /* Cor inicial da label */
+  font-size: 1.05rem; /* Tamanho da fonte da label */
+  font-family: var(--font-main);
+  font-weight: 500;
+  pointer-events: none;
+  background: transparent;
+  transition: all 0.25s cubic-bezier(.4,0,.2,1); /* Transição mais suave */
+  z-index: 2;
+}
+
+/* Estilo da label quando o campo está focado ou preenchido */
+.form-group.focused label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -0.7rem;
+  left: 1rem;
+  font-size: 0.95rem;
+  color: var(--color-primary); /* Label vermelha quando focada/preenchida */
+  background: var(--color-light); /* Fundo para a label "flutuante" */
+  padding: 0 0.4em; /* Mais padding na label flutuante */
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Sombra para a label flutuante */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1.2rem 1.4rem; /* Mais padding interno */
+  font-size: 1.08rem;
+  font-family: var(--font-main);
+  background: var(--color-light-alt); /* Fundo claro para os inputs */
+  color: var(--color-dark); /* Texto dos inputs em escuro */
+  border: 2px solid var(--color-dark-alt); /* Borda mais definida e escura */
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border 0.25s, box-shadow 0.25s;
+  margin-bottom: 0.2rem;
+  box-shadow: 0 0 0 2px var(--color-light) inset, 0 2px 8px rgba(0,0,0,0.1); /* Sombra interna e externa */
+}
+
+/* Estilo do input/textarea no foco */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--color-primary); /* Borda vermelha no foco */
+  box-shadow: 0 0 0 2px var(--color-primary) inset, 0 0 16px 0 rgba(225,6,0,0.3); /* Glow vermelho no foco */
+}
+
+/* Estilo do placeholder */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(0,0,0,0.3); /* Placeholder mais sutil e discreto */
+  opacity: 1;
+  font-size: 1.01rem;
+  font-family: var(--font-main);
+}
+
+/* Estilo para a animação fade-slide-up (mantido, se já estiver em uso) */
+.fade-slide-up {
+  opacity: 0;
+  animation: fadeSlideUp 1.2s cubic-bezier(.4,0,.2,1) forwards;
+}
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(32px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Modal de Mensagem */
+.message-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); /* Fundo escuro transparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+.message-modal-overlay.visible {
+  opacity: 1;
+}
+
+.message-modal-content {
+  background: linear-gradient(135deg, var(--color-light) 0%, var(--color-light-alt) 100%); /* Fundo claro do modal */
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 24px var(--color-primary); /* Sombra e glow vermelho */
+  text-align: center;
+  color: var(--color-dark); /* Texto escuro no modal */
+  max-width: 380px;
+  width: 90%;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: modalPopIn 0.4s cubic-bezier(.4,0,.2,1) forwards;
+  border: 2px solid var(--color-primary);
+}
+
+@keyframes modalPopIn {
+  from { opacity: 0; transform: translateY(40px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.message-modal-content h3 {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  color: var(--color-primary); /* Título do modal em vermelho */
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.6); /* Sombra clara para o título */
+}
+
+.message-modal-content p {
+  font-family: var(--font-main);
+  font-size: 1.05rem;
+  color: var(--color-dark-alt); /* Texto em cinza escuro */
+  margin-bottom: 2rem;
+}
+
+.message-modal-close-btn {
+  background: var(--color-primary);
+  color: var(--color-light);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.7em 1.8em;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 0 12px rgba(225,6,0,0.4);
+}
+
+.message-modal-close-btn:hover {
+  background: var(--color-dark); /* Fundo escuro no hover */
+  box-shadow: 0 0 24px var(--color-primary); /* Glow vermelho mais intenso */
+  transform: scale(1.05);
+}
+
+
+/* Media Queries para responsividade */
+@media (max-width: 700px) {
+  .contact-section {
+    padding: 60px 0 50px 0;
+  }
+  .contact-title {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+  .contact-desc {
+    font-size: 1rem;
+    max-width: 90vw;
+    margin-bottom: 2.5rem;
+  }
+  .contact-actions {
+    flex-direction: column;
+    gap: 1rem;
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 2.5rem;
+  }
+  .contact-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.7em 1.5em;
+  }
+  .contact-form {
+    max-width: 95vw;
+  }
+  .form-group label {
+    font-size: 0.95rem;
+  }
+  .form-group.focused label,
+  .form-group input:not(:placeholder-shown) + label,
+  .form-group textarea:not(:placeholder-shown) + label {
+    font-size: 0.85rem;
+    top: -0.6rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    padding: 0.9rem 1.2rem;
+    font-size: 0.98rem;
+  }
+}

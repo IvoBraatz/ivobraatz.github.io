@@ -1,0 +1,90 @@
+/* Importação das variáveis globais */
+@import url('../../styles/variables.css');
+
+.project-card {
+  background: var(--color-light-alt); /* Fundo claro para o cartão */
+  border-radius: var(--radius-md); /* Borda mais arredondada */
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.15), inset 0 2px 18px 0 rgba(255,255,255,0.8); /* Sombra mais definida e brilho interno */
+  overflow: hidden;
+  width: 360px; /* Largura ligeiramente maior */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s, border 0.3s; /* Transições mais suaves */
+  cursor: pointer;
+  border: 2px solid var(--color-light-alt); /* Borda padrão clara */
+  outline: none;
+  will-change: transform;
+  perspective: 800px; /* Perspectiva mais forte para o tilt */
+  font-family: var(--font-title);
+  position: relative; /* Para o overlay e efeitos */
+}
+.project-card:focus, .project-card.focus-tilt {
+  box-shadow: 0 0 48px 0 var(--color-primary), 0 8px 32px 0 rgba(0,0,0,0.4); /* Glow vermelho no foco */
+  border-color: var(--color-primary);
+  transform: scale(1.05) rotateY(0deg) rotateX(0deg); /* Scale ligeiramente maior */
+  z-index: 2;
+}
+.project-card:hover {
+  transform: scale(1.04); /* Scale no hover */
+  box-shadow: 0 0 40px 0 var(--color-primary), 0 8px 32px 0 rgba(0,0,0,0.3); /* Glow vermelho no hover */
+  border-color: var(--color-primary);
+}
+
+@keyframes cardGlow {
+  0% { box-shadow: 0 0 0 0 var(--color-primary); }
+  100% { box-shadow: 0 8px 32px var(--color-primary), 0 0 16px 2px var(--color-primary); }
+}
+
+.project-card__img {
+  width: 100%;
+  height: 200px; /* Altura da imagem ligeiramente maior */
+  object-fit: cover;
+  background: var(--color-dark-alt); /* Fundo escuro para a imagem */
+  transition: filter 0.3s;
+  border-bottom: 1.5px solid var(--color-dark-alt); /* Borda inferior escura */
+}
+.project-card:hover .project-card__img, .project-card:focus .project-card__img {
+  filter: brightness(1.2) saturate(1.3) drop-shadow(0 0 16px var(--color-primary)); /* Efeito mais vívido e glow */
+}
+
+.project-card__content {
+  padding: 1.5rem 1.8rem; /* Mais padding */
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.project-card__content h3 {
+  font-family: var(--font-title);
+  font-size: 1.25rem; /* Título maior */
+  font-weight: 800;
+  color: var(--color-dark); /* Título escuro */
+  text-transform: none;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.4em 0;
+  text-shadow: 0 1px 4px rgba(255,255,255,0.6); /* Sombra clara */
+}
+.project-card__content p {
+  color: var(--color-dark-alt); /* Descrição em cinza escuro */
+  font-family: var(--font-main);
+  font-size: 1.05rem;
+  margin: 0 0 0.8em 0; /* Mais espaço abaixo da descrição */
+  line-height: 1.6;
+}
+
+/* Estilo do botão "Ver no GitHub" */
+.btn-link {
+  color: var(--color-primary); /* Cor vermelha para o link */
+  text-decoration: none; /* Sem sublinhado padrão */
+  border-bottom: 2px solid transparent;
+  transition: color 0.25s, border-color 0.25s;
+  font-family: var(--font-main); /* Usar fonte principal para links */
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block; /* Para aplicar padding e transformar */
+  padding-bottom: 0.2em; /* Pequeno padding para a borda */
+}
+.btn-link:hover, .btn-link:focus {
+  color: var(--color-dark); /* Texto escuro no hover */
+  border-color: var(--color-primary); /* Borda vermelha no hover */
+  text-shadow: 0 0 8px rgba(0,0,0,0.2); /* Pequena sombra no texto */
+}

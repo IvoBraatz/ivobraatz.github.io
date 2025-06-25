@@ -1,0 +1,43 @@
+:root {
+  /* Cores Porsche */
+  --color-primary: #E10600; /* Vermelho Porsche */
+  --color-accent: #B0B4BA; /* Cinza claro, quase prata (usado para acentos) */
+  --color-dark: #18191B; /* Preto carvão (fundo principal) */
+  --color-dark-alt: #23232E; /* Cinza escuro (elementos de fundo secundários) */
+  --color-light: #F7F7F8; /* Branco off-white, chassis (para elementos claros) */
+  --color-light-alt: #E9EAEC; /* Cinza claro, painel (para elementos claros secundários) */
+
+  /* Cores originais (mantidas para compatibilidade ou uso futuro, se necessário) */
+  --color-bg-dark: #111214;
+  --color-bg-light: #f7f7f8;
+  --color-secondary: #b0b4ba; /* Prata discreto */
+  --color-text: #f7f7f8;
+  --color-text-dark: #232323;
+  --color-border: #23232e;
+  --color-card: #18181c;
+  --color-card-glass: rgba(24,24,28,0.98);
+
+  /* Sombras */
+  --shadow-light: 0 2px 16px 0 rgba(0,0,0,0.1), 0 0 8px 0 rgba(225,6,0,0.1);
+  --shadow-strong: 0 8px 32px 0 rgba(0,0,0,0.4), 0 0 16px 0 rgba(225,6,0,0.2);
+  --shadow: 0 2px 16px rgba(0,0,0,0.10); /* Sombra original mantida */
+
+  /* Raio das Bordas */
+  --radius-lg: 32px; /* Raio grande, para elementos maiores */
+  --radius-md: 18px; /* Raio médio, para a maioria dos cartões */
+  --radius-sm: 8px;  /* Raio pequeno, para tooltips/detalhes */
+  --radius: 14px;    /* Raio original mantido */
+
+  /* Largura Máxima e Altura de Cabeçalho */
+  --max-width: 1200px; /* Mantido, pode ser ajustado conforme o layout principal */
+  --header-height: 72px; /* Mantido */
+
+  /* Fontes */
+  --font-title: 'Inter', sans-serif; /* Fonte moderna para títulos, inspirada na Porsche */
+  --font-main: 'Inter', sans-serif; /* Fonte principal para descrições */
+  /* Fontes originais (mantidas como fallback ou para outros usos) */
+  --font-original-title: 'Orbitron', 'Montserrat', Arial, Helvetica, sans-serif;
+
+  /* Transições */
+  --transition: 0.25s cubic-bezier(.4,0,.2,1); /* Transição padrão */
+}

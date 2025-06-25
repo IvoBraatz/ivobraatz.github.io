@@ -1,0 +1,121 @@
+/* Variáveis CSS são importadas de variables.css */
+
+/* Cartão de habilidade */
+.skill-card {
+  background: linear-gradient(135deg, var(--color-dark-alt) 0%, var(--color-dark) 100%);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.8), 0 0 0 0 var(--color-primary); /* Sombra escura e glow vermelho */
+  padding: 1.5rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+  gap: 0.8rem;
+  border: 2px solid var(--color-dark-alt);
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+  outline: none;
+  font-family: var(--font-title);
+  position: relative;
+  overflow: hidden;
+}
+.skill-card:hover, .skill-card:focus {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 0 48px 0 var(--color-primary), 0 4px 24px 0 rgba(255,255,255,0.1), 0 12px 48px 0 rgba(0,0,0,0.9); /* Glow mais intenso */
+  border-color: var(--color-primary);
+}
+
+/* Envoltório do ícone */
+.skill-card__icon-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+}
+
+/* Ícone da habilidade */
+.skill-card__icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-light); /* Ícone branco para contraste forte */
+  background: linear-gradient(135deg, var(--color-dark-alt) 0%, var(--color-dark) 100%);
+  border-radius: 50%;
+  padding: 0.4em;
+  box-shadow: 0 0 0 4px var(--color-dark), 0 0 20px 4px var(--color-primary) inset, 0 4px 12px 0 rgba(255,255,255,0.1) inset; /* Glow vermelho forte */
+  transition: transform 0.3s, color 0.3s, background 0.3s, box-shadow 0.3s;
+  border: 2px solid var(--color-dark-alt);
+}
+.skill-card:hover .skill-card__icon,
+.skill-card:focus .skill-card__icon {
+  transform: scale(1.15);
+  color: var(--color-light);
+  background: linear-gradient(135deg, var(--color-primary) 0%, rgba(225,6,0,0.8) 100%);
+  box-shadow: 0 0 0 4px var(--color-primary), 0 0 48px 8px var(--color-primary) inset, 0 4px 16px 0 rgba(255,255,255,0.2) inset;
+  border-color: var(--color-primary);
+}
+
+/* Tooltip do nível da habilidade */
+.skill-card__tooltip {
+  position: absolute;
+  top: -2.8rem;
+  left: 50%;
+  transform: translateX(-50%) scale(0.7);
+  background: var(--color-primary);
+  color: var(--color-light);
+  font-size: 1.1rem;
+  font-family: var(--font-title);
+  font-weight: 700;
+  padding: 0.4em 1em;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.6); /* Sombra mais escura */
+  opacity: 0;
+  pointer-events: none;
+  animation: tooltipIn 0.4s forwards cubic-bezier(.2,1,.2,1);
+  z-index: 10;
+  border: 1px solid var(--color-light-alt);
+}
+@keyframes tooltipIn {
+  0% { opacity: 0; transform: translateX(-50%) scale(0.6) translateY(12px); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1) translateY(0); }
+}
+
+/* Nome da habilidade */
+.skill-card > span {
+  color: var(--color-light); /* Texto branco para contraste forte */
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8); /* Sombra mais escura */
+}
+
+/* Barra de progresso */
+.skill-card__bar {
+  width: 90%;
+  height: 10px;
+  background: linear-gradient(90deg, var(--color-dark-alt) 0%, var(--color-dark) 100%);
+  border-radius: 6px;
+  margin-top: 0.6rem;
+  overflow: hidden;
+  position: relative;
+  border: 1.5px solid var(--color-dark-alt);
+  box-shadow: 0 0 8px 0 var(--color-primary) inset, 0 1px 6px rgba(0,0,0,0.8); /* Glow vermelho interno */
+}
+
+/* Preenchimento da barra de progresso */
+.skill-card__bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  border-radius: 6px;
+  transition: width 1.5s cubic-bezier(.4,1,.4,1);
+  box-shadow: 0 0 16px 3px var(--color-primary), 0 0 4px var(--color-light); /* Glow vermelho forte */
+  animation: digital-bar-fill 1.5s cubic-bezier(.4,1,.4,1) forwards;
+}
+@keyframes digital-bar-fill {
+  from { width: 0; filter: blur(3px) brightness(0.6); }
+  to { filter: blur(0) brightness(1); }
+}

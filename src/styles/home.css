@@ -1,0 +1,198 @@
+.home-section {
+  max-width: var(--max-width);
+  margin: 0 auto 4rem auto;
+  padding: 2.5rem 1.5rem;
+  background: var(--color-card-glass);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: background var(--transition);
+  animation: fadeIn 1.2s cubic-bezier(.4,0,.2,1) both, slideUp 1.2s cubic-bezier(.4,0,.2,1) both;
+  font-family: var(--font-title);
+}
+
+.home-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--color-accent);
+  text-align: center;
+  font-family: var(--font-title);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+.home-projects__list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.project-card {
+  background: var(--color-bg-dark);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+}
+.project-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(108,99,255,0.15);
+  border-color: var(--color-primary);
+}
+.project-card__img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: #22223b;
+}
+.project-card__content {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7em 1.5em;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border var(--transition), box-shadow var(--transition);
+  text-decoration: none;
+  margin: 0.5rem 0.5rem 0 0;
+  font-family: var(--font-title);
+  letter-spacing: 0.01em;
+  text-transform: none;
+  box-shadow: none;
+}
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+}
+.btn-primary:hover {
+  background: #b00000;
+  color: #fff;
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+.btn-secondary:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+.btn-link {
+  background: none;
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-main);
+}
+.btn-link:hover {
+  color: var(--color-accent);
+}
+
+.home-skills__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.skill-card {
+  background: var(--color-bg-dark);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 160px;
+  gap: 0.7rem;
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.skill-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(0,201,167,0.12);
+  border-color: var(--color-secondary);
+}
+.skill-card__icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+}
+.skill-card__bar {
+  width: 100%;
+  height: 8px;
+  background: #23234b;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+.skill-card__bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: 4px;
+  transition: width 0.7s cubic-bezier(.4,0,.2,1);
+}
+
+.home-contact {
+  text-align: center;
+}
+.home-contact p {
+  margin-bottom: 2rem;
+  color: var(--color-text);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+  .home-projects__list, .home-skills__list {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .project-card, .skill-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+@media (max-width: 600px) {
+  .home-section {
+    padding: 1rem 0.2rem;
+    margin-bottom: 2rem;
+  }
+  .home-section h2 {
+    font-size: 1.3rem;
+  }
+  .project-card__img {
+    height: 120px;
+  }
+  .skill-card {
+    padding: 0.7rem 0.5rem;
+  }
+} 
