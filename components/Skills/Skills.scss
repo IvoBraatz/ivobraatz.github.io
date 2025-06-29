@@ -1,0 +1,638 @@
+.skills {
+  padding: 6rem 0;
+  background: var(--background-dark);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  }
+  
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  // Marquee Infinito
+  &__marquee {
+    margin-bottom: 4rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    
+    &-track {
+      display: flex;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+    }
+    
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.5rem;
+      background: var(--background-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      margin-right: 1rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      min-width: 140px;
+      justify-content: center;
+      
+      &:hover {
+        transform: translateY(-5px);
+        border-color: var(--tech-color);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 20px var(--tech-color);
+      }
+      
+      svg {
+        color: var(--tech-color);
+        flex-shrink: 0;
+      }
+      
+      span {
+        font-weight: 600;
+        color: var(--text-primary);
+        font-family: var(--font-space-grotesk), sans-serif;
+        font-size: 0.875rem;
+        white-space: nowrap;
+      }
+    }
+    
+    &-blur {
+      position: absolute;
+      top: 0;
+      width: 80px;
+      height: 100%;
+      z-index: 3;
+      pointer-events: none;
+      &--left {
+        left: 0;
+        background: linear-gradient(90deg, var(--background-dark) 60%, transparent);
+      }
+      &--right {
+        right: 0;
+        background: linear-gradient(270deg, var(--background-dark) 60%, transparent);
+      }
+    }
+    
+    &-item {
+      box-shadow: none;
+      border: 1.5px solid var(--border-color);
+      background: var(--background-card);
+      transition: border 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
+      &::before {
+        display: none;
+      }
+      svg {
+        color: var(--tech-color);
+        filter: none;
+      }
+      &:hover {
+        border: 1.5px solid var(--accent-color);
+        box-shadow: 0 4px 16px 0 var(--accent-color, #00FFB3, 0.08);
+        transform: scale(1.04);
+      }
+    }
+  }
+  
+  // Carrossel
+  &__carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 2;
+    
+    &-container {
+      position: relative;
+      height: 340px;
+      overflow: visible;
+      border-radius: 24px;
+      background: rgba(30,32,40,0.7);
+      border: 1.5px solid var(--border-color);
+      box-shadow: 0 8px 40px 0 rgba(0,0,0,0.18);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    &-slide {
+      display: none;
+      opacity: 0;
+      z-index: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 2rem 2rem 2rem;
+      min-width: 320px;
+      min-height: 260px;
+      border-radius: 20px;
+      background: rgba(30,32,40,0.7);
+      border: 2px solid var(--border-color);
+      box-shadow: 0 8px 40px 0 rgba(0,0,0,0.18);
+      transition: box-shadow 0.3s, border 0.3s, transform 0.3s, opacity 0.3s;
+      position: absolute;
+      left: 0; right: 0; top: 0; bottom: 0;
+      margin: auto;
+      &.active {
+        display: flex;
+        opacity: 1;
+        z-index: 2;
+        border: 2px solid var(--tech-color);
+        box-shadow: 0 0 32px 0 var(--tech-color, #00FFB3, 0.18), 0 8px 40px 0 rgba(0,0,0,0.18);
+        transform: scale(1.04);
+      }
+      &:hover {
+        box-shadow: 0 0 48px 0 var(--tech-color, #00FFB3, 0.28), 0 12px 48px 0 rgba(0,0,0,0.22);
+        border-color: var(--accent-color);
+        transform: scale(1.07);
+      }
+    }
+    
+    &-icon {
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.06);
+      box-shadow: none;
+      svg {
+        color: var(--tech-color);
+        filter: none;
+        font-size: 54px;
+        background: none;
+      }
+    }
+    
+    &-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-family: var(--font-space-grotesk), sans-serif;
+      text-align: center;
+      background: linear-gradient(90deg, var(--tech-color), var(--accent-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    &-description {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      text-align: center;
+      line-height: 1.7;
+      max-width: 420px;
+      margin: 0 auto;
+      margin-bottom: 0.5rem;
+    }
+    
+    &-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+    
+    &-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--border-color);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      
+      &.active {
+        background: var(--tech-color);
+        box-shadow: 0 0 8px var(--tech-color);
+        transform: scale(1.3);
+      }
+      
+      &.pulse {
+        animation: pulseBtn 1.5s infinite alternate;
+      }
+      
+      &:hover {
+        background: var(--accent-color);
+        transform: scale(1.1);
+      }
+    }
+    
+    &-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--background-card);
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      color: var(--text-secondary);
+      z-index: 3;
+      
+      &:hover {
+        background: var(--accent-color);
+        color: var(--background-dark);
+        border-color: var(--accent-color);
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: var(--shadow-md), var(--glow-accent);
+      }
+      
+      &--prev {
+        left: -60px;
+      }
+      
+      &--next {
+        right: -60px;
+      }
+      
+      svg {
+        transition: transform 0.3s;
+      }
+      
+      &:hover svg {
+        transform: scale(1.2) rotate(-10deg);
+      }
+    }
+  }
+  
+  // Animações de Fundo
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+  
+  &__code-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    &-line {
+      position: absolute;
+      height: 1px;
+      background: var(--accent-color);
+      opacity: 0.3;
+      animation: codeLine var(--duration) ease-in-out infinite;
+      animation-delay: var(--delay);
+      
+      &:nth-child(odd) {
+        width: 100px;
+        top: 10%;
+        left: 5%;
+      }
+      
+      &:nth-child(even) {
+        width: 150px;
+        top: 20%;
+        right: 10%;
+      }
+      
+      &:nth-child(3n) {
+        width: 80px;
+        top: 30%;
+        left: 20%;
+      }
+      
+      &:nth-child(4n) {
+        width: 120px;
+        top: 40%;
+        right: 15%;
+      }
+      
+      &:nth-child(5n) {
+        width: 90px;
+        top: 50%;
+        left: 30%;
+      }
+      
+      &:nth-child(6n) {
+        width: 110px;
+        top: 60%;
+        right: 25%;
+      }
+      
+      &:nth-child(7n) {
+        width: 70px;
+        top: 70%;
+        left: 40%;
+      }
+      
+      &:nth-child(8n) {
+        width: 130px;
+        top: 80%;
+        right: 35%;
+      }
+      
+      &:nth-child(9n) {
+        width: 100px;
+        top: 90%;
+        left: 50%;
+      }
+      
+      &:nth-child(10n) {
+        width: 140px;
+        top: 15%;
+        left: 60%;
+      }
+    }
+  }
+  
+  &__network {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    &-node {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      animation: networkNode var(--duration) ease-in-out infinite;
+      animation-delay: var(--delay);
+      
+      &:nth-child(odd) {
+        top: 15%;
+        left: 10%;
+      }
+      
+      &:nth-child(even) {
+        top: 25%;
+        right: 15%;
+      }
+      
+      &:nth-child(3n) {
+        top: 35%;
+        left: 25%;
+      }
+      
+      &:nth-child(4n) {
+        top: 45%;
+        right: 30%;
+      }
+      
+      &:nth-child(5n) {
+        top: 55%;
+        left: 40%;
+      }
+      
+      &:nth-child(6n) {
+        top: 65%;
+        right: 45%;
+      }
+      
+      &:nth-child(7n) {
+        top: 75%;
+        left: 55%;
+      }
+      
+      &:nth-child(8n) {
+        top: 85%;
+        right: 60%;
+      }
+      
+      &:nth-child(9n) {
+        top: 95%;
+        left: 70%;
+      }
+      
+      &:nth-child(10n) {
+        top: 5%;
+        left: 80%;
+      }
+      
+      &:nth-child(11n) {
+        top: 20%;
+        right: 5%;
+      }
+      
+      &:nth-child(12n) {
+        top: 40%;
+        left: 90%;
+      }
+      
+      &:nth-child(13n) {
+        top: 60%;
+        right: 10%;
+      }
+      
+      &:nth-child(14n) {
+        top: 80%;
+        left: 5%;
+      }
+      
+      &:nth-child(15n) {
+        top: 10%;
+        right: 80%;
+      }
+    }
+  }
+  
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+    animation-delay: var(--delay, 0s);
+  }
+  .pulse {
+    animation: pulseBtn 1.5s infinite alternate;
+  }
+  @keyframes pulseBtn {
+    0% { box-shadow: 0 0 0 0 var(--tech-color, #00FFB3); }
+    100% { box-shadow: 0 0 16px 4px var(--tech-color, #00FFB3); }
+  }
+}
+
+// Animações
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes codeLine {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scaleX(1.2);
+  }
+}
+
+@keyframes networkNode {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  .skills {
+    padding: 4rem 0;
+    
+    &__header {
+      margin-bottom: 3rem;
+    }
+    
+    &__marquee {
+      margin-bottom: 3rem;
+      
+      &-item {
+        padding: 0.75rem 1rem;
+        min-width: 120px;
+        
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+        
+        span {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    
+    &__carousel {
+      &-container {
+        height: 250px;
+      }
+      
+      &-slide {
+        padding: 1.5rem;
+      }
+      
+      &-icon svg {
+        width: 60px;
+        height: 60px;
+      }
+      
+      &-title {
+        font-size: 1.5rem;
+      }
+      
+      &-description {
+        font-size: 1rem;
+      }
+      
+      &-control {
+        width: 40px;
+        height: 40px;
+        
+        &--prev {
+          left: -50px;
+        }
+        
+        &--next {
+          right: -50px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    &__marquee {
+      &-item {
+        padding: 0.5rem 0.75rem;
+        min-width: 100px;
+        margin-right: 0.5rem;
+        
+        svg {
+          width: 28px;
+          height: 28px;
+        }
+        
+        span {
+          font-size: 0.75rem;
+        }
+      }
+    }
+    
+    &__carousel {
+      &-container {
+        height: 200px;
+      }
+      
+      &-slide {
+        padding: 1rem;
+      }
+      
+      &-icon svg {
+        width: 50px;
+        height: 50px;
+      }
+      
+      &-title {
+        font-size: 1.25rem;
+      }
+      
+      &-description {
+        font-size: 0.9rem;
+      }
+      
+      &-control {
+        width: 36px;
+        height: 36px;
+        
+        &--prev {
+          left: -45px;
+        }
+        
+        &--next {
+          right: -45px;
+        }
+      }
+    }
+  }
+} 
