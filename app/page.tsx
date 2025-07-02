@@ -20,7 +20,7 @@ export default function Home() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in-up')
+          entry.target.classList.add('fade-in-up', 'animate-in')
         }
       })
     }, observerOptions)

@@ -80,6 +80,17 @@ const Header = () => {
 
         {/* Menu Mobile */}
         <div className={`header__mobile-menu ${isMenuOpen ? 'header__mobile-menu--open' : ''}`}>
+          {/* Botão hamburger animado para fechar */}
+          <button
+            className={`header__menu-toggle header__menu-toggle--active header__menu-toggle--close`}
+            onClick={() => setIsMenuOpen(false)}
+            aria-label="Fechar menu"
+            style={{ position: 'absolute', top: 20, right: 20, zIndex: 10 }}
+          >
+            <span className="header__menu-line"></span>
+            <span className="header__menu-line"></span>
+            <span className="header__menu-line"></span>
+          </button>
           <nav className="header__mobile-nav">
             <ul className="header__mobile-nav-list">
               {menuItems.map((item, index) => (
@@ -94,7 +105,7 @@ const Header = () => {
                   >
                     <span className="header__mobile-nav-text">{item.label}</span>
                     <div className="header__mobile-nav-icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                       </svg>
                     </div>

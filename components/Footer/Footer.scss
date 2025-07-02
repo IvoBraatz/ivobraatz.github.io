@@ -1,9 +1,19 @@
+@import '../../app/globals.scss';
+
 .footer {
-  background: rgba(30,32,40,0.85);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid var(--border-color);
-  padding: 4rem 0 2rem;
+  /* background: var(--background-dark); */
   position: relative;
+  
+  &__content, &__bottom {
+    position: relative;
+    z-index: 2;
+  }
+  
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-top: 1.5px solid var(--border-light);
+  box-shadow: var(--glass-glow);
+  padding: 4rem 0 2rem;
   
   &::before {
     content: '';
@@ -66,24 +76,26 @@
     gap: 1rem;
     
     &-link {
+      @extend .glass;
+      background: var(--glass-bg);
+      box-shadow: var(--glass-glow);
+      border: 1.5px solid var(--border-light);
+      transition: box-shadow 0.3s, border 0.3s, transform 0.3s;
       display: flex;
       align-items: center;
       justify-content: center;
       width: 40px;
       height: 40px;
-      background: var(--background-dark);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
       color: var(--text-secondary);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s;
       font-size: 1.3rem;
       
       &:hover {
         background: var(--accent-color);
         color: var(--background-dark) !important;
         border-color: var(--accent-color);
-        transform: translateY(-4px) scale(1.15);
-        box-shadow: 0 0 16px 2px var(--accent-color), var(--glow-accent);
+        transform: translateY(-6px) scale(1.15);
+        box-shadow: var(--shadow-xl), var(--glass-glow);
+        filter: brightness(1.10);
       }
     }
   }
@@ -110,18 +122,24 @@
         margin-bottom: 0.5rem;
         
         button {
+          @extend .glass;
+          background: var(--glass-bg);
+          box-shadow: var(--glass-glow);
+          border: 1.5px solid var(--border-light);
+          transition: box-shadow 0.3s, border 0.3s, transform 0.3s;
           background: none;
           border: none;
           color: var(--text-secondary);
           font-size: 0.9rem;
           cursor: pointer;
-          transition: all 0.3s ease;
           padding: 0;
           text-align: left;
           
           &:hover {
             color: var(--accent-color);
-            transform: translateX(5px);
+            transform: translateX(8px) scale(1.04);
+            box-shadow: var(--shadow-md), var(--glass-glow);
+            filter: brightness(1.10);
           }
         }
       }
@@ -258,6 +276,22 @@
   @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+  
+  &__brand-text {
+    background: linear-gradient(120deg, var(--primary-color), var(--accent-color), var(--primary-light));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: footerTitleGlow 6s ease-in-out infinite;
+    text-shadow: 0 2px 24px rgba(56, 189, 248, 0.12);
+  }
+  
+  @keyframes footerTitleGlow {
+    0% { background-position: 0% 50%; text-shadow: 0 2px 24px rgba(56, 189, 248, 0.12); }
+    50% { background-position: 100% 50%; text-shadow: 0 4px 32px rgba(99, 102, 241, 0.18); }
+    100% { background-position: 0% 50%; text-shadow: 0 2px 24px rgba(56, 189, 248, 0.12); }
   }
 }
 

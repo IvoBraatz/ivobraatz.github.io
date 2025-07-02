@@ -1,29 +1,33 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Contact.scss'
-import { SiHtml5, SiCss3, SiJavascript, SiSass, SiTypescript, SiReact, SiNextdotjs, SiNodedotjs, SiNestjs, SiAmazon, SiDocker, SiRedis, SiRailway, SiVercel, SiGit, SiSharp, SiMysql, SiMongodb, SiPostgresql, SiMaildotru, SiLinkedin, SiGithub, SiWhatsapp } from 'react-icons/si'
-import { FaUser, FaRegCommentDots } from 'react-icons/fa'
+import { SiMaildotru, SiLinkedin, SiGithub, SiWhatsapp } from 'react-icons/si'
+import { FaUser, FaRegCommentDots, FaBuilding, FaMapMarkerAlt, FaPhone } from 'react-icons/fa'
+import { MdBusinessCenter } from 'react-icons/md'
 
 const Contact = () => {
   const [formData, setFormData] = useState<{
     name: string;
     email: string;
     company: string;
-    skills: string[];
     message: string;
   }>({
     name: '',
     email: '',
     company: '',
-    skills: [],
     message: ''
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [mounted, setMounted] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
@@ -31,19 +35,32 @@ const Contact = () => {
     }))
   }
 
+  const validateForm = () => {
+    const { name, email, message } = formData
+    return name.trim() && email.trim() && message.trim()
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
     
-    // Simular envio do formulário
-    setTimeout(() => {
+    if (!validateForm()) {
+      setSubmitStatus('error')
+      return
+    }
+
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+    
+    try {
+      // Simular envio do formulário
+      await new Promise(resolve => setTimeout(resolve, 2000))
+      
       setIsSubmitting(false)
       setSubmitStatus('success')
       setFormData({
         name: '',
         email: '',
         company: '',
-        skills: [],
         message: ''
       })
       
@@ -51,66 +68,55 @@ const Contact = () => {
       setTimeout(() => {
         setSubmitStatus('idle')
       }, 5000)
-    }, 2000)
-  }
-
-  const handleSkillToggle = (skillName: string) => {
-    setFormData(prev => ({
-      ...prev,
-      skills: prev.skills.includes(skillName)
-        ? prev.skills.filter(s => s !== skillName)
-        : [...prev.skills, skillName]
-    }))
+    } catch (error) {
+      setIsSubmitting(false)
+      setSubmitStatus('error')
+      
+      setTimeout(() => {
+        setSubmitStatus('idle')
+      }, 5000)
+    }
   }
 
   const contactInfo = [
     {
       icon: <SiMaildotru size={24} />,
-      title: 'Email',
+      title: 'Email Profissional',
       value: 'ivo@netto.codes',
-      link: 'mailto:ivo@netto.codes'
+      link: 'mailto:ivo@netto.codes',
+      description: 'Para propostas comerciais'
     },
     {
       icon: <SiLinkedin size={24} color="#0A66C2" />,
       title: 'LinkedIn',
       value: 'linkedin.com/in/ivonetto',
-      link: 'https://linkedin.com/in/ivonetto'
+      link: 'https://linkedin.com/in/ivonetto',
+      description: 'Vamos nos conectar!'
     },
     {
       icon: <SiGithub size={24} color="#fff" />,
       title: 'GitHub',
       value: 'github.com/ivonetto',
-      link: 'https://github.com/ivonetto'
+      link: 'https://github.com/ivonetto',
+      description: 'Confira meus projetos'
     },
     {
       icon: <SiWhatsapp size={24} color="#25D366" />,
       title: 'WhatsApp',
-      value: '+55 (11) 99999-9999',
-      link: 'https://wa.me/5511999999999'
+      value: '+55 (51) 99999-9999',
+      link: 'https://wa.me/5551999999999',
+      description: 'Contato direto e rápido'
+    },
+    {
+      icon: <FaMapMarkerAlt size={24} color="#ef4444" />,
+      title: 'Localização',
+      value: 'Parobé, RS - Brasil',
+      link: '#',
+      description: 'Trabalho remoto disponível'
     }
   ]
 
-  const skillsList = [
-    { name: 'HTML5', icon: SiHtml5 },
-    { name: 'CSS3', icon: SiCss3 },
-    { name: 'JavaScript', icon: SiJavascript },
-    { name: 'Sass', icon: SiSass },
-    { name: 'TypeScript', icon: SiTypescript },
-    { name: 'React', icon: SiReact },
-    { name: 'Next.js', icon: SiNextdotjs },
-    { name: 'Node.js', icon: SiNodedotjs },
-    { name: 'NestJS', icon: SiNestjs },
-    { name: 'AWS', icon: SiAmazon },
-    { name: 'Docker', icon: SiDocker },
-    { name: 'Redis', icon: SiRedis },
-    { name: 'Railway', icon: SiRailway },
-    { name: 'Vercel', icon: SiVercel },
-    { name: 'Git', icon: SiGit },
-    { name: 'C#', icon: SiSharp },
-    { name: 'MySQL', icon: SiMysql },
-    { name: 'MongoDB', icon: SiMongodb },
-    { name: 'PostgreSQL', icon: SiPostgresql },
-  ]
+  if (!mounted) return null
 
   return (
     <section id="contact" className="contact">
@@ -118,7 +124,8 @@ const Contact = () => {
         <div className="contact__header">
           <h2 className="section-title">Vamos Conversar</h2>
           <p className="section-subtitle">
-            Pronto para transformar sua ideia em uma solução digital incrível?
+            Pronto para transformar sua ideia em uma solução digital incrível? 
+            Entre em contato e vamos criar algo extraordinário juntos.
           </p>
         </div>
 
@@ -128,8 +135,8 @@ const Contact = () => {
             <div className="contact__info-header">
               <h3>Entre em Contato</h3>
               <p>
-                Estou sempre aberto a novos projetos e oportunidades. 
-                Vamos discutir como posso ajudar a transformar sua visão em realidade.
+                Estou sempre aberto a novos projetos e oportunidades colaborativas. 
+                Vamos discutir como posso ajudar a transformar sua visão em uma realidade digital impactante.
               </p>
             </div>
 
@@ -139,13 +146,27 @@ const Contact = () => {
                   key={index} 
                   href={info.link} 
                   className="contact__info-item"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={info.link.startsWith('http') ? "_blank" : "_self"}
+                  rel={info.link.startsWith('http') ? "noopener noreferrer" : undefined}
+                  onClick={info.link === '#' ? (e) => e.preventDefault() : undefined}
                 >
-                  <div className="contact__info-item-icon">{info.icon}</div>
+                  <div className="contact__info-item-icon">
+                    {info.icon}
+                  </div>
                   <div className="contact__info-item-content">
                     <h4>{info.title}</h4>
                     <span>{info.value}</span>
+                    {info.description && (
+                      <small style={{ 
+                        display: 'block', 
+                        marginTop: '4px', 
+                        fontSize: '0.8rem', 
+                        color: 'var(--text-muted)',
+                        opacity: 0.8
+                      }}>
+                        {info.description}
+                      </small>
+                    )}
                   </div>
                 </a>
               ))}
@@ -157,14 +178,16 @@ const Contact = () => {
             <form className="contact__form" onSubmit={handleSubmit}>
               <div className="contact__form-header">
                 <h3>Inicie seu Projeto</h3>
-                <p>Preencha o formulário abaixo e eu entrarei em contato em até 24h</p>
+                <p>Preencha o formulário abaixo e eu entrarei em contato em até 24h para discutirmos sua proposta</p>
               </div>
 
               <div className="contact__form-grid">
                 <div className="contact__form-group">
-                  <label htmlFor="name">Nome Completo *</label>
+                  <label htmlFor="name">Nome Completo</label>
                   <div className="contact__input-wrapper">
-                    <span className="contact__input-icon"><FaUser size={18} /></span>
+                    <span className="contact__input-icon">
+                      <FaUser size={18} />
+                    </span>
                     <input
                       type="text"
                       id="name"
@@ -173,14 +196,17 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       placeholder="Seu nome completo"
+                      autoComplete="name"
                     />
                   </div>
                 </div>
 
                 <div className="contact__form-group">
-                  <label htmlFor="email">Email *</label>
+                  <label htmlFor="email">Email</label>
                   <div className="contact__input-wrapper">
-                    <span className="contact__input-icon"><SiMaildotru size={18} /></span>
+                    <span className="contact__input-icon">
+                      <SiMaildotru size={18} />
+                    </span>
                     <input
                       type="email"
                       id="email"
@@ -189,30 +215,36 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       placeholder="seu@email.com"
+                      autoComplete="email"
                     />
                   </div>
                 </div>
 
                 <div className="contact__form-group">
-                  <label htmlFor="company">Empresa</label>
+                  <label htmlFor="company">Empresa / Projeto</label>
                   <div className="contact__input-wrapper">
-                    <span className="contact__input-icon"><SiLinkedin size={18} /></span>
+                    <span className="contact__input-icon">
+                      <MdBusinessCenter size={18} />
+                    </span>
                     <input
                       type="text"
                       id="company"
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      placeholder="Nome da sua empresa"
+                      placeholder="Nome da empresa ou projeto"
+                      autoComplete="organization"
                     />
                   </div>
                 </div>
               </div>
 
               <div className="contact__form-group">
-                <label htmlFor="message">Mensagem *</label>
+                <label htmlFor="message">Mensagem</label>
                 <div className="contact__input-wrapper contact__textarea-wrapper">
-                  <span className="contact__input-icon"><FaRegCommentDots size={18} /></span>
+                  <span className="contact__input-icon">
+                    <FaRegCommentDots size={18} />
+                  </span>
                   <textarea
                     id="message"
                     name="message"
@@ -220,7 +252,8 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={6}
-                    placeholder="Conte-me sobre seu projeto, objetivos, timeline e qualquer outra informação relevante..."
+                    placeholder="Conte-me sobre seu projeto, objetivos, timeline e orçamento estimado. Quanto mais detalhes, melhor poderei ajudá-lo..."
+                    style={{ minHeight: '120px' }}
                   />
                 </div>
               </div>
@@ -228,12 +261,12 @@ const Contact = () => {
               <button 
                 type="submit" 
                 className={`btn btn--primary contact__form-submit ${isSubmitting ? 'loading' : ''}`}
-                disabled={isSubmitting}
+                disabled={isSubmitting || !validateForm()}
               >
                 {isSubmitting ? (
                   <>
                     <span className="contact__form-spinner"></span>
-                    Enviando...
+                    Enviando mensagem...
                   </>
                 ) : (
                   'Enviar Mensagem'
@@ -243,29 +276,36 @@ const Contact = () => {
               {submitStatus === 'success' && (
                 <div className="contact__form-success">
                   <span>✓</span>
-                  <p>Mensagem enviada com sucesso! Entrarei em contato em breve.</p>
+                  <div>
+                    <strong>Mensagem enviada com sucesso!</strong>
+                    <p>Obrigado pelo contato. Entrarei em contato em breve para discutirmos seu projeto.</p>
+                  </div>
                 </div>
               )}
 
               {submitStatus === 'error' && (
                 <div className="contact__form-error">
                   <span>✗</span>
-                  <p>Erro ao enviar mensagem. Tente novamente ou entre em contato diretamente.</p>
+                  <div>
+                    <strong>Erro ao enviar mensagem</strong>
+                    <p>Verifique se todos os campos obrigatórios estão preenchidos ou tente novamente mais tarde.</p>
+                  </div>
                 </div>
               )}
             </form>
           </div>
         </div>
+
         {/* Elementos de fundo decorativos */}
         <div className="contact__background">
           <div className="contact__grid">
-            {[...Array(20)].map((_, i) => (
+            {[...Array(48)].map((_, i) => (
               <div 
                 key={i} 
                 className="contact__grid-item"
                 style={{
-                  '--delay': `${i * 0.1}s`,
-                  '--duration': `${2 + Math.random() * 2}s`
+                  '--delay': `${i * 0.05}s`,
+                  '--duration': `${2 + Math.random() * 3}s`
                 } as React.CSSProperties}
               />
             ))}
@@ -276,4 +316,4 @@ const Contact = () => {
   )
 }
 
-export default Contact 
+export default Contact

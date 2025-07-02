@@ -3,293 +3,261 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import './Hero.scss'
 
-// Hook para animação de digitação
-function useTypewriter(lines: string[], delay = 50, lineDelay = 500) {
-  const [displayed, setDisplayed] = useState<string[]>([''])
-  const [line, setLine] = useState(0)
-  const [char, setChar] = useState(0)
+// Hook para animação de digitação mais suave
+function useTypewriter(text: string, speed = 100) {
+  const [displayText, setDisplayText] = useState('')
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [showCursor, setShowCursor] = useState(true)
 
   useEffect(() => {
-    if (line < lines.length) {
-      if (char < lines[line].length) {
-        const timeout = setTimeout(() => {
-          setDisplayed((prev) => {
-            const newLines = [...prev]
-            newLines[line] = (newLines[line] || '') + lines[line][char]
-            return newLines
-          })
-          setChar((c) => c + 1)
-        }, delay)
-        return () => clearTimeout(timeout)
-      } else {
-        const timeout = setTimeout(() => {
-          setDisplayed((prev) => [...prev, ''])
-          setLine((l) => l + 1)
-          setChar(0)
-        }, lineDelay)
-        return () => clearTimeout(timeout)
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(prev => prev + text.charAt(currentIndex))
+        setCurrentIndex(prev => prev + 1)
+      }, speed)
+      return () => clearTimeout(timeout)
+    }
+  }, [currentIndex, text, speed])
+
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setShowCursor(prev => !prev)
+    }, 500)
+    return () => clearInterval(cursorInterval)
+  }, [])
+
+  return { displayText, showCursor }
+}
+
+// Hook para números animados
+function useCountUp(target: number, duration = 2000) {
+  const [count, setCount] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    if (!isVisible) return
+
+    let startTime: number
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime
+      const progress = Math.min((currentTime - startTime) / duration, 1)
+      
+      setCount(Math.floor(progress * target))
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate)
       }
     }
-  }, [char, line, lines, delay, lineDelay])
+    
+    requestAnimationFrame(animate)
+  }, [isVisible, target, duration])
 
-  return displayed.slice(0, lines.length)
+  return { count, setIsVisible }
 }
 
 const Hero = () => {
-  const [currentText, setCurrentText] = useState(0)
-  const [isTyping, setIsTyping] = useState(true)
-  const [numbersAnimated, setNumbersAnimated] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
-  const animationRefs = useRef<{ [key: string]: number }>({})
+  const [currentRole, setCurrentRole] = useState(0)
+  const [isLoaded, setIsLoaded] = useState(false)
+  const heroRef = useRef<HTMLElement>(null)
+  const codeBlockRef = useRef<HTMLDivElement>(null)
 
-  const texts = [
-    'Desenvolvedor Full Stack',
-    'Especialista em Soluções Digitais',
-    'Criador de Experiências Web',
-    'Arquiteto de Software'
+  const roles = [
+    'Full Stack Developer',
+    'React Specialist',
+    'Node.js Expert',
+    'UI/UX Enthusiast'
   ]
 
-  // Animar números - memoizado
-  const animateNumbers = useCallback(() => {
-    const numberElements = document.querySelectorAll('[data-count]')
-    
-    numberElements.forEach((element) => {
-      const target = parseInt((element as HTMLElement).dataset.count || '0')
-      const duration = 2000
-      const start = 0
-      const increment = target / (duration / 16)
-      let current = start
-      
-      const timer = setInterval(() => {
-        current += increment
-        if (current >= target) {
-          current = target
-          clearInterval(timer)
-        }
-        
-        const displayValue = Math.floor(current)
-        ;(element as HTMLElement).textContent = displayValue === 100 ? '100%' : displayValue.toString()
-      }, 16)
-    })
-  }, [])
+  const { displayText: typedRole, showCursor } = useTypewriter(roles[currentRole], 80)
+  const { count: projectsCount, setIsVisible: setProjectsVisible } = useCountUp(50)
+  const { count: experienceCount, setIsVisible: setExperienceVisible } = useCountUp(5)
+  const { count: clientsCount, setIsVisible: setClientsVisible } = useCountUp(100)
 
-  // Texto animado - memoizado para evitar recriação
-  const animateText = useCallback(() => {
-    const interval = setInterval(() => {
-      setIsTyping(false)
-      setTimeout(() => {
-        setCurrentText((prev) => (prev + 1) % texts.length)
-        setIsTyping(true)
-      }, 500)
-    }, 3000)
+  // Código de exemplo para o bloco de código
+  const codeExample = `const developer = {
+  name: "Seu Nome",
+  skills: ["React", "Node.js", "TypeScript"],
+  experience: "5+ anos",
+  passion: "Criar soluções incríveis",
+  
+  buildAmazingThings() {
+    return this.skills.map(skill => 
+      \`Dominando \${skill} para criar experiências únicas\`
+    );
+  }
+};
 
-    return () => clearInterval(interval)
-  }, [texts.length])
+console.log(developer.buildAmazingThings());`
 
+  // Rotação dos roles
   useEffect(() => {
-    const cleanup = animateText()
-    return cleanup
-  }, [animateText])
+    const interval = setInterval(() => {
+      setCurrentRole(prev => (prev + 1) % roles.length)
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [roles.length])
 
-  // Intersection Observer - memoizado
-  const setupIntersectionObserver = useCallback(() => {
+  // Intersection Observer para animações
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animate-in')
-            
-            if (!numbersAnimated) {
-              setNumbersAnimated(true)
-              animateNumbers()
-            }
+            // Trigger counter animations
+            setProjectsVisible(true)
+            setExperienceVisible(true)
+            setClientsVisible(true)
           }
         })
       },
       { threshold: 0.1 }
     )
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
+    const elements = document.querySelectorAll('.fade-in-up')
+    elements.forEach(el => observer.observe(el))
 
-    return observer
-  }, [numbersAnimated, animateNumbers])
-
-  useEffect(() => {
-    const observer = setupIntersectionObserver()
     return () => observer.disconnect()
-  }, [setupIntersectionObserver])
+  }, [setProjectsVisible, setExperienceVisible, setClientsVisible])
 
-  // Parallax real - memoizado
-  const setupParallax = useCallback(() => {
-    const handleScroll = () => {
-      const scrolled = window.pageYOffset
-      const parallaxElements = document.querySelectorAll('.parallax')
-      
-      parallaxElements.forEach((element) => {
-        const speed = parseFloat((element as HTMLElement).dataset.speed || '0.5')
-        const yPos = -(scrolled * speed)
-        ;(element as HTMLElement).style.transform = `translateY(${yPos}px)`
+  // Loading effect
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoaded(true), 500)
+    return () => clearTimeout(timer)
+  }, [])
+
+  // Parallax effect para elementos flutuantes
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const { clientX, clientY } = e
+      const x = (clientX / window.innerWidth) * 100
+      const y = (clientY / window.innerHeight) * 100
+
+      const floatingElements = document.querySelectorAll('.floating-element')
+      floatingElements.forEach((element, index) => {
+        const speed = (index + 1) * 0.5
+        const el = element as HTMLElement
+        el.style.transform = `translate(${x * speed * 0.02}px, ${y * speed * 0.02}px)`
       })
     }
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
-  useEffect(() => {
-    return setupParallax()
-  }, [setupParallax])
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
-  // Linhas para cada bloco
-  const terminalLines = [
-    'npm install react',
-    'git commit -m "feat: add new feature"',
-    'docker build -t app .'
-  ]
-  const editorLines = [
-    "import React from 'react';",
-    "import './App.css';",
-    '',
-    'function App() {',
-    '  return (',
-    '    <div className=\"App\">',
-    '      <h1>Hello World</h1>',
-    '    </div>',
-    '  );',
-    '}'
-  ]
-  const queryLines = [
-    'SELECT * FROM users',
-    "WHERE status = 'active'",
-    'ORDER BY created_at DESC'
-  ]
-  const deployLines = ['Build', 'Test', 'Deploy']
-
-  // Hooks de digitação
-  const terminalTyped = useTypewriter(terminalLines, 35, 400)
-  const editorTyped = useTypewriter(editorLines, 18, 250)
-  const queryTyped = useTypewriter(queryLines, 22, 350)
-  const deployTyped = useTypewriter(deployLines, 40, 350)
-
-  // Função utilitária para saber se é a linha atual
-  function isCurrentLine(typedArr: string[], idx: number, lines: string[]) {
-    return idx === typedArr.length - 1 && typedArr.length <= lines.length;
-  }
-
   return (
-    <section id="home" className="hero" ref={sectionRef}>
+    <section className={`hero ${isLoaded ? 'loaded' : ''}`} ref={heroRef}>
       <div className="hero__background">
-        <div className="hero__gradient parallax" data-speed="0.3"></div>
+        <div className="hero__gradient"></div>
+        <div className="hero__pattern"></div>
       </div>
 
       <div className="container">
         <div className="hero__content">
-          {/* Badge de apresentação */}
-          <div className="hero__badge fade-in-up">
-            <span className="hero__badge-icon">🚀</span>
-            <span className="hero__badge-text">Disponível para novos projetos</span>
+          {/* Status Badge */}
+          <div className="hero__status fade-in-up">
+            <div className="status-indicator"></div>
+            <span>Disponível para novos projetos</span>
           </div>
 
-          {/* Título principal */}
-          <h1 className="hero__title fade-in-up">
-            Desenvolvedor Full Stack
-            <span className="hero__title-accent"> Criativo</span>
-          </h1>
+          {/* Main Content */}
+          <div className="hero__main">
+            <div className="hero__text">
+              <h1 className="hero__title fade-in-up">
+                Olá, eu sou
+                <span className="hero__name"> Ivo Netto</span>
+              </h1>
 
-          {/* Subtítulo animado */}
-          <div className="hero__subtitle fade-in-up">
-            <span className="hero__subtitle-text">
-              {texts[currentText]}
-            </span>
-            <span className={`hero__cursor ${isTyping ? 'typing' : ''}`}>|</span>
-          </div>
+              <div className="hero__subtitle fade-in-up">
+                <span className="role-text">{typedRole}</span>
+                <span className={`cursor ${showCursor ? 'visible' : ''}`}>|</span>
+              </div>
 
-          {/* Descrição */}
-          <p className="hero__description fade-in-up">
-            Transformando ideias em experiências digitais excepcionais. 
-            Especialista em React, Node.js e tecnologias modernas.
-          </p>
+              <p className="hero__description fade-in-up">
+                Transformo ideias em experiências digitais excepcionais. 
+                Especializado em React, Node.js e tecnologias modernas, 
+                criando soluções que fazem a diferença.
+              </p>
 
-          {/* Estatísticas */}
-          <div className="hero__stats fade-in-up">
-            <div className="hero__stat">
-              <div className="hero__stat-number" data-count="22">0</div>
-              <div className="hero__stat-label">Anos</div>
-            </div>
-            <div className="hero__stat">
-              <div className="hero__stat-number" data-count="50">0</div>
-              <div className="hero__stat-label">Projetos</div>
-            </div>
-            <div className="hero__stat">
-              <div className="hero__stat-number" data-count="100">0</div>
-              <div className="hero__stat-label">Comprometimento</div>
-            </div>
-          </div>
+              {/* CTA Buttons */}
+              <div className="hero__actions fade-in-up">
+                <a href="#projects" className="btn btn--primary">
+                  <span>Ver Projetos</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+                <a href="#contact" className="btn btn--outline">
+                  <span>Fale Comigo</span>
+                </a>
+              </div>
 
-          {/* CTAs */}
-          <div className="hero__cta fade-in-up">
-            <a 
-              href="#projects"
-              className="btn btn--primary"
-            >
-              Ver Projetos
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-            <a 
-              href="#contact"
-              className="btn btn--secondary"
-            >
-              Fale Comigo
-            </a>
-          </div>
-
-          {/* Cards flutuantes */}
-          <div className="hero__cards">
-            <div className="hero__card hero__card--tech fade-in-up">
-              <div className="hero__card-icon">⚡</div>
-              <div className="hero__card-content">
-                <h4>Performance</h4>
-                <p>Código otimizado e rápido</p>
+              {/* Stats */}
+              <div className="hero__stats fade-in-up">
+                <div className="stat">
+                  <div className="stat__number">{projectsCount}+</div>
+                  <div className="stat__label">Projetos</div>
+                </div>
+                <div className="stat">
+                  <div className="stat__number">{experienceCount}+</div>
+                  <div className="stat__label">Anos</div>
+                </div>
+                <div className="stat">
+                  <div className="stat__number">{clientsCount}%</div>
+                  <div className="stat__label">Satisfação</div>
+                </div>
               </div>
             </div>
-            
-            <div className="hero__card hero__card--design fade-in-up">
-              <div className="hero__card-icon">🎨</div>
-              <div className="hero__card-content">
-                <h4>Design</h4>
-                <p>Interfaces modernas e intuitivas</p>
-              </div>
-            </div>
-            
-            <div className="hero__card hero__card--innovation fade-in-up">
-              <div className="hero__card-icon">🚀</div>
-              <div className="hero__card-content">
-                <h4>Inovação</h4>
-                <p>Tecnologias de ponta</p>
+
+            {/* Code Block */}
+            <div className="hero__visual fade-in-up">
+              <div className="code-block" ref={codeBlockRef}>
+                <div className="code-block__header">
+                  <div className="window-controls">
+                    <span className="control control--close"></span>
+                    <span className="control control--minimize"></span>
+                    <span className="control control--maximize"></span>
+                  </div>
+                  <div className="file-name">developer.js</div>
+                </div>
+                <div className="code-block__content">
+                  <pre>
+                    <code>{codeExample}</code>
+                  </pre>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Floating Elements */}
+      <div className="hero__floating">
+        <div className="floating-element floating-element--1">
+          <div className="floating-icon">⚡</div>
+        </div>
+        <div className="floating-element floating-element--2">
+          <div className="floating-icon">🚀</div>
+        </div>
+        <div className="floating-element floating-element--3">
+          <div className="floating-icon">💡</div>
+        </div>
+        <div className="floating-element floating-element--4">
+          <div className="floating-icon">🎯</div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
       <div className="hero__scroll fade-in">
-        <div className="hero__scroll-text">Scroll</div>
-        <div className="hero__scroll-arrow"></div>
+        <div className="scroll-text">Scroll para explorar</div>
+        <div className="scroll-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </div>
       </div>
     </section>
   )
 }
 
-export default Hero 
+export default Hero
