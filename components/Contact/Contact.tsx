@@ -5,6 +5,8 @@ import './Contact.scss'
 import { SiMaildotru, SiLinkedin, SiGithub, SiWhatsapp } from 'react-icons/si'
 import { FaUser, FaRegCommentDots, FaBuilding, FaMapMarkerAlt, FaPhone } from 'react-icons/fa'
 import { MdBusinessCenter } from 'react-icons/md'
+import SectionHeader from '../../app/SectionHeader'
+import '../../app/SectionHeader.scss'
 
 const Contact = () => {
   const [formData, setFormData] = useState<{
@@ -121,13 +123,11 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       <div className="container" style={{position: 'relative', zIndex: 2}}>
-        <div className="contact__header">
-          <h2 className="section-title">Vamos Conversar</h2>
-          <p className="section-subtitle">
-            Pronto para transformar sua ideia em uma solução digital incrível? 
-            Entre em contato e vamos criar algo extraordinário juntos.
-          </p>
-        </div>
+        <SectionHeader
+          title="Vamos"
+          highlight="Conversar"
+          subtitle="Pronto para transformar sua ideia em uma solução digital incrível? Entre em contato e vamos criar algo extraordinário juntos."
+        />
 
         <div className="contact__content">
           {/* Informações de Contato */}

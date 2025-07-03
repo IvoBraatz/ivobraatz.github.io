@@ -1,13 +1,63 @@
 'use client'
 
-import { FaCode, FaRocket, FaUserCheck, FaRegCopy, FaDownload, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaCode, FaRocket, FaUserCheck, FaRegCopy, FaDownload, FaGithub, FaLinkedin, FaCheckCircle, FaCubes, FaVial, FaEnvelope, FaMapMarkerAlt, FaGamepad, FaHeadphones, FaTachometerAlt, FaCoffee } from 'react-icons/fa'
 import { useEffect, useRef, useState } from 'react'
 import './About.scss'
+import SectionHeader from '../../app/SectionHeader'
+import '../../app/SectionHeader.scss'
+
+const impactfulSubtitles = [
+  "Transformando ideias em experiências digitais.",
+  "Código limpo, soluções inteligentes.",
+  "Performance e inovação em cada projeto.",
+  "Tecnologia para conectar pessoas e oportunidades."
+];
+
+function FadingSubtitle() {
+  const [index, setIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setFade(false), 3500);
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % impactfulSubtitles.length);
+        setFade(true);
+      }, 900); // tempo do fade-out (0.9s)
+    }, 7000); // tempo total de exibição (7s)
+    return () => {
+      clearTimeout(timeout);
+      clearInterval(interval);
+    };
+  }, [index]);
+
+  return (
+    <span className={`fading-subtitle${fade ? ' fade-in' : ' fade-out'}`}>{impactfulSubtitles[index]}</span>
+  );
+}
+
+const profileImages = [
+  '/profile-placeholder-1.png',
+  '/profile-placeholder-2.png',
+  '/profile-placeholder-3.png',
+];
+
+const badges = [
+  { icon: <FaGamepad />, label: 'Gamer' },
+  { icon: <FaTachometerAlt />, label: 'Gearhead' },
+  { icon: <FaCoffee />, label: 'Café Lover' },
+  { icon: <FaRocket />, label: 'Inovador' },
+  { icon: <FaCode />, label: 'Dev' },
+  { icon: <FaUserCheck />, label: 'Team Player' },
+  { icon: <FaDownload />, label: 'Open Source' },
+];
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null)
   const [copied, setCopied] = useState(false)
   const [activeSkill, setActiveSkill] = useState<number | null>(null)
+  const [carouselIndex, setCarouselIndex] = useState(0);
   
   const codeString = `class IvoNetto {
   constructor() {
@@ -76,13 +126,6 @@ developer.develop();`
     }
   ]
 
-  const stats = [
-    { label: 'Anos de Experiência', value: '3+', suffix: '' },
-    { label: 'Projetos Concluídos', value: '50', suffix: '+' },
-    { label: 'Tecnologias Dominadas', value: '20', suffix: '+' },
-    { label: 'Satisfação do Cliente', value: '100', suffix: '%' }
-  ]
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -104,6 +147,13 @@ developer.develop();`
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCarouselIndex((prev) => (prev + 1) % profileImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   const handleCopy = () => {
     navigator.clipboard.writeText(codeString)
     setCopied(true)
@@ -116,160 +166,73 @@ developer.develop();`
   }
 
   return (
-    <section id="about" className="about" ref={sectionRef}>
+    <section id="about" className="about">
+      <SectionHeader
+        title="Sobre"
+        highlight="Mim"
+        subtitle="Apaixonado por criar soluções elegantes e eficientes que conectam tecnologia e pessoas."
+      />
       <div className="container">
-        <div className="about__content">
-          {/* Header */}
-          <div className="about__header animate-on-scroll">
-            <h2 className="section-title">Sobre Mim</h2>
-            <p className="section-subtitle">
-              Desenvolvedor Full Stack apaixonado por criar soluções digitais que fazem a diferença
+        <div className="about__content-layout">
+          <div className="about__main-content">
+            <p className="about__intro">Apaixonado por criar soluções elegantes e eficientes que conectam tecnologia e pessoas.</p>
+            <p className="about__description">
+              Sou Ivo Netto, desenvolvedor Full Stack com mais de 3 anos de experiência, focado em entregar produtos digitais de alta qualidade, performance e usabilidade.<br />
+              Minha jornada é guiada por princípios sólidos de desenvolvimento e uma busca constante por inovação e excelência técnica.
             </p>
-          </div>
-
-          {/* Main Content */}
-          <div className="about__main">
-            {/* Profile Section */}
-            <div className="about__profile animate-on-scroll">
-              <div className="about__profile-card">
-                <div className="about__profile-image">
-                  <div className="about__profile-avatar">
-                    <span>IN</span>
-                  </div>
-                  <div className="about__profile-status">
-                    <span className="about__status-dot"></span>
-                    Disponível para projetos
-                  </div>
-                </div>
-                
-                <div className="about__profile-info">
-                  <h3>Ivo Netto</h3>
-                  <p className="about__profile-role">Full Stack Developer</p>
-                  <p className="about__profile-location">📍 Parobé, RS - Brasil</p>
-                  
-                  <div className="about__profile-description">
-                    <p>
-                      Com mais de 3 anos de experiência, sou especialista em desenvolvimento 
-                      Full Stack, criando soluções completas que combinam performance, 
-                      usabilidade e código limpo.
-                    </p>
-                  </div>
-
-                  <div className="about__profile-actions">
-                    <button onClick={downloadCV} className="btn btn--primary">
-                      <FaDownload size={16} />
-                      Download CV
-                    </button>
-                    <div className="about__social-links">
-                      <a href="#" className="about__social-link" title="GitHub">
-                        <FaGithub size={20} />
-                      </a>
-                      <a href="#" className="about__social-link" title="LinkedIn">
-                        <FaLinkedin size={20} />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Code Display */}
-            <div className="about__code animate-on-scroll">
-              <div className="about__code-window">
-                <div className="about__code-header">
-                  <div className="about__code-dots">
-                    <span className="about__dot about__dot--red"></span>
-                    <span className="about__dot about__dot--yellow"></span>
-                    <span className="about__dot about__dot--green"></span>
-                  </div>
-                  <span className="about__code-title">ivo-netto.js</span>
-                  <button 
-                    className="about__copy-btn" 
-                    onClick={handleCopy} 
-                    title="Copiar código"
-                  >
-                    <FaRegCopy size={16} />
-                    {copied && <span className="about__copy-feedback">Copiado!</span>}
-                  </button>
-                </div>
-                <div className="about__code-content">
-                  <pre><code>{codeString}</code></pre>
-                </div>
-              </div>
+            <div className="about__principles">
+              <div className="about__principle"><FaCode /> Clean Code</div>
+              <div className="about__principle"><FaCubes /> SOLID</div>
+              <div className="about__principle"><FaVial /> TDD</div>
             </div>
           </div>
-
-          {/* Stats Section */}
-          <div className="about__stats animate-on-scroll">
-            <div className="about__stats-grid">
-              {stats.map((stat, index) => (
-                <div 
-                  key={index} 
-                  className="about__stat-card"
-                  style={{ '--delay': `${index * 0.1}s` } as React.CSSProperties}
-                >
-                  <div className="about__stat-number">
-                    {stat.value}<span className="about__stat-suffix">{stat.suffix}</span>
-                  </div>
-                  <div className="about__stat-label">{stat.label}</div>
-                </div>
-              ))}
+          <aside className="about__profile-card">
+            <div className="about__profile-header">
+              <div className="about__profile-avatar-carousel">
+                <img
+                  src={profileImages[carouselIndex]}
+                  alt="Foto de perfil"
+                  className="about__profile-avatar-img"
+                />
+              </div>
+              <h3>Ivo Netto</h3>
+              <p className="about__profile-role">Full Stack Developer</p>
             </div>
-          </div>
-
-          {/* Highlights */}
-          <div className="about__highlights animate-on-scroll">
-            <div className="about__highlights-grid">
-              <div className="about__highlight">
-                <div className="about__highlight-icon about__highlight-icon--primary">
-                  <FaCode size={24} />
-                </div>
-                <div className="about__highlight-content">
-                  <h4>Código Limpo</h4>
-                  <p>Seguindo as melhores práticas e princípios SOLID para código maintível e escalável</p>
-                </div>
+            <div className="about__profile-contact">
+              <div className="about__profile-contact-item">
+                <FaEnvelope /> ivo@netto.codes
               </div>
-              
-              <div className="about__highlight">
-                <div className="about__highlight-icon about__highlight-icon--accent">
-                  <FaRocket size={24} />
-                </div>
-                <div className="about__highlight-content">
-                  <h4>Performance</h4>
-                  <p>Otimização constante para garantir a melhor experiência do usuário</p>
-                </div>
+              <div className="about__profile-contact-item">
+                <FaMapMarkerAlt /> Parobé, RS - Brasil
               </div>
-              
-              <div className="about__highlight">
-                <div className="about__highlight-icon about__highlight-icon--success">
-                  <FaUserCheck size={24} />
-                </div>
-                <div className="about__highlight-content">
-                  <h4>UX Focus</h4>
-                  <p>Interfaces intuitivas que conectam tecnologia e necessidades humanas</p>
-                </div>
+              <div className="about__profile-socials">
+                <a href="https://github.com/ivonetto" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+                <a href="https://linkedin.com/in/ivonetto" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
               </div>
             </div>
-          </div>
-
-          {/* CTA */}
-          <div className="about__cta animate-on-scroll">
-            <h3>Vamos trabalhar juntos?</h3>
-            <p>Estou sempre aberto a novos desafios e oportunidades de crescimento</p>
-            <a href="#contact" className="btn btn--primary btn--lg">
-              Entrar em Contato
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
+            <a href="/cv.pdf" className="about__cv-btn">
+              <FaDownload /> Download CV
             </a>
+          </aside>
+        </div>
+        <div className="about__badges-marquee">
+          <div className="about__badges-track">
+            {[...badges, ...badges].map((badge, idx) => (
+              <span className="about__profile-badge" key={idx}>
+                {badge.icon} {badge.label}
+              </span>
+            ))}
           </div>
         </div>
       </div>
-
-      {/* Background Effects */}
       <div className="about__background">
-        <div className="about__bg-grid"></div>
-        <div className="about__bg-gradient"></div>
+        <div className="about__pattern"></div>
+      </div>
+      <div className="about__floating">
+        <div className="floating-element floating-element--1"><div className="floating-icon">💡</div></div>
+        <div className="floating-element floating-element--2"><div className="floating-icon">🚀</div></div>
+        <div className="floating-element floating-element--3"><div className="floating-icon">🎯</div></div>
+        <div className="floating-element floating-element--4"><div className="floating-icon">⚡</div></div>
       </div>
     </section>
   )

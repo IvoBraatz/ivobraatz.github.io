@@ -21,6 +21,8 @@ import {
   FaCloud
 } from 'react-icons/fa'
 import './Skills.scss'
+import SectionHeader from '../../app/SectionHeader'
+import '../../app/SectionHeader.scss'
 
 interface Technology {
   name: string
@@ -418,15 +420,11 @@ const Skills = () => {
       </div>
 
       <div className="container">
-        <div className="skills__header">
-          <h2 className="section-title">
-            <span className="skills__title-main">Minhas</span>
-            <span className="skills__title-accent">Skills</span>
-          </h2>
-          <p className="section-subtitle">
-            Tecnologias e ferramentas que domino para criar experiências digitais excepcionais
-          </p>
-        </div>
+        <SectionHeader
+          title="Minhas"
+          highlight="Skills"
+          subtitle="Tecnologias e ferramentas que domino para criar experiências digitais excepcionais"
+        />
 
         {/* Enhanced Marquee */}
         <div className="skills__marquee" ref={marqueeRef}>

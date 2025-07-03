@@ -41,27 +41,6 @@
 }
 
 // ============================================================================
-// HEADER SECTION
-// ============================================================================
-
-.projects__header {
-  text-align: center;
-  margin-bottom: var(--space-4xl);
-  position: relative;
-  
-  &-content {
-    margin-bottom: var(--space-3xl);
-  }
-}
-
-.projects__title-accent {
-  display: inline-block;
-  margin-left: var(--space-sm);
-  animation: bounce 2s ease-in-out infinite;
-  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
-}
-
-// ============================================================================
 // GRID DE PROJETOS
 // ============================================================================
 
@@ -815,4 +794,165 @@
   0% { transform: translateY(0) scale(1); }
   50% { transform: translateY(-3px) scale(1.05); }
   100% { transform: translateY(0) scale(1); }
+}
+
+.projects__card--modern {
+  background: var(--background-card);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: 2px solid var(--border-light);
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+
+  &.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: all 0.8s var(--transition-normal);
+  }
+
+  &:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: var(--shadow-2xl), var(--glow-primary);
+    border-color: var(--primary-color);
+    .projects__card-img {
+      filter: brightness(0.95) blur(1px) grayscale(0.1);
+      scale: 1.04;
+    }
+    .projects__card-overlay {
+      opacity: 1;
+      backdrop-filter: blur(12px);
+    }
+    .projects__card-title {
+      color: var(--primary-color);
+    }
+    .projects__card-tech {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+  }
+
+  .projects__card-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background: var(--gradient-dark);
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+    img.projects__card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+      transition: filter 0.3s, scale 0.3s;
+    }
+    .projects__card-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(120deg, rgba(56,189,248,0.15), rgba(99,102,241,0.7));
+      opacity: 0;
+      transition: all var(--transition-normal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      backdrop-filter: blur(0px);
+    }
+    .projects__card-status {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 3;
+      .status-completed {
+        background: linear-gradient(90deg, #10b981, #22d3ee);
+        color: #fff;
+      }
+      .status-in-progress {
+        background: linear-gradient(90deg, #f59e0b, #fbbf24);
+        color: #fff;
+      }
+      .status-concept {
+        background: linear-gradient(90deg, #6366f1, #a21caf);
+        color: #fff;
+      }
+      span {
+        display: inline-block;
+        padding: 0.3rem 0.9rem;
+        border-radius: var(--radius-full);
+        font-size: 0.95rem;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        letter-spacing: 0.01em;
+      }
+    }
+  }
+
+  .projects__card-content {
+    padding: var(--space-xl) var(--space-lg) var(--space-lg) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    flex: 1;
+    .projects__card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.2em;
+      transition: color 0.2s;
+    }
+    .projects__card-desc {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      margin-bottom: 0.5em;
+      line-height: 1.5;
+    }
+    .projects__card-techs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.5em;
+      .projects__card-tech {
+        background: linear-gradient(90deg, #6366f1 60%, #38bdf8 100%);
+        color: #fff;
+        font-size: 0.92rem;
+        font-weight: 500;
+        border-radius: var(--radius-full);
+        padding: 0.3rem 0.9rem;
+        box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+        letter-spacing: 0.01em;
+        transition: all 0.2s;
+      }
+    }
+    .projects__card-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5em;
+      a {
+        color: #fff;
+        background: linear-gradient(90deg, #6366f1 60%, #38bdf8 100%);
+        padding: 0.4rem 1.1rem;
+        border-radius: var(--radius-full);
+        font-weight: 600;
+        font-size: 0.98rem;
+        text-decoration: none;
+        box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+        transition: background 0.2s, transform 0.2s;
+        &:hover {
+          background: linear-gradient(90deg, #38bdf8 60%, #6366f1 100%);
+          transform: translateY(-2px) scale(1.04);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    min-height: 340px;
+    .projects__card-image { height: 140px; }
+    .projects__card-content { padding: var(--space-md); }
+  }
 }
