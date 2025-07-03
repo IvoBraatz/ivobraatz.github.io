@@ -133,8 +133,8 @@ const Contact = () => {
           {/* Informações de Contato */}
           <div className="contact__info">
             <div className="contact__info-header">
-              <h3>Entre em Contato</h3>
-              <p>
+              <h3 className="text-title">Entre em Contato</h3>
+              <p className="text-body">
                 Estou sempre aberto a novos projetos e oportunidades colaborativas. 
                 Vamos discutir como posso ajudar a transformar sua visão em uma realidade digital impactante.
               </p>
@@ -154,10 +154,10 @@ const Contact = () => {
                     {info.icon}
                   </div>
                   <div className="contact__info-item-content">
-                    <h4>{info.title}</h4>
-                    <span>{info.value}</span>
+                    <h4 className="text-subtitle">{info.title}</h4>
+                    <span className="text-body">{info.value}</span>
                     {info.description && (
-                      <small style={{ 
+                      <small className="text-body" style={{ 
                         display: 'block', 
                         marginTop: '4px', 
                         fontSize: '0.8rem', 
@@ -177,8 +177,8 @@ const Contact = () => {
           <div className="contact__form-container">
             <form className="contact__form" onSubmit={handleSubmit}>
               <div className="contact__form-header">
-                <h3>Inicie seu Projeto</h3>
-                <p>Preencha o formulário abaixo e eu entrarei em contato em até 24h para discutirmos sua proposta</p>
+                <h3 className="text-title">Inicie seu Projeto</h3>
+                <p className="text-body">Preencha o formulário abaixo e eu entrarei em contato em até 24h para discutirmos sua proposta</p>
               </div>
 
               <div className="contact__form-grid">
@@ -260,7 +260,7 @@ const Contact = () => {
 
               <button 
                 type="submit" 
-                className={`btn btn--primary contact__form-submit ${isSubmitting ? 'loading' : ''}`}
+                className={`btn btn--primary contact__form-submit text-cta ${isSubmitting ? 'loading' : ''}`}
                 disabled={isSubmitting || !validateForm()}
               >
                 {isSubmitting ? (
@@ -277,8 +277,8 @@ const Contact = () => {
                 <div className="contact__form-success">
                   <span>✓</span>
                   <div>
-                    <strong>Mensagem enviada com sucesso!</strong>
-                    <p>Obrigado pelo contato. Entrarei em contato em breve para discutirmos seu projeto.</p>
+                    <strong className="text-subtitle">Mensagem enviada com sucesso!</strong>
+                    <p className="text-body">Obrigado pelo contato. Entrarei em contato em breve para discutirmos seu projeto.</p>
                   </div>
                 </div>
               )}
@@ -287,8 +287,8 @@ const Contact = () => {
                 <div className="contact__form-error">
                   <span>✗</span>
                   <div>
-                    <strong>Erro ao enviar mensagem</strong>
-                    <p>Verifique se todos os campos obrigatórios estão preenchidos ou tente novamente mais tarde.</p>
+                    <strong className="text-subtitle">Erro ao enviar mensagem</strong>
+                    <p className="text-body">Verifique se todos os campos obrigatórios estão preenchidos ou tente novamente mais tarde.</p>
                   </div>
                 </div>
               )}

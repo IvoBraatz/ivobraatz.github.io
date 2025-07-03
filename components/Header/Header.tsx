@@ -41,8 +41,8 @@ const Header = () => {
           <div className="header__logo">
             <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home') }}>
               <div className="header__logo-text">
-                <span className="header__logo-brand">Netto</span>
-                <span className="header__logo-domain">.codes</span>
+                <span className="header__logo-brand text-title-bold">Netto</span>
+                <span className="header__logo-domain text-subtitle">.codes</span>
               </div>
               <div className="header__logo-glow"></div>
             </a>
@@ -57,7 +57,7 @@ const Header = () => {
                     className="header__nav-link"
                     onClick={() => scrollToSection(item.id)}
                   >
-                    <span className="header__nav-text">{item.label}</span>
+                    <span className="header__nav-text text-subtitle">{item.label}</span>
                     <span className="header__nav-indicator"></span>
                   </button>
                 </li>
@@ -103,7 +103,7 @@ const Header = () => {
                     className="header__mobile-nav-link"
                     onClick={() => scrollToSection(item.id)}
                   >
-                    <span className="header__mobile-nav-text">{item.label}</span>
+                    <span className="header__mobile-nav-text text-subtitle">{item.label}</span>
                     <div className="header__mobile-nav-icon">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M5 12h14M12 5l7 7-7 7"/>

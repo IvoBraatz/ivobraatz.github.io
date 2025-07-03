@@ -58,6 +58,11 @@ const About = () => {
   const [copied, setCopied] = useState(false)
   const [activeSkill, setActiveSkill] = useState<number | null>(null)
   const [carouselIndex, setCarouselIndex] = useState(0);
+  const marqueeRef = useRef<HTMLDivElement>(null)
+  const [isMarqueeReady, setIsMarqueeReady] = useState(false)
+  const marqueeContainerRef = useRef<HTMLDivElement>(null)
+  const marqueeTrackRef = useRef<HTMLDivElement>(null)
+  const [marqueeBadges, setMarqueeBadges] = useState(badges)
   
   const codeString = `class IvoNetto {
   constructor() {
@@ -154,6 +159,86 @@ developer.develop();`
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    if (!marqueeRef.current) return
+    const marquee = marqueeRef.current
+    let frame: number
+    let speed = 1 // px por frame
+    let pos = 0
+    let groupWidth = 0
+
+    const setup = () => {
+      const group = Array.from(marquee.children).slice(0, badges.length) as HTMLElement[]
+      groupWidth = group.reduce((acc, el) => acc + el.offsetWidth, 0)
+      setIsMarqueeReady(true)
+    }
+
+    setup()
+
+    const animate = () => {
+      pos -= speed
+      if (Math.abs(pos) >= groupWidth) {
+        pos = 0
+      }
+      marquee.style.transform = `translateX(${pos}px)`
+      frame = requestAnimationFrame(animate)
+    }
+    frame = requestAnimationFrame(animate)
+    return () => {
+      cancelAnimationFrame(frame)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!marqueeTrackRef.current) return
+    const track = marqueeTrackRef.current
+    let pos = 0
+    let frame: number
+    let speed = 1 // px por frame
+
+    const animate = () => {
+      pos -= speed
+      if (track.children.length > 0) {
+        const first = track.children[0] as HTMLElement
+        if (first && Math.abs(pos) >= first.offsetWidth) {
+          // Move o primeiro badge para o final
+          track.appendChild(first)
+          pos += first.offsetWidth
+        }
+      }
+      track.style.transform = `translateX(${pos}px)`
+      frame = requestAnimationFrame(animate)
+    }
+    frame = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(frame)
+  }, [])
+
+  useEffect(() => {
+    if (!marqueeContainerRef.current) return
+    // Cria um elemento temporário para medir a largura dos badges
+    const temp = document.createElement('div')
+    temp.style.visibility = 'hidden'
+    temp.style.position = 'absolute'
+    temp.style.height = '0'
+    temp.style.display = 'flex'
+    document.body.appendChild(temp)
+    badges.forEach(badge => {
+      const span = document.createElement('span')
+      span.className = 'about__profile-badge'
+      span.innerHTML = `${badge.icon.props ? badge.icon.props.children : ''} ${badge.label}`
+      temp.appendChild(span)
+    })
+    const groupWidth = temp.offsetWidth
+    const containerWidth = marqueeContainerRef.current.offsetWidth
+    let repeat = 2
+    if (groupWidth > 0 && containerWidth > 0) {
+      repeat = Math.ceil((containerWidth * 2) / groupWidth)
+    }
+    const result = Array(repeat).fill(badges).flat()
+    setMarqueeBadges(result)
+    document.body.removeChild(temp)
+  }, [])
+
   const handleCopy = () => {
     navigator.clipboard.writeText(codeString)
     setCopied(true)
@@ -167,16 +252,17 @@ developer.develop();`
 
   return (
     <section id="about" className="about">
-      <SectionHeader
-        title="Sobre"
-        highlight="Mim"
-        subtitle="Apaixonado por criar soluções elegantes e eficientes que conectam tecnologia e pessoas."
-      />
       <div className="container">
+        <SectionHeader
+          title="Sobre"
+          highlight="Mim"
+          subtitle="Apaixonado por criar soluções elegantes e eficientes que conectam tecnologia e pessoas."
+          align="left"
+        />
         <div className="about__content-layout">
           <div className="about__main-content">
-            <p className="about__intro">Apaixonado por criar soluções elegantes e eficientes que conectam tecnologia e pessoas.</p>
-            <p className="about__description">
+            <p className="about__intro text-body-medium">Apaixonado por criar soluções elegantes e eficientes que conectam tecnologia e pessoas.</p>
+            <p className="about__description text-body">
               Sou Ivo Netto, desenvolvedor Full Stack com mais de 3 anos de experiência, focado em entregar produtos digitais de alta qualidade, performance e usabilidade.<br />
               Minha jornada é guiada por princípios sólidos de desenvolvimento e uma busca constante por inovação e excelência técnica.
             </p>
@@ -195,14 +281,14 @@ developer.develop();`
                   className="about__profile-avatar-img"
                 />
               </div>
-              <h3>Ivo Netto</h3>
-              <p className="about__profile-role">Full Stack Developer</p>
+              <h3 className="text-title">Ivo Netto</h3>
+              <p className="about__profile-role text-subtitle">Full Stack Developer</p>
             </div>
             <div className="about__profile-contact">
-              <div className="about__profile-contact-item">
+              <div className="about__profile-contact-item text-body">
                 <FaEnvelope /> ivo@netto.codes
               </div>
-              <div className="about__profile-contact-item">
+              <div className="about__profile-contact-item text-body">
                 <FaMapMarkerAlt /> Parobé, RS - Brasil
               </div>
               <div className="about__profile-socials">
@@ -210,19 +296,10 @@ developer.develop();`
                 <a href="https://linkedin.com/in/ivonetto" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
               </div>
             </div>
-            <a href="/cv.pdf" className="about__cv-btn">
+            <a href="/cv.pdf" className="about__cv-btn text-cta">
               <FaDownload /> Download CV
             </a>
           </aside>
-        </div>
-        <div className="about__badges-marquee">
-          <div className="about__badges-track">
-            {[...badges, ...badges].map((badge, idx) => (
-              <span className="about__profile-badge" key={idx}>
-                {badge.icon} {badge.label}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
       <div className="about__background">

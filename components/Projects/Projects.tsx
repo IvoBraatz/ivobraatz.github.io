@@ -185,11 +185,11 @@ const Projects = () => {
                     </div>
                   </div>
                   <div className="projects__card-content">
-                    <h3 className="projects__card-title">{project.title}</h3>
-                    <p className="projects__card-desc">{project.description}</p>
+                    <h3 className="projects__card-title text-title">{project.title}</h3>
+                    <p className="projects__card-desc text-body">{project.description}</p>
                     <div className="projects__card-techs">
                       {project.technologies.map(tech => (
-                        <span className="projects__card-tech" key={tech}>{tech}</span>
+                        <span className="projects__card-tech text-tech" key={tech}>{tech}</span>
                       ))}
                     </div>
                     <div className="projects__card-links">
@@ -236,8 +236,8 @@ const Projects = () => {
                     </div>
                   </div>
                   <div className="projects__card-content">
-                    <h3 className="projects__card-title">{project.title}</h3>
-                    <p className="projects__card-desc">{project.description}</p>
+                    <h3 className="projects__card-title text-title">{project.title}</h3>
+                    <p className="projects__card-desc text-body">{project.description}</p>
                   </div>
                 </div>
               )
@@ -258,8 +258,8 @@ const Projects = () => {
           {/* CTA */}
           <div className="projects__cta fade-in-up">
             <div className="projects__cta-content">
-              <h3 className="projects__cta-title">Gostou do que viu?</h3>
-              <p className="projects__cta-description">
+              <h3 className="projects__cta-title text-title">Gostou do que viu?</h3>
+              <p className="projects__cta-description text-body-medium">
                 Vamos criar algo incrível juntos! Entre em contato para discutir seu próximo projeto.
               </p>
               <div className="projects__cta-actions">
@@ -298,10 +298,10 @@ const Projects = () => {
             
             <div className="projects__modal-header">
               <div className="projects__modal-title-section">
-                <h2 className="projects__modal-title">{selectedProject.title}</h2>
+                <h2 className="projects__modal-title text-title-bold">{selectedProject.title}</h2>
                 <div className="projects__modal-meta">
-                  <span className="projects__modal-year">{selectedProject.year}</span>
-                  <span className={`projects__modal-status projects__modal-status--${selectedProject.status}`}>
+                  <span className="projects__modal-year text-subtitle">{selectedProject.year}</span>
+                  <span className={`projects__modal-status projects__modal-status--${selectedProject.status} text-subtitle`}>
                     {getStatusIcon(selectedProject.status)} {getStatusLabel(selectedProject.status)}
                   </span>
                 </div>
@@ -322,15 +322,15 @@ const Projects = () => {
 
               <div className="projects__modal-info">
                 <div className="projects__modal-description">
-                  <h3>Sobre o Projeto</h3>
-                  <p>{selectedProject.longDescription}</p>
+                  <h3 className="text-subtitle">Sobre o Projeto</h3>
+                  <p className="text-body">{selectedProject.longDescription}</p>
                 </div>
 
                 <div className="projects__modal-technologies">
-                  <h3>Tecnologias Utilizadas</h3>
+                  <h3 className="text-subtitle">Tecnologias Utilizadas</h3>
                   <div className="projects__modal-tech-grid">
                     {selectedProject.technologies.map((tech, index) => (
-                      <span key={index} className="projects__modal-tech">
+                      <span key={index} className="projects__modal-tech text-tech">
                         {tech}
                       </span>
                     ))}

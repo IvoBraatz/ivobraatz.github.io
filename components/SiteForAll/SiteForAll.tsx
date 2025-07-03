@@ -34,9 +34,10 @@ const SiteForAll = () => (
         title="Site para"
         highlight="Todos"
         subtitle="Uma iniciativa para democratizar a presença digital e criar impacto social."
+        align="left"
       />
       <div className="site-for-all__mission">
-        <p>
+        <p className="text-body-medium">
           Desenvolvo sites gratuitos para instituições sem fins lucrativos, portfólios para recém-formados e projetos que geram impacto positivo. Vamos juntos construir parcerias e transformar ideias em realidade!
         </p>
       </div>
@@ -45,18 +46,18 @@ const SiteForAll = () => (
           <div className="site-for-all__card-mini fade-in-up" key={idx} style={{ animationDelay: `${idx * 0.10 + 0.1}s` }}>
             <span className="site-for-all__icon-bg-mini">{card.icon}</span>
             <div>
-              <h3>{card.title}</h3>
-              <p>{card.desc}</p>
+              <h3 className="text-subtitle">{card.title}</h3>
+              <p className="text-body">{card.desc}</p>
             </div>
           </div>
         ))}
       </div>
       <div className="site-for-all__cta-hero">
-        <a href="#contact" className="btn btn--primary btn--lg">
+        <a href="#contact" className="btn btn--primary btn--lg text-cta">
           <span>Quero Participar</span>
           <svg width="22" height="22" fill="none" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <p className="site-for-all__cta-text">
+        <p className="site-for-all__cta-text text-body">
           Tem uma instituição, projeto ou pessoa para indicar? Vamos juntos!
         </p>
       </div>

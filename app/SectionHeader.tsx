@@ -13,7 +13,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   title,
   highlight,
   subtitle,
-  align = 'center',
+  align = 'left',
   className = '',
 }) => (
   <div className={`section-header section-header--${align} ${className}`.trim()}>

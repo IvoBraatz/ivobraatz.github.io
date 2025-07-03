@@ -163,17 +163,17 @@ console.log(developer.buildAmazingThings());`
           {/* Main Content */}
           <div className="hero__main">
             <div className="hero__text">
-              <h1 className="hero__title fade-in-up">
+              <h1 className="hero__title text-title-bold fade-in-up">
                 Olá, eu sou
                 <span className="hero__name"> Ivo Netto</span>
               </h1>
 
-              <div className="hero__subtitle fade-in-up">
+              <div className="hero__subtitle text-subtitle fade-in-up">
                 <span className="role-text">{typedRole}</span>
                 <span className={`cursor ${showCursor ? 'visible' : ''}`}>|</span>
               </div>
 
-              <p className="hero__description fade-in-up">
+              <p className="hero__description text-body-medium fade-in-up">
                 Transformo ideias em experiências digitais excepcionais. 
                 Especializado em React, Node.js e tecnologias modernas, 
                 criando soluções que fazem a diferença.
@@ -181,13 +181,13 @@ console.log(developer.buildAmazingThings());`
 
               {/* CTA Buttons */}
               <div className="hero__actions fade-in-up">
-                <a href="#projects" className="btn btn--primary">
+                <a href="#projects" className="btn btn--primary text-cta">
                   <span>Ver Projetos</span>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
                 </a>
-                <a href="#contact" className="btn btn--outline">
+                <a href="#contact" className="btn btn--outline text-cta">
                   <span>Fale Comigo</span>
                 </a>
               </div>
@@ -195,16 +195,16 @@ console.log(developer.buildAmazingThings());`
               {/* Stats */}
               <div className="hero__stats fade-in-up">
                 <div className="stat">
-                  <div className="stat__number">{projectsCount}+</div>
-                  <div className="stat__label">Projetos</div>
+                  <div className="stat__number text-tech">{projectsCount}+</div>
+                  <div className="stat__label text-subtitle">Projetos</div>
                 </div>
                 <div className="stat">
-                  <div className="stat__number">{experienceCount}+</div>
-                  <div className="stat__label">Anos</div>
+                  <div className="stat__number text-tech">{experienceCount}+</div>
+                  <div className="stat__label text-subtitle">Anos</div>
                 </div>
                 <div className="stat">
-                  <div className="stat__number">{clientsCount}%</div>
-                  <div className="stat__label">Satisfação</div>
+                  <div className="stat__number text-tech">{clientsCount}%</div>
+                  <div className="stat__label text-subtitle">Satisfação</div>
                 </div>
               </div>
             </div>
@@ -249,7 +249,7 @@ console.log(developer.buildAmazingThings());`
 
       {/* Scroll Indicator */}
       <div className="hero__scroll fade-in">
-        <div className="scroll-text">Scroll para explorar</div>
+        <div className="scroll-text text-body">Scroll para explorar</div>
         <div className="scroll-arrow">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path d="M12 5v14M5 12l7 7 7-7"/>

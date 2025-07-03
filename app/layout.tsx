@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Space_Grotesk, Fira_Code } from 'next/font/google'
+import { Inter, Poppins, Montserrat, Lexend_Deca, Fira_Code } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.scss'
@@ -13,10 +13,29 @@ const inter = Inter({
   weight: ['300', '400', '500', '600', '700']
 })
 
-const spaceGrotesk = Space_Grotesk({ 
+// Fonte para títulos principais - Poppins (ExtraBold/Black)
+const poppins = Poppins({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-poppins',
+  display: 'swap',
+  preload: true
+})
+
+// Fonte alternativa para títulos - Montserrat (ExtraBold/Black)
+const montserrat = Montserrat({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-montserrat',
+  display: 'swap',
+  preload: true
+})
+
+// Fonte para subtítulos e textos de destaque - Lexend Deca
+const lexendDeca = Lexend_Deca({ 
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-space-grotesk',
+  variable: '--font-lexend',
   display: 'swap',
   preload: true
 })
@@ -284,7 +303,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body 
         className={`
           ${inter.variable} 
-          ${spaceGrotesk.variable} 
+          ${poppins.variable} 
+          ${montserrat.variable} 
+          ${lexendDeca.variable}
           ${firaCode.variable}
           antialiased
           overflow-x-hidden

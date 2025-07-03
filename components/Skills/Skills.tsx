@@ -488,8 +488,8 @@ const Skills = () => {
                       <div className="skills__carousel-slide-glow"></div>
                     </div>
                     <div className="skills__carousel-slide-info">
-                      <h3 className="skills__carousel-slide-title">{tech.name}</h3>
-                      <p className="skills__carousel-slide-description">{tech.description}</p>
+                      <h3 className="skills__carousel-slide-title text-tech">{tech.name}</h3>
+                      <p className="skills__carousel-slide-description text-body">{tech.description}</p>
                       <div className="skills__carousel-slide-meta">
                         <span className={`skills__level-badge ${tech.level}`}>
                           {tech.level}
@@ -549,10 +549,10 @@ const Skills = () => {
               >
                 <selectedTech.icon />
               </div>
-              <h3 className="skills__modal-title">{selectedTech.name}</h3>
+              <h3 className="skills__modal-title text-tech">{selectedTech.name}</h3>
             </div>
             <div className="skills__modal-body">
-              <p className="skills__modal-description">{selectedTech.description}</p>
+              <p className="skills__modal-description text-body">{selectedTech.description}</p>
               <div className="skills__modal-meta">
                 <div className="skills__modal-level">
                   <span>Nível:</span>

@@ -19,6 +19,7 @@ html, body {
 body {
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400; /* Regular */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
@@ -169,9 +170,11 @@ body {
   --transition-bounce: 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+/* ===== HIERARQUIA DE TIPOGRAFIA ===== */
+
+/* Títulos Principais - Poppins (ExtraBold/Black) */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-space-grotesk), sans-serif;
-  font-weight: 600;
+  font-family: var(--font-poppins), var(--font-montserrat), sans-serif;
   line-height: 1.2;
   color: var(--text-primary);
   letter-spacing: -0.02em;
@@ -180,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 700;
+  font-weight: 900; /* Black */
   line-height: 1.1;
   letter-spacing: -0.04em;
   background: var(--gradient-primary);
@@ -193,44 +196,48 @@ h1 {
 
 h2 {
   font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 700;
+  font-weight: 800; /* ExtraBold */
   letter-spacing: -0.03em;
 }
 
 h3 {
   font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-weight: 600;
+  font-weight: 700; /* Bold */
 }
 
 h4 {
   font-size: clamp(1.25rem, 2.5vw, 2rem);
-  font-weight: 600;
+  font-weight: 700; /* Bold */
 }
 
 h5 {
   font-size: clamp(1.125rem, 2vw, 1.5rem);
-  font-weight: 600;
+  font-weight: 600; /* SemiBold */
 }
 
 h6 {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
-  font-weight: 600;
+  font-weight: 600; /* SemiBold */
 }
 
+/* Parágrafos e Corpo do Texto - Inter (Regular/Medium) */
 p {
+  font-family: var(--font-inter), sans-serif;
   font-size: 1.125rem;
+  font-weight: 400; /* Regular */
   line-height: 1.7;
   color: var(--text-secondary);
   margin-bottom: var(--space-md);
   
   &.lead {
     font-size: 1.25rem;
-    font-weight: 400;
+    font-weight: 500; /* Medium */
     color: var(--text-primary);
   }
   
   &.small {
     font-size: 0.875rem;
+    font-weight: 400; /* Regular */
     color: var(--text-muted);
   }
 }
@@ -343,11 +350,11 @@ pre {
 
 .section-title {
   font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 700;
+  font-weight: 800; /* ExtraBold */
   text-align: center;
   margin-bottom: var(--space-md);
   color: var(--text-primary);
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-poppins), var(--font-montserrat), sans-serif;
   letter-spacing: -0.02em;
   position: relative;
   
@@ -372,7 +379,8 @@ pre {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  font-weight: 400;
+  font-weight: 500; /* Medium */
+  font-family: var(--font-lexend), var(--font-inter), sans-serif;
   line-height: 1.6;
 }
 
@@ -385,8 +393,8 @@ pre {
   border: none;
   border-radius: var(--radius-lg);
   font-size: 1rem;
-  font-weight: 600;
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-weight: 700; /* Bold para chamadas de ação */
+  font-family: var(--font-lexend), var(--font-inter), sans-serif;
   text-decoration: none;
   cursor: pointer;
   transition: all var(--transition-normal);
@@ -652,6 +660,25 @@ pre {
   }
 }
 
+/* Animações específicas para tipografia */
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(99, 102, 241, 0.6), 0 0 30px rgba(99, 102, 241, 0.4);
+  }
+}
+
+@keyframes textFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
@@ -671,6 +698,8 @@ pre {
 .pulse { animation: pulse 2s ease-in-out infinite; }
 .glow { animation: glow 2s ease-in-out infinite alternate; }
 .rotate { animation: rotate 2s linear infinite; }
+.text-glow { animation: textGlow 3s ease-in-out infinite alternate; }
+.text-float { animation: textFloat 4s ease-in-out infinite; }
 
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
@@ -835,14 +864,65 @@ pre {
 .text-warning { color: var(--warning-500); }
 .text-error { color: var(--error-500); }
 
+/* Classes de Fonte */
+.font-poppins { font-family: var(--font-poppins), sans-serif; }
+.font-montserrat { font-family: var(--font-montserrat), sans-serif; }
+.font-lexend { font-family: var(--font-lexend), sans-serif; }
+.font-inter { font-family: var(--font-inter), sans-serif; }
+.font-fira-code { font-family: var(--font-fira-code), monospace; }
+
+/* Classes de Peso */
 .font-thin { font-weight: 100; }
 .font-light { font-weight: 300; }
 .font-normal { font-weight: 400; }
 .font-medium { font-weight: 500; }
 .font-semibold { font-weight: 600; }
 .font-bold { font-weight: 700; }
-.font-extrabold { font-weight: 700; }
-.font-black { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.font-black { font-weight: 900; }
+
+/* Classes de Tipografia Específicas */
+.text-title {
+  font-family: var(--font-poppins), var(--font-montserrat), sans-serif;
+  font-weight: 800; /* ExtraBold */
+  letter-spacing: -0.02em;
+}
+
+.text-title-bold {
+  font-family: var(--font-poppins), var(--font-montserrat), sans-serif;
+  font-weight: 900; /* Black */
+  letter-spacing: -0.02em;
+}
+
+.text-subtitle {
+  font-family: var(--font-lexend), var(--font-inter), sans-serif;
+  font-weight: 600; /* SemiBold */
+  letter-spacing: -0.01em;
+}
+
+.text-body {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400; /* Regular */
+  line-height: 1.7;
+}
+
+.text-body-medium {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 500; /* Medium */
+  line-height: 1.7;
+}
+
+.text-cta {
+  font-family: var(--font-lexend), var(--font-inter), sans-serif;
+  font-weight: 700; /* Bold */
+  letter-spacing: 0.01em;
+}
+
+.text-tech {
+  font-family: var(--font-poppins), var(--font-montserrat), sans-serif;
+  font-weight: 700; /* Bold */
+  letter-spacing: -0.01em;
+}
 
 .bg-dark { background-color: var(--background-dark); }
 .bg-card { background-color: var(--background-card); }

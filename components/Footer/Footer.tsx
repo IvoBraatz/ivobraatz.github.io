@@ -21,12 +21,12 @@ const Footer = () => {
           {/* Logo e Descrição */}
           <div className="footer__brand">
             <div className="footer__logo">
-              <span className="footer__logo-text">
+              <span className="footer__logo-text text-title-bold">
                 <span className="code-symbol">&lt;/&gt;</span>
                 Netto.codes
               </span>
             </div>
-            <p className="footer__description">
+            <p className="footer__description text-body">
               Código com propósito. Soluções que conectam. 
               Especialista em desenvolvimento Full Stack com foco em criar 
               experiências digitais impactantes e eficientes.
@@ -73,7 +73,7 @@ const Footer = () => {
 
           {/* Links Rápidos */}
           <div className="footer__links">
-            <h4>Navegação</h4>
+            <h4 className="text-subtitle">Navegação</h4>
             <ul className="footer__links-list">
               <li>
                 <button onClick={() => scrollToSection('home')}>
@@ -100,7 +100,7 @@ const Footer = () => {
 
           {/* Serviços */}
           <div className="footer__services">
-            <h4>Serviços</h4>
+            <h4 className="text-subtitle">Serviços</h4>
             <ul className="footer__services-list">
               <li>Desenvolvimento Web Full Stack</li>
               <li>Aplicações React/Next.js</li>
@@ -113,19 +113,19 @@ const Footer = () => {
 
           {/* Contato */}
           <div className="footer__contact">
-            <h4>Contato</h4>
+            <h4 className="text-subtitle">Contato</h4>
             <div className="footer__contact-info">
               <div className="footer__contact-item">
                 <span className="footer__contact-icon"><SiMaildotru size={18} /></span>
-                <span>ivo@netto.codes</span>
+                <span className="text-body">ivo@netto.codes</span>
               </div>
               <div className="footer__contact-item">
                 <span className="footer__contact-icon"><SiWhatsapp size={18} /></span>
-                <span>+55 (11) 99999-9999</span>
+                <span className="text-body">+55 (11) 99999-9999</span>
               </div>
               <div className="footer__contact-item">
                 <span className="footer__contact-icon"><FaMapMarkerAlt size={18} /></span>
-                <span>São Paulo, SP - Brasil</span>
+                <span className="text-body">São Paulo, SP - Brasil</span>
               </div>
             </div>
           </div>
@@ -137,10 +137,10 @@ const Footer = () => {
         {/* Copyright */}
         <div className="footer__bottom">
           <div className="footer__copyright">
-            <p>
-              © {currentYear} <strong>Netto.codes</strong>. Todos os direitos reservados.
+            <p className="text-body">
+              © {currentYear} <strong className="text-subtitle">Netto.codes</strong>. Todos os direitos reservados.
             </p>
-            <p>
+            <p className="text-body">
               Desenvolvido com ❤️ por Ivo Netto
             </p>
           </div>
