@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import './Hero.scss'
+import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa'
 
 // Hook para animação de digitação mais suave
 function useTypewriter(text: string, speed = 100) {
@@ -55,6 +56,12 @@ function useCountUp(target: number, duration = 2000) {
   return { count, setIsVisible }
 }
 
+const profileImages = [
+  '/profile-placeholder-1.png',
+  '/profile-placeholder-2.png',
+  '/profile-placeholder-3.png',
+];
+
 const Hero = () => {
   const [currentRole, setCurrentRole] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -72,22 +79,6 @@ const Hero = () => {
   const { count: projectsCount, setIsVisible: setProjectsVisible } = useCountUp(50)
   const { count: experienceCount, setIsVisible: setExperienceVisible } = useCountUp(5)
   const { count: clientsCount, setIsVisible: setClientsVisible } = useCountUp(100)
-
-  // Código de exemplo para o bloco de código
-  const codeExample = `const developer = {
-  name: "Seu Nome",
-  skills: ["React", "Node.js", "TypeScript"],
-  experience: "5+ anos",
-  passion: "Criar soluções incríveis",
-  
-  buildAmazingThings() {
-    return this.skills.map(skill => 
-      \`Dominando \${skill} para criar experiências únicas\`
-    );
-  }
-};
-
-console.log(developer.buildAmazingThings());`
 
   // Rotação dos roles
   useEffect(() => {
@@ -211,21 +202,34 @@ console.log(developer.buildAmazingThings());`
 
             {/* Code Block */}
             <div className="hero__visual fade-in-up">
-              <div className="code-block" ref={codeBlockRef}>
-                <div className="code-block__header">
-                  <div className="window-controls">
-                    <span className="control control--close"></span>
-                    <span className="control control--minimize"></span>
-                    <span className="control control--maximize"></span>
+              <aside className="about__profile-card">
+                <div className="about__profile-header">
+                  <div className="about__profile-avatar-carousel">
+                    <img
+                      src={profileImages && profileImages[0] ? profileImages[0] : '/profile-placeholder-1.png'}
+                      alt="Foto de perfil"
+                      className="about__profile-avatar-img"
+                    />
                   </div>
-                  <div className="file-name">developer.js</div>
+                  <h3 className="text-title">Ivo Netto</h3>
+                  <p className="about__profile-role text-subtitle">Full Stack Developer</p>
                 </div>
-                <div className="code-block__content">
-                  <pre>
-                    <code>{codeExample}</code>
-                  </pre>
+                <div className="about__profile-contact">
+                  <div className="about__profile-contact-item text-body">
+                    <FaEnvelope /> ivo@netto.codes
+                  </div>
+                  <div className="about__profile-contact-item text-body">
+                    <FaMapMarkerAlt /> Parobé, RS - Brasil
+                  </div>
+                  <div className="about__profile-socials">
+                    <a href="https://github.com/ivonetto" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+                    <a href="https://linkedin.com/in/ivonetto" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+                  </div>
                 </div>
-              </div>
+                <a href="/cv.pdf" className="about__cv-btn text-cta">
+                  <FaDownload /> Download CV
+                </a>
+              </aside>
             </div>
           </div>
         </div>

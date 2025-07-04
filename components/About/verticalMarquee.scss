@@ -1,0 +1,47 @@
+.vertical-marquee-viewport {
+  width: 100%;
+  position: relative;
+}
+
+.vertical-marquee-track {
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-marquee-item {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.vertical-marquee-fade-top,
+.vertical-marquee-fade-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2.5rem;
+  z-index: 2;
+  pointer-events: none;
+}
+.vertical-marquee-fade-top {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.0) 100%);
+}
+.vertical-marquee-fade-bottom {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.0) 100%);
+}
+
+.vertical-marquee-track-continuous {
+  display: flex;
+  flex-direction: column;
+  animation: vertical-marquee-continuous 16s linear infinite;
+}
+
+@keyframes vertical-marquee-continuous {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+} 

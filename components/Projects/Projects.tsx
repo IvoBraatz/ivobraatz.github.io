@@ -164,7 +164,7 @@ const Projects = () => {
               index === 0 ? (
                 <div 
                   key={project.id} 
-                  ref={el => projectRefs.current[index] = el}
+                  ref={el => { projectRefs.current[index] = el }}
                   data-index={index}
                   className={`projects__card projects__card--modern ${visibleProjects.includes(index) ? 'animate-in' : ''} ${project.featured ? 'featured' : ''}`}
                   onClick={() => openModal(project)}
@@ -201,7 +201,7 @@ const Projects = () => {
               ) : (
                 <div 
                   key={project.id} 
-                  ref={el => projectRefs.current[index] = el}
+                  ref={el => { projectRefs.current[index] = el }}
                   data-index={index}
                   className={`projects__card ${visibleProjects.includes(index) ? 'animate-in' : ''} ${project.featured ? 'featured' : ''}`}
                   onClick={() => openModal(project)}

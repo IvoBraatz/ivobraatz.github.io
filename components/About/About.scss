@@ -5,20 +5,38 @@
 
   &__content-layout {
     display: flex;
-    gap: var(--space-4xl);
-    align-items: flex-start;
-    @media (max-width: 900px) {
-      flex-direction: column;
-      gap: var(--space-2xl);
-    }
+    gap: 3rem;
+    align-items: stretch;
+    width: 100%;
+    max-height: 420px;
   }
 
   &__main-content {
-    flex: 2;
+    flex: 0 1 65%;
+    min-width: 0;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: var(--space-xl);
+    max-width: 700px;
+  }
+
+  &__certs-marquee-container {
+    flex: 0 1 35%;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    height: 360px; /* 5 itens de 72px */
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    position: relative;
+    overflow: hidden;
   }
 
   &__profile-card {
@@ -39,8 +57,8 @@
     opacity: 1;
     transform: translateY(0) scale(1);
     cursor: pointer;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
     @media (max-width: 900px) {
       max-width: 100%;
       width: 100%;
@@ -375,6 +393,7 @@
       align-items: center;
       justify-content: center;
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       animation: float 7s ease-in-out infinite;
       &--1 { top: 15%; left: 10%; animation-delay: 0s; }
       &--2 { top: 60%; right: 15%; animation-delay: 2s; }
@@ -406,6 +425,17 @@
       max-width: 100%;
       width: 100%;
     }
+    .about__main-content,
+    .about__certs-marquee-container {
+      width: 100%;
+      max-width: 100%;
+      flex: 1 1 100%;
+    }
+    .about__certs-marquee-container,
+    .about__certs-marquee-viewport {
+      height: 320px;
+      min-height: 220px;
+    }
   }
   @media (max-width: 600px) {
     padding: var(--space-2xl) 0;
@@ -423,4 +453,160 @@
 
 .about .section-header {
   align-items: flex-start;
+}
+
+// Hobbies
+.about__hobbies-container {
+  margin-top: 3rem;
+  background: rgba(30,41,59,0.32); /* mais transparente */
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 24px rgba(99,102,241,0.10);
+  padding: 2rem 1.5rem;
+  animation: fadeInUp 1s cubic-bezier(0.4,0,0.2,1);
+  border: 1.5px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(99,102,241,0.08) 0%, rgba(56,189,248,0.07) 100%);
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+.about__hobbies-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-400);
+  margin-bottom: 1.2rem;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.about__hobbies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about__hobby {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: rgba(99,102,241,0.13);
+  color: var(--primary-400);
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: var(--radius-lg);
+  padding: 0.7rem 1.2rem;
+  box-shadow: 0 1px 6px rgba(99,102,241,0.10);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  cursor: default;
+  border: 1.2px solid rgba(255,255,255,0.13);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.about__hobby:hover {
+  background: var(--primary-400);
+  color: #fff;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 2px 12px rgba(99,102,241,0.18);
+}
+
+// Marquee vertical de certificações
+.about__certs-title {
+  display: none;
+}
+
+.about__certs-marquee-viewport {
+  height: 360px;
+  min-height: 320px;
+  overflow: hidden;
+  position: relative;
+  flex: 1 1 100%;
+}
+
+.about__certs-marquee-track {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  animation: certs-marquee-scroll 8s linear infinite;
+}
+
+@keyframes certs-marquee-scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+// Máscara de fade no topo e base do marquee
+.about__certs-fade-top, .about__certs-fade-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2.5rem;
+  z-index: 2;
+  pointer-events: none;
+}
+.about__certs-fade-top {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(20,20,40,0.85) 70%, transparent 100%);
+}
+.about__certs-fade-bottom {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(20,20,40,0.85) 70%, transparent 100%);
+}
+
+.about__cert-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: none;
+  border-radius: var(--radius-lg);
+  padding: 0.7rem 1rem;
+  box-shadow: none;
+  border: none;
+  min-height: 60px;
+  transition: background 0.2s, transform 0.2s;
+}
+.about__cert-item:hover {
+  background: none;
+  color: var(--primary-400);
+  transform: scale(1.04);
+}
+
+.about__cert-logo {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(99,102,241,0.08);
+}
+
+.about__cert-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about__cert-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.about__cert-date {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.2rem;
 }

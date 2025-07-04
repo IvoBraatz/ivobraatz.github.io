@@ -63,6 +63,7 @@
     color: #10b981;
     margin-bottom: var(--space-2xl);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     .status-indicator {
       width: 8px;
@@ -212,6 +213,7 @@
         color: var(--text-primary);
         border: 2px solid var(--border-light);
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
 
         &:hover {
           border-color: var(--primary-500);
@@ -235,7 +237,6 @@
     display: flex;
     gap: var(--space-2xl);
     margin-top: var(--space-2xl);
-    padding-top: var(--space-2xl);
     border-top: 1px solid var(--border-color);
 
     @media (max-width: 640px) {
@@ -278,6 +279,7 @@
     border: 1px solid var(--border-color);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     overflow: hidden;
     position: relative;
 
@@ -353,6 +355,7 @@
       align-items: center;
       justify-content: center;
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       animation: float 6s ease-in-out infinite;
 
       &--1 {
@@ -618,4 +621,104 @@
       transition: none;
     }
   }
+}
+
+// Melhorar o aside de perfil no Hero:
+.about__profile-card {
+  background: rgba(30, 41, 59, 0.7);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.15), 0 1.5px 8px rgba(0,0,0,0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 2.5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+  max-width: 350px;
+  margin: 0 auto;
+  animation: fadeInUp 1s cubic-bezier(0.4,0,0.2,1);
+}
+
+.about__profile-avatar-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.about__profile-avatar-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-400);
+  box-shadow: 0 2px 12px rgba(99,102,241,0.15);
+  background: linear-gradient(135deg, var(--primary-500), var(--accent-400));
+}
+
+.about__profile-header {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.about__profile-role {
+  color: var(--primary-400);
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+.about__profile-contact {
+  margin-bottom: 1.2rem;
+  width: 100%;
+}
+
+.about__profile-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  justify-content: center;
+}
+
+.about__profile-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.about__profile-socials a {
+  color: var(--primary-400);
+  font-size: 1.5rem;
+  transition: color 0.2s, transform 0.2s;
+}
+.about__profile-socials a:hover {
+  color: var(--accent-400);
+  transform: scale(1.18);
+}
+
+.about__cv-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(90deg, var(--primary-400), var(--accent-400));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 0.9rem 1.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1.2rem;
+  box-shadow: 0 2px 12px rgba(99,102,241,0.10);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+.about__cv-btn:hover {
+  background: linear-gradient(90deg, var(--accent-400), var(--primary-400));
+  transform: translateY(-2px) scale(1.04);
 }

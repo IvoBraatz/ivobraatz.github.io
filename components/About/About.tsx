@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 import './About.scss'
 import SectionHeader from '../../app/SectionHeader'
 import '../../app/SectionHeader.scss'
+import InfiniteVerticalMarquee from './InfiniteVerticalMarquee'
 
 const impactfulSubtitles = [
   "Transformando ideias em experiências digitais.",
@@ -63,73 +64,27 @@ const About = () => {
   const marqueeContainerRef = useRef<HTMLDivElement>(null)
   const marqueeTrackRef = useRef<HTMLDivElement>(null)
   const [marqueeBadges, setMarqueeBadges] = useState(badges)
-  
-  const codeString = `class IvoNetto {
-  constructor() {
-    this.name = 'Ivo Netto';
-    this.age = 22;
-    this.location = 'Parobé, RS - Brasil';
-    this.role = 'Full Stack Developer';
-    this.passion = 'Technology & Innovation';
-    this.experience = '3+ years';
-  }
 
-  async develop() {
-    const requirements = await this.analyze();
-    const architecture = await this.design(requirements);
-    const solution = await this.implement(architecture);
-    return this.deploy(solution);
-  }
-
-  get techStack() {
+  // Lista mockada de 20 certificações com keys estáveis
+  const certs = Array.from({ length: 20 }).map((_, i) => {
     return {
-      frontend: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
-      backend: ['Node.js', 'Express', 'Python', 'PostgreSQL'],
-      cloud: ['AWS', 'Docker', 'Vercel', 'MongoDB'],
-      tools: ['Git', 'VS Code', 'Figma', 'Jest']
+      key: `cert-${i + 1}`,
+      content: (
+        <div className="about__cert-item">
+          <img src={`/cert-logos/cert${(i % 4) + 1}.png`} alt={`Certificação ${i + 1}`} className="about__cert-logo" />
+          <div className="about__cert-info">
+            <span className="about__cert-name">Certificação {i + 1}</span>
+            <span className="about__cert-date">202{(i % 5)}</span>
+          </div>
+        </div>
+      )
     };
-  }
-
-  get principles() {
-    return [
-      'Clean Code',
-      'SOLID Principles', 
-      'Performance First',
-      'User Experience'
-    ];
-  }
-}
-
-const developer = new IvoNetto();
-console.log('Building the future... 🚀');
-developer.develop();`
-
-  const skills = [
-    {
-      category: 'Frontend',
-      items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'SCSS', 'JavaScript'],
-      color: '#61DAFB',
-      icon: '⚛️'
-    },
-    {
-      category: 'Backend',
-      items: ['Node.js', 'Express', 'Python', 'PostgreSQL', 'MongoDB', 'REST APIs'],
-      color: '#68D391',
-      icon: '🗄️'
-    },
-    {
-      category: 'DevOps & Tools',
-      items: ['AWS', 'Docker', 'Git', 'Vercel', 'VS Code', 'Linux'],
-      color: '#F6AD55',
-      icon: '⚙️'
-    },
-    {
-      category: 'Design & UX',
-      items: ['Figma', 'UI/UX Design', 'Responsive Design', 'Animations', 'Prototyping'],
-      color: '#B794F6',
-      icon: '🎨'
-    }
-  ]
+  });
+  
+  const VISIBLE_COUNT = 5;
+  const marqueeItemHeight = 72;
+  const [offset, setOffset] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -154,8 +109,17 @@ developer.develop();`
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCarouselIndex((prev) => (prev + 1) % profileImages.length);
-    }, 3000);
+      setIsAnimating(true);
+      setOffset(-marqueeItemHeight);
+      setTimeout(() => {
+        setCerts((prev) => {
+          const [first, ...rest] = prev;
+          return [...rest, first];
+        });
+        setIsAnimating(false);
+        setOffset(0);
+      }, 400); // tempo da transição
+    }, 1800);
     return () => clearInterval(interval);
   }, []);
 
@@ -239,12 +203,6 @@ developer.develop();`
     document.body.removeChild(temp)
   }, [])
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(codeString)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
-
   const downloadCV = () => {
     // Simular download do CV
     console.log('Downloading CV...')
@@ -272,34 +230,24 @@ developer.develop();`
               <div className="about__principle"><FaVial /> TDD</div>
             </div>
           </div>
-          <aside className="about__profile-card">
-            <div className="about__profile-header">
-              <div className="about__profile-avatar-carousel">
-                <img
-                  src={profileImages[carouselIndex]}
-                  alt="Foto de perfil"
-                  className="about__profile-avatar-img"
-                />
-              </div>
-              <h3 className="text-title">Ivo Netto</h3>
-              <p className="about__profile-role text-subtitle">Full Stack Developer</p>
-            </div>
-            <div className="about__profile-contact">
-              <div className="about__profile-contact-item text-body">
-                <FaEnvelope /> ivo@netto.codes
-              </div>
-              <div className="about__profile-contact-item text-body">
-                <FaMapMarkerAlt /> Parobé, RS - Brasil
-              </div>
-              <div className="about__profile-socials">
-                <a href="https://github.com/ivonetto" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-                <a href="https://linkedin.com/in/ivonetto" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-              </div>
-            </div>
-            <a href="/cv.pdf" className="about__cv-btn text-cta">
-              <FaDownload /> Download CV
-            </a>
-          </aside>
+          <div className="about__certs-marquee-container">
+            <InfiniteVerticalMarquee
+              items={certs}
+              speed={1800}
+              visibleCount={5}
+              itemHeight={72}
+            />
+          </div>
+        </div>
+        <div className="about__hobbies-container">
+          <h3 className="about__hobbies-title">Hobbies & Interesses</h3>
+          <div className="about__hobbies-list">
+            <div className="about__hobby"><FaGamepad /> Games</div>
+            <div className="about__hobby"><FaHeadphones /> Música</div>
+            <div className="about__hobby"><FaCoffee /> Café</div>
+            <div className="about__hobby"><FaTachometerAlt /> Carros</div>
+            <div className="about__hobby"><FaRocket /> Inovação</div>
+          </div>
         </div>
       </div>
       <div className="about__background">
