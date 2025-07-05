@@ -1,11 +1,11 @@
 'use client'
 
-import { FaCode, FaRocket, FaUserCheck, FaRegCopy, FaDownload, FaGithub, FaLinkedin, FaCheckCircle, FaCubes, FaVial, FaEnvelope, FaMapMarkerAlt, FaGamepad, FaHeadphones, FaTachometerAlt, FaCoffee } from 'react-icons/fa'
+import { FaCode, FaRocket, FaUserCheck, FaRegCopy, FaDownload, FaGithub, FaLinkedin, FaCheckCircle, FaCubes, FaVial, FaEnvelope, FaMapMarkerAlt, FaGamepad, FaHeadphones, FaTachometerAlt, FaCoffee, FaUserGraduate, FaGraduationCap, FaUniversity } from 'react-icons/fa'
+
 import { useEffect, useRef, useState } from 'react'
 import './About.scss'
 import SectionHeader from '../../app/SectionHeader'
 import '../../app/SectionHeader.scss'
-import InfiniteVerticalMarquee from './InfiniteVerticalMarquee'
 
 const impactfulSubtitles = [
   "Transformando ideias em experiências digitais.",
@@ -58,155 +58,119 @@ const About = () => {
   const sectionRef = useRef<HTMLElement>(null)
   const [copied, setCopied] = useState(false)
   const [activeSkill, setActiveSkill] = useState<number | null>(null)
-  const [carouselIndex, setCarouselIndex] = useState(0);
-  const marqueeRef = useRef<HTMLDivElement>(null)
-  const [isMarqueeReady, setIsMarqueeReady] = useState(false)
-  const marqueeContainerRef = useRef<HTMLDivElement>(null)
-  const marqueeTrackRef = useRef<HTMLDivElement>(null)
-  const [marqueeBadges, setMarqueeBadges] = useState(badges)
-
-  // Lista mockada de 20 certificações com keys estáveis
-  const certs = Array.from({ length: 20 }).map((_, i) => {
-    return {
-      key: `cert-${i + 1}`,
-      content: (
-        <div className="about__cert-item">
-          <img src={`/cert-logos/cert${(i % 4) + 1}.png`} alt={`Certificação ${i + 1}`} className="about__cert-logo" />
-          <div className="about__cert-info">
-            <span className="about__cert-name">Certificação {i + 1}</span>
-            <span className="about__cert-date">202{(i % 5)}</span>
-          </div>
-        </div>
-      )
-    };
-  });
+  const [carouselIndex, setCarouselIndex] = useState(0)
+  const [marqueeSpeed, setMarqueeSpeed] = useState(1)
+  const [hoveredTech, setHoveredTech] = useState<string | null>(null)
   
-  const VISIBLE_COUNT = 5;
-  const marqueeItemHeight = 72;
-  const [offset, setOffset] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const marqueeRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in')
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-    
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-      const elements = sectionRef.current.querySelectorAll('.animate-on-scroll')
-      elements.forEach(el => observer.observe(el))
+  // Instituições e seus logos
+  const institutions = {
+    alura: {
+      name: 'Alura',
+      logo: '/cert-logos/alura.png'
+    },
+    senai: {
+      name: 'Senai',
+      logo: '/cert-logos/senai.png'
     }
-    
-    return () => observer.disconnect()
-  }, [])
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsAnimating(true);
-      setOffset(-marqueeItemHeight);
-      setTimeout(() => {
-        setCerts((prev) => {
-          const [first, ...rest] = prev;
-          return [...rest, first];
-        });
-        setIsAnimating(false);
-        setOffset(0);
-      }, 400); // tempo da transição
-    }, 1800);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    if (!marqueeRef.current) return
-    const marquee = marqueeRef.current
-    let frame: number
-    let speed = 1 // px por frame
-    let pos = 0
-    let groupWidth = 0
-
-    const setup = () => {
-      const group = Array.from(marquee.children).slice(0, badges.length) as HTMLElement[]
-      groupWidth = group.reduce((acc, el) => acc + el.offsetWidth, 0)
-      setIsMarqueeReady(true)
-    }
-
-    setup()
-
-    const animate = () => {
-      pos -= speed
-      if (Math.abs(pos) >= groupWidth) {
-        pos = 0
-      }
-      marquee.style.transform = `translateX(${pos}px)`
-      frame = requestAnimationFrame(animate)
-    }
-    frame = requestAnimationFrame(animate)
-    return () => {
-      cancelAnimationFrame(frame)
-    }
-  }, [])
-
-  useEffect(() => {
-    if (!marqueeTrackRef.current) return
-    const track = marqueeTrackRef.current
-    let pos = 0
-    let frame: number
-    let speed = 1 // px por frame
-
-    const animate = () => {
-      pos -= speed
-      if (track.children.length > 0) {
-        const first = track.children[0] as HTMLElement
-        if (first && Math.abs(pos) >= first.offsetWidth) {
-          // Move o primeiro badge para o final
-          track.appendChild(first)
-          pos += first.offsetWidth
-        }
-      }
-      track.style.transform = `translateX(${pos}px)`
-      frame = requestAnimationFrame(animate)
-    }
-    frame = requestAnimationFrame(animate)
-    return () => cancelAnimationFrame(frame)
-  }, [])
-
-  useEffect(() => {
-    if (!marqueeContainerRef.current) return
-    // Cria um elemento temporário para medir a largura dos badges
-    const temp = document.createElement('div')
-    temp.style.visibility = 'hidden'
-    temp.style.position = 'absolute'
-    temp.style.height = '0'
-    temp.style.display = 'flex'
-    document.body.appendChild(temp)
-    badges.forEach(badge => {
-      const span = document.createElement('span')
-      span.className = 'about__profile-badge'
-      span.innerHTML = `${badge.icon.props ? badge.icon.props.children : ''} ${badge.label}`
-      temp.appendChild(span)
-    })
-    const groupWidth = temp.offsetWidth
-    const containerWidth = marqueeContainerRef.current.offsetWidth
-    let repeat = 2
-    if (groupWidth > 0 && containerWidth > 0) {
-      repeat = Math.ceil((containerWidth * 2) / groupWidth)
-    }
-    const result = Array(repeat).fill(badges).flat()
-    setMarqueeBadges(result)
-    document.body.removeChild(temp)
-  }, [])
-
-  const downloadCV = () => {
-    // Simular download do CV
-    console.log('Downloading CV...')
   }
+
+  // Certificados para o marquee vertical
+  const certificates = [
+    { 
+      name: 'Desenvolvedor Back-end C#', 
+      institution: institutions.senai,
+      date: 'Maio 2024'
+    },
+    { 
+      name: 'JavaScript', 
+      institution: institutions.alura,
+      date: 'Novembro 2024'
+    },
+    { 
+      name: 'Node.js', 
+      institution: institutions.alura,
+      date: 'Novembro 2024'
+    },
+    { 
+      name: 'C#', 
+      institution: institutions.alura,
+      date: 'Setembro 2023'
+    },
+    { 
+      name: 'SQL com MySQL', 
+      institution: institutions.alura,
+      date: 'Setembro 2023'
+    },
+    { 
+      name: 'Git & GitHub', 
+      institution: institutions.alura,
+      date: 'Novembro 2024'
+    },
+    { 
+      name: 'HTML5 & CSS3', 
+      institution: institutions.alura,
+      date: 'Novembro 2024'
+    },
+    { 
+      name: 'Arquitetura CSS', 
+      institution: institutions.alura,
+      date: 'Setembro 2023'
+    },
+    { 
+      name: 'Lógica de programação', 
+      institution: institutions.alura,
+      date: 'Novembro 2024'
+    },
+    { 
+      name: 'HTTP', 
+      institution: institutions.alura,
+      date: 'Setembro 2023'
+    },
+    { 
+      name: 'UI para devs', 
+      institution: institutions.alura,
+      date: 'Novembro 2024'
+    },
+    { 
+      name: 'Acessibilidade web', 
+      institution: institutions.alura,
+      date: 'Outubro 2024'
+    },
+    { 
+      name: 'SEO otimização de sites', 
+      institution: institutions.alura,
+      date: 'Novembro 2024'
+    },
+    { 
+      name: 'Redes onboarding', 
+      institution: institutions.alura,
+      date: 'Novembro 2024'
+    },
+    { 
+      name: 'Linux Onboarding', 
+      institution: institutions.alura,
+      date: 'Novembro 2024'
+    }
+  ]
+
+  // Marquee hover effect
+  useEffect(() => {
+    const marqueeElement = marqueeRef.current
+    if (!marqueeElement) return
+
+    const handleMouseEnter = () => setMarqueeSpeed(0.3)
+    const handleMouseLeave = () => setMarqueeSpeed(1)
+
+    marqueeElement.addEventListener('mouseenter', handleMouseEnter)
+    marqueeElement.addEventListener('mouseleave', handleMouseLeave)
+
+    return () => {
+      marqueeElement.removeEventListener('mouseenter', handleMouseEnter)
+      marqueeElement.removeEventListener('mouseleave', handleMouseLeave)
+    }
+  }, [])
 
   return (
     <section id="about" className="about">
@@ -216,7 +180,22 @@ const About = () => {
           highlight="Mim"
           subtitle="Apaixonado por criar soluções elegantes e eficientes que conectam tecnologia e pessoas."
           align="left"
-        />
+        >
+          <div className="about__graduation-info">
+            <FaGraduationCap className="about__graduation-icon" />
+            <div className="about__graduation-details">
+              <div className="about__graduation-course">Gestão da Tecnologia da Informação</div>
+              <div className="about__graduation-institution">
+                <FaUniversity className="about__graduation-institution-icon" />
+                Centro Universitário Leonardo da Vinci
+              </div>
+              <div className="about__graduation-year">
+                <FaGraduationCap className="about__graduation-year-icon" />
+                Formado em 2024
+              </div>
+            </div>
+          </div>
+        </SectionHeader>
         <div className="about__content-layout">
           <div className="about__main-content">
             <p className="about__intro text-body-medium">Apaixonado por criar soluções elegantes e eficientes que conectam tecnologia e pessoas.</p>
@@ -230,13 +209,38 @@ const About = () => {
               <div className="about__principle"><FaVial /> TDD</div>
             </div>
           </div>
-          <div className="about__certs-marquee-container">
-            <InfiniteVerticalMarquee
-              items={certs}
-              speed={1800}
-              visibleCount={5}
-              itemHeight={72}
-            />
+
+          {/* Marquee Vertical de Tecnologias */}
+          <div className="about__marquee-container">
+            <div className="about__marquee" ref={marqueeRef}>
+              <div className="about__marquee-blur about__marquee-blur--top"></div>
+              <div className="about__marquee-blur about__marquee-blur--bottom"></div>
+              <div 
+                className="about__marquee-track"
+                style={{ 
+                  animationDuration: `${30 / marqueeSpeed}s`,
+                  animationPlayState: hoveredTech ? 'paused' : 'running'
+                }}
+              >
+                {[...certificates, ...certificates].map((cert, idx) => (
+                  <div 
+                    key={`${cert.name}-${idx}`}
+                    className="about__marquee-item"
+                    onMouseEnter={() => setHoveredTech(cert.name)}
+                    onMouseLeave={() => setHoveredTech(null)}
+                  >
+                    <div className="about__marquee-item-icon">
+                      <img src={cert.institution.logo} alt={cert.institution.name} className="about__cert-logo" />
+                    </div>
+                    <div className="about__marquee-item-info">
+                      <span className="about__marquee-item-name">{cert.name}</span>
+                      <span className="about__marquee-item-institution">{cert.institution.name}</span>
+                      <span className="about__marquee-item-date">{cert.date}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         <div className="about__hobbies-container">

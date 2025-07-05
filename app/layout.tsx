@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Poppins, Montserrat, Lexend_Deca, Fira_Code } from 'next/font/google'
+import { Inter, Poppins, Montserrat, Lexend_Deca, Fira_Code, Space_Grotesk } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.scss'
@@ -46,6 +46,15 @@ const firaCode = Fira_Code({
   display: 'swap',
   preload: true,
   weight: ['300', '400', '500', '600', '700']
+})
+
+// Fonte para elementos técnicos e números - Space Grotesk
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-space-grotesk',
+  display: 'swap',
+  preload: true
 })
 
 // Metadata otimizada para SEO
@@ -166,7 +175,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html 
       lang="pt-BR" 
-      className="scroll-smooth"
+      className={`scroll-smooth ${inter.variable} ${poppins.variable} ${montserrat.variable} ${lexendDeca.variable} ${firaCode.variable} ${spaceGrotesk.variable}`}
       suppressHydrationWarning
     >
       <head>

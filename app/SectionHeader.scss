@@ -1,25 +1,112 @@
+// Variáveis CSS para melhor organização
+:root {
+  --section-header-title-size-desktop: 2.8rem;
+  --section-header-title-size-tablet: 2.4rem;
+  --section-header-title-size-mobile: 2rem;
+  --section-header-title-size-small: 1.6rem;
+  
+  --section-header-subtitle-size-desktop: 1.25rem;
+  --section-header-subtitle-size-tablet: 1.1rem;
+  --section-header-subtitle-size-mobile: 1rem;
+  
+  --section-header-spacing-desktop: var(--space-4xl);
+  --section-header-spacing-tablet: var(--space-3xl);
+  --section-header-spacing-mobile: var(--space-2xl);
+  
+  --section-header-gap-desktop: 2rem;
+  --section-header-gap-tablet: 1.5rem;
+  --section-header-gap-mobile: 1rem;
+}
+
+// Breakpoints
+$breakpoint-one: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
+$breakpoint-small: 320px;
+
 .section-header {
-  text-align: left;
-  margin-bottom: var(--space-4xl);
+  // Layout base
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--section-header-gap-desktop);
+  margin-bottom: var(--section-header-spacing-desktop);
   position: relative;
   z-index: 2;
+  width: 100%;
+  @media (max-width: $breakpoint-one){
+    flex-direction: column;
+  }
+  // Modificadores de alinhamento
+  &--center {
+    text-align: center;
+    justify-content: center;
+    
+    .section-header__left {
+      text-align: center;
+      width: 100%;
 
+    }
+    
+    .section-header__right {
+      justify-content: center;
+      width: 100%;
+
+    }
+  }
+  
+  &--left {
+    text-align: left;
+    justify-content: space-between;
+    
+    .section-header__left {
+      text-align: left;
+      width: 100%;
+
+    }
+    
+    .section-header__right {
+      justify-content: flex-end;
+      width: 100%;
+
+    }
+  }
+
+  // Container esquerdo
+  &__left {
+    flex: 1;
+    min-width: 0; // Previne overflow em flex containers
+    width: 100%;
+
+  }
+
+  // Container direito
+  &__right {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+
+  }
+
+  // Título principal
   &__title {
     position: relative;
     color: #fff;
-    font-size: 2.8rem;
+    font-size: var(--section-header-title-size-desktop);
     font-weight: 900;
     letter-spacing: 0.04em;
-    line-height: 1.05;
-    text-align: left;
-    width: 100%;
-    margin: 0 auto 0.5em auto;
+    line-height: 1.1;
+    margin: 0 0 0.5em 0;
     text-transform: none;
     z-index: 1;
     text-shadow: 0 4px 24px rgba(0,0,0,0.15), 0 1px 0 #222;
     font-family: var(--font-poppins), var(--font-montserrat), sans-serif;
-    overflow: visible;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
 
+    // Destaque do título
     .section-header__highlight {
       background: linear-gradient(90deg, #38bdf8 0%, #fff 100%);
       background-clip: text;
@@ -31,64 +118,184 @@
       padding: 0 0.2em;
       position: relative;
       text-shadow: none;
+      display: inline-block;
     }
   }
 
-  &__underline {
-    width: 100%;
-    height: 8px;
-    margin: 0.7em auto 0 auto;
-    border-radius: 5px;
-    background: linear-gradient(270deg, rgba(56,189,248,0.5), rgba(99,102,241,0.5), rgba(162,28,175,0.5), rgba(56,189,248,0.5));
-    background-size: 400% 100%;
-    background-position: 0% 50%;
-    opacity: 0.6;
-    animation: gradient-move 4s linear infinite, underline-shine 2.5s linear infinite;
-    transition: background-position 0.3s, opacity 0.3s;
-    display: block;
-    max-width: 100%;
-    position: relative;
-    overflow: hidden;
-  }
 
-  &__underline::after {
-    content: '';
-    position: absolute;
-    left: -60px;
-    top: 0;
-    width: 60px;
-    height: 100%;
-    background: linear-gradient(90deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 100%);
-    filter: blur(2px);
-    opacity: 0.7;
-    animation: underline-shine 2.5s linear infinite;
-  }
 
+  // Subtítulo
   &__subtitle {
-    font-size: 1.25rem;
+    font-size: var(--section-header-subtitle-size-desktop);
     color: var(--text-secondary);
     max-width: 600px;
     margin: 0.7em 0 0 0;
     line-height: 1.6;
-    text-align: left;
+    font-weight: 400;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
-
-  @media (max-width: 600px) {
+  
+  // Responsividade - Tablet
+  @media (max-width: $breakpoint-tablet) {
+    gap: var(--section-header-gap-tablet);
+    margin-bottom: var(--section-header-spacing-tablet);
+    
     &__title {
-      font-size: 2rem;
+      font-size: var(--section-header-title-size-tablet);
+      line-height: 1.15;
     }
+    
+    &__subtitle {
+      font-size: var(--section-header-subtitle-size-tablet);
+      max-width: 100%;
+    }
+    
+    // Em telas menores, empilhar verticalmente se necessário
+    &--stack-mobile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      
+      .section-header__left {
+        text-align: center;
+      }
+      
+      .section-header__right {
+        justify-content: center;
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  // Responsividade - Mobile
+  @media (max-width: $breakpoint-mobile) {
+    gap: var(--section-header-gap-mobile);
+    margin-bottom: var(--section-header-spacing-mobile);
+    
+    &__title {
+      font-size: var(--section-header-title-size-mobile);
+      line-height: 1.2;
+      margin-bottom: 0.3em;
+    }
+    
+    &__subtitle {
+      font-size: var(--section-header-subtitle-size-mobile);
+      line-height: 1.5;
+      margin-top: 0.5em;
+    }
+    
+    // Forçar layout vertical em mobile
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    .section-header__left {
+      text-align: center;
+      width: 100%;
+    }
+    
+    .section-header__right {
+      justify-content: center;
+      margin-top: 1rem;
+      width: 100%;
+    }
+  }
+
+  // Responsividade - Telas muito pequenas
+  @media (max-width: $breakpoint-small) {
+    &__title {
+      font-size: var(--section-header-title-size-small);
+      line-height: 1.25;
+    }
+    
+    &__subtitle {
+      font-size: 0.9rem;
+    }
+  }
+
+  // Melhorias de acessibilidade
+  @media (prefers-reduced-motion: reduce) {
     &__underline {
-      height: 5px;
+      animation: none;
+      
+      &::after {
+        animation: none;
+      }
+    }
+  }
+
+  // Suporte para modo escuro (se aplicável)
+  @media (prefers-color-scheme: dark) {
+    &__title {
+      text-shadow: 0 4px 24px rgba(0,0,0,0.3), 0 1px 0 #111;
     }
   }
 }
 
-@keyframes gradient-move {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+
+
+// Utilitários para diferentes contextos
+.section-header--compact {
+  margin-bottom: var(--space-2xl);
+  
+  .section-header__title {
+    font-size: 2rem;
+    margin-bottom: 0.3em;
+  }
+  
+  .section-header__subtitle {
+    font-size: 1rem;
+    margin-top: 0.4em;
+  }
 }
 
-@keyframes underline-shine {
-  0% { left: -60px; }
-  100% { left: 100%; }
+.section-header--large {
+  margin-bottom: var(--space-5xl);
+  
+  .section-header__title {
+    font-size: 3.5rem;
+  }
+  
+  .section-header__subtitle {
+    font-size: 1.4rem;
+  }
+}
+
+// Animações de scroll (opcional)
+.section-header--animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  
+  &.section-header--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Estados de hover e foco para melhor interatividade
+.section-header {
+  .section-header__title:focus {
+    outline: 2px solid #38bdf8;
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+  
+  .section-header__highlight:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+// Melhorias para impressão
+@media print {
+  .section-header {
+    &__highlight {
+      background: #333 !important;
+      -webkit-text-fill-color: #333 !important;
+      text-fill-color: #333 !important;
+    }
+  }
 } 

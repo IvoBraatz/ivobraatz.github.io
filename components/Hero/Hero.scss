@@ -6,8 +6,9 @@
   justify-content: center;
   overflow: hidden;
   padding: var(--space-4xl) 0;
-  opacity: 0;
-  transform: translateY(20px);
+  min-height: 100vh;
+  opacity: 1;
+  transform: translateY(0);
   transition: all 1s ease-out;
 
   &.loaded {
@@ -15,34 +16,19 @@
     transform: translateY(0);
   }
 
-  // Background com gradientes e padrões
-  &__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -2;
-  }
 
-  
-  &__pattern {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-      radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.04) 2px, transparent 2px),
-      radial-gradient(circle at 75% 75%, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
-    background-size: 60px 60px, 40px 40px;
-    opacity: 0.6;
-  }
 
   // Layout principal
   &__content {
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+  }
+
+  .container {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
@@ -334,7 +320,7 @@
     }
   }
 
-  // Elementos flutuantes
+  // Floating elements
   &__floating {
     position: absolute;
     top: 0;
@@ -342,51 +328,67 @@
     right: 0;
     bottom: 0;
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
+  }
 
-    .floating-element {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: rgba(99, 102, 241, 0.1);
-      border: 1px solid rgba(99, 102, 241, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      animation: float 6s ease-in-out infinite;
+  .floating-element {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    animation: float 6s ease-in-out infinite;
 
-      &--1 {
-        top: 20%;
-        left: 10%;
-        animation-delay: 0s;
-      }
-
-      &--2 {
-        top: 60%;
-        right: 15%;
-        animation-delay: 2s;
-      }
-
-      &--3 {
-        top: 80%;
-        left: 20%;
-        animation-delay: 4s;
-      }
-
-      &--4 {
-        top: 30%;
-        right: 30%;
-        animation-delay: 1s;
-      }
-
-      .floating-icon {
-        font-size: 1.5rem;
-        opacity: 0.8;
-      }
+    &--1 {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
     }
+
+    &--2 {
+      top: 60%;
+      right: 15%;
+      animation-delay: 2s;
+    }
+
+    &--3 {
+      top: 80%;
+      left: 20%;
+      animation-delay: 4s;
+    }
+
+    &--4 {
+      top: 30%;
+      right: 30%;
+      animation-delay: 1s;
+    }
+
+    .floating-icon {
+      font-size: 1.5rem;
+      opacity: 0.8;
+      color: var(--primary-400);
+    }
+  }
+
+  .floating-element--3 {
+    bottom: 30%;
+    left: 20%;
+  }
+
+  .floating-element--4 {
+    top: 40%;
+    right: 25%;
+  }
+
+  .floating-icon {
+    font-size: 1.5rem;
+    color: var(--primary-400);
   }
 
   // Indicador de scroll
@@ -420,14 +422,6 @@
 }
 
 // Animações personalizadas
-@keyframes gradientShift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
 
 @keyframes float {
   0%, 100% {
@@ -585,10 +579,6 @@
 // High contrast mode
 @media (prefers-contrast: high) {
   .hero {
-    &__background {
-      display: none;
-    }
-
     &__status {
       background: var(--success-500);
       color: white;
@@ -603,10 +593,6 @@
 // Reduced motion
 @media (prefers-reduced-motion: reduce) {
   .hero {
-    &__gradient {
-      animation: none;
-    }
-
     &__floating .floating-element {
       animation: none;
     }
@@ -722,3 +708,61 @@
   background: linear-gradient(90deg, var(--accent-400), var(--primary-400));
   transform: translateY(-2px) scale(1.04);
 }
+
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes gradientText {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+// Classes de animação
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-up.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.fade-in.animate-in {
+  opacity: 1;
+}
+
+.floating-element {
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-element--1 { animation-delay: 0s; }
+.floating-element--2 { animation-delay: 0.5s; }
+.floating-element--3 { animation-delay: 1s; }
+.floating-element--4 { animation-delay: 1.5s; }

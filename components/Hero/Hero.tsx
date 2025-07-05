@@ -68,6 +68,8 @@ const Hero = () => {
   const heroRef = useRef<HTMLElement>(null)
   const codeBlockRef = useRef<HTMLDivElement>(null)
 
+
+
   const roles = [
     'Full Stack Developer',
     'React Specialist',
@@ -90,6 +92,8 @@ const Hero = () => {
 
   // Intersection Observer para animações
   useEffect(() => {
+    if (typeof window === 'undefined') return
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -113,12 +117,16 @@ const Hero = () => {
 
   // Loading effect
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoaded(true), 500)
+    const timer = setTimeout(() => {
+      setIsLoaded(true)
+    }, 500)
     return () => clearTimeout(timer)
   }, [])
 
   // Parallax effect para elementos flutuantes
   useEffect(() => {
+    if (typeof window === 'undefined') return
+
     const handleMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e
       const x = (clientX / window.innerWidth) * 100
@@ -128,7 +136,9 @@ const Hero = () => {
       floatingElements.forEach((element, index) => {
         const speed = (index + 1) * 0.5
         const el = element as HTMLElement
-        el.style.transform = `translate(${x * speed * 0.02}px, ${y * speed * 0.02}px)`
+        if (el) {
+          el.style.transform = `translate(${x * speed * 0.02}px, ${y * speed * 0.02}px)`
+        }
       })
     }
 
@@ -138,10 +148,6 @@ const Hero = () => {
 
   return (
     <section className={`hero ${isLoaded ? 'loaded' : ''}`} ref={heroRef}>
-      <div className="hero__background">
-        <div className="hero__gradient"></div>
-        <div className="hero__pattern"></div>
-      </div>
 
       <div className="container">
         <div className="hero__content">
@@ -209,6 +215,10 @@ const Hero = () => {
                       src={profileImages && profileImages[0] ? profileImages[0] : '/profile-placeholder-1.png'}
                       alt="Foto de perfil"
                       className="about__profile-avatar-img"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement
+                        target.src = '/profile-placeholder-1.png'
+                      }}
                     />
                   </div>
                   <h3 className="text-title">Ivo Netto</h3>
